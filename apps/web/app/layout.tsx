@@ -1,9 +1,12 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { SidebarInset, SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
+import { AppSidebar } from "@/components/common/sidebar/AppSidebar";
+import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
-  title: "Carefree Hub",
-  description: "Carefree Hub is a platform for creating and sharing carefree life",
+  title: siteConfig.meta.title,
+  description: siteConfig.meta.description,
 };
 
 export default function RootLayout({
@@ -13,9 +16,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
-        {children}
-      </body>
+        <body>
+        <SidebarProvider>
+          <AppSidebar />
+          <SidebarInset>
+            <main>
+              {/* <SidebarTrigger /> */}
+              {children}
+            </main>
+          </SidebarInset>
+        </SidebarProvider>
+        </body>
     </html>
   );
 }

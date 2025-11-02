@@ -7,4 +7,1585 @@
    - Network:      http://172.30.1.47:3000
 
  [32m[1m✓[22m[39m Starting...
- [32m[1m✓[22m[39m Ready in 473ms
+ [32m[1m✓[22m[39m Ready in 349ms
+ GET / [32m200[39m in 1783ms[2m (compile: 1678ms, render: 105ms)[22m
+ [33m[1m⚠[22m[39m Cross origin request detected from 127.0.0.1 to /_next/* resource. In a future major version of Next.js, you will need to explicitly configure "allowedDevOrigins" in next.config to allow this.
+Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
+ [32m[1m✓[22m[39m Compiled in 43ms
+ [32m[1m✓[22m[39m Compiled in 16ms
+ GET / [32m200[39m in 115ms[2m (compile: 44ms, render: 72ms)[22m
+ GET / [32m200[39m in 59ms[2m (compile: 24ms, render: 35ms)[22m
+ GET / [32m200[39m in 59ms[2m (compile: 4ms, render: 55ms)[22m
+ [32m[1m✓[22m[39m Compiled in 32ms
+ [32m[1m✓[22m[39m Compiled in 19ms
+ [32m[1m✓[22m[39m Compiled in 24ms
+ [32m[1m✓[22m[39m Compiled in 14ms
+ [32m[1m✓[22m[39m Compiled in 19ms
+ [32m[1m✓[22m[39m Compiled in 20ms
+ [32m[1m✓[22m[39m Compiled in 26ms
+ [32m[1m✓[22m[39m Compiled in 23ms
+ [32m[1m✓[22m[39m Compiled in 21ms
+ [32m[1m✓[22m[39m Compiled in 18ms
+ [32m[1m✓[22m[39m Compiled in 21ms
+ [32m[1m✓[22m[39m Compiled in 11ms
+ [32m[1m✓[22m[39m Compiled in 10ms
+ [32m[1m✓[22m[39m Compiled in 25ms
+ [32m[1m✓[22m[39m Compiled in 18ms
+ [32m[1m✓[22m[39m Compiled in 75ms
+ [32m[1m✓[22m[39m Compiled in 28ms
+ [32m[1m✓[22m[39m Compiled in 25ms
+ [32m[1m✓[22m[39m Compiled in 21ms
+ [32m[1m✓[22m[39m Compiled in 40ms
+ [32m[1m✓[22m[39m Compiled in 25ms
+ [32m[1m✓[22m[39m Compiled in 26ms
+ [32m[1m✓[22m[39m Compiled in 27ms
+ [32m[1m✓[22m[39m Compiled in 18ms
+ [32m[1m✓[22m[39m Compiled in 71ms
+ [32m[1m✓[22m[39m Compiled in 23ms
+ [32m[1m✓[22m[39m Compiled in 37ms
+ [32m[1m✓[22m[39m Compiled in 16ms
+ [32m[1m✓[22m[39m Compiled in 15ms
+ [32m[1m✓[22m[39m Compiled in 13ms
+ [32m[1m✓[22m[39m Compiled in 26ms
+ [32m[1m✓[22m[39m Compiled in 29ms
+ [32m[1m✓[22m[39m Compiled in 28ms
+ GET / [32m200[39m in 187ms[2m (compile: 88ms, render: 100ms)[22m
+ [32m[1m✓[22m[39m Compiled in 41ms
+ [32m[1m✓[22m[39m Compiled in 32ms
+ GET / [32m200[39m in 66ms[2m (compile: 35ms, render: 32ms)[22m
+ [32m[1m✓[22m[39m Compiled in 13ms
+ [32m[1m✓[22m[39m Compiled in 21ms
+ [32m[1m✓[22m[39m Compiled in 15ms
+ [32m[1m✓[22m[39m Compiled in 20ms
+ [32m[1m✓[22m[39m Compiled in 16ms
+ [32m[1m✓[22m[39m Compiled in 34ms
+ [32m[1m✓[22m[39m Compiled in 28ms
+
+thread 'tokio-runtime-worker' (74952070) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/operation/mod.rs:452:9:
+Item already exists
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+ [32m[1m✓[22m[39m Compiled in 36ms
+ [32m[1m✓[22m[39m Compiled in 26ms
+ [32m[1m✓[22m[39m Compiled in 26ms
+ [32m[1m✓[22m[39m Compiled in 23ms
+ [32m[1m✓[22m[39m Compiled in 43ms
+ GET / [32m200[39m in 91ms[2m (compile: 55ms, render: 36ms)[22m
+ [32m[1m✓[22m[39m Compiled in 30ms
+ [32m[1m✓[22m[39m Compiled in 56ms
+ [33m[1m⚠[22m[39m Fast Refresh had to perform a full reload due to a runtime error.
+ [32m[1m✓[22m[39m Compiled in 33ms
+ GET / [32m200[39m in 155ms[2m (compile: 45ms, render: 110ms)[22m
+ [32m[1m✓[22m[39m Compiled in 19ms
+ [32m[1m✓[22m[39m Compiled in 44ms
+ GET / [32m200[39m in 134ms[2m (compile: 49ms, render: 85ms)[22m
+ [32m[1m✓[22m[39m Compiled in 31ms
+ [32m[1m✓[22m[39m Compiled in 27ms
+ GET / [32m200[39m in 122ms[2m (compile: 38ms, render: 84ms)[22m
+ [32m[1m✓[22m[39m Compiled in 26ms
+ [32m[1m✓[22m[39m Compiled in 13ms
+ [31m[1m⨯[22m[39m ./apps/web/components/common/sidebar/header/AppSidebarHeader.tsx:3:1
+[1m[31mModule not found[39m[22m: Can't resolve [32m'./AppSidebarHeaderButtonGroup'[39m
+[0m [90m 1 |[39m [36mimport[39m { [33mCard[39m[33m,[39m [33mCardContent[39m[33m,[39m [33mCardDescription[39m[33m,[39m [33mCardHeader[39m[33m,[39m [33mCardTitle[39m } [36mfrom[39m [32m"@/components/ui/card"[39m[33m;[39m
+ [90m 2 |[39m [36mimport[39m [33mImage[39m [36mfrom[39m [32m"next/image"[39m[33m;[39m
+[31m[1m>[22m[39m[90m 3 |[39m [36mimport[39m [33mAppSidebarHeaderButtonGroup[39m [36mfrom[39m [32m"./AppSidebarHeaderButtonGroup"[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 4 |[39m
+ [90m 5 |[39m [36minterface[39m [33mAppSidebarHeaderProps[39m {
+ [90m 6 |[39m   title[33m:[39m string[33m;[39m[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./apps/web/components/common/sidebar/header/AppSidebarHeader.tsx [Client Component Browser]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Client Component Browser]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Server Component]
+    ./apps/web/app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./apps/web/components/common/sidebar/header/AppSidebarHeader.tsx [Client Component SSR]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Client Component SSR]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Server Component]
+    ./apps/web/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ [31m[1m⨯[22m[39m ./apps/web/components/common/sidebar/header/AppSidebarHeader.tsx:3:1
+[1m[31mModule not found[39m[22m: Can't resolve [32m'./AppSidebarHeaderButtonGroup'[39m
+[0m [90m 1 |[39m [36mimport[39m { [33mCard[39m[33m,[39m [33mCardContent[39m[33m,[39m [33mCardDescription[39m[33m,[39m [33mCardHeader[39m[33m,[39m [33mCardTitle[39m } [36mfrom[39m [32m"@/components/ui/card"[39m[33m;[39m
+ [90m 2 |[39m [36mimport[39m [33mImage[39m [36mfrom[39m [32m"next/image"[39m[33m;[39m
+[31m[1m>[22m[39m[90m 3 |[39m [36mimport[39m [33mAppSidebarHeaderButtonGroup[39m [36mfrom[39m [32m"./AppSidebarHeaderButtonGroup"[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 4 |[39m
+ [90m 5 |[39m [36minterface[39m [33mAppSidebarHeaderProps[39m {
+ [90m 6 |[39m   title[33m:[39m string[33m;[39m[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./apps/web/components/common/sidebar/header/AppSidebarHeader.tsx [Client Component Browser]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Client Component Browser]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Server Component]
+    ./apps/web/app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./apps/web/components/common/sidebar/header/AppSidebarHeader.tsx [Client Component SSR]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Client Component SSR]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Server Component]
+    ./apps/web/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ [31m[1m⨯[22m[39m ./apps/web/components/common/sidebar/header/AppSidebarHeader.tsx:3:1
+[1m[31mModule not found[39m[22m: Can't resolve [32m'./AppSidebarHeaderButtonGroup'[39m
+[0m [90m 1 |[39m [36mimport[39m { [33mCard[39m[33m,[39m [33mCardContent[39m[33m,[39m [33mCardDescription[39m[33m,[39m [33mCardHeader[39m[33m,[39m [33mCardTitle[39m } [36mfrom[39m [32m"@/components/ui/card"[39m[33m;[39m
+ [90m 2 |[39m [36mimport[39m [33mImage[39m [36mfrom[39m [32m"next/image"[39m[33m;[39m
+[31m[1m>[22m[39m[90m 3 |[39m [36mimport[39m [33mAppSidebarHeaderButtonGroup[39m [36mfrom[39m [32m"./AppSidebarHeaderButtonGroup"[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 4 |[39m
+ [90m 5 |[39m [36minterface[39m [33mAppSidebarHeaderProps[39m {
+ [90m 6 |[39m   title[33m:[39m string[33m;[39m[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./apps/web/components/common/sidebar/header/AppSidebarHeader.tsx [Client Component Browser]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Client Component Browser]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Server Component]
+    ./apps/web/app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./apps/web/components/common/sidebar/header/AppSidebarHeader.tsx [Client Component SSR]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Client Component SSR]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Server Component]
+    ./apps/web/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ [31m[1m⨯[22m[39m ./apps/web/components/common/sidebar/header/AppSidebarHeader.tsx:3:1
+[1m[31mModule not found[39m[22m: Can't resolve [32m'./AppSidebarHeaderButtonGroup'[39m
+[0m [90m 1 |[39m [36mimport[39m { [33mCard[39m[33m,[39m [33mCardContent[39m[33m,[39m [33mCardDescription[39m[33m,[39m [33mCardHeader[39m[33m,[39m [33mCardTitle[39m } [36mfrom[39m [32m"@/components/ui/card"[39m[33m;[39m
+ [90m 2 |[39m [36mimport[39m [33mImage[39m [36mfrom[39m [32m"next/image"[39m[33m;[39m
+[31m[1m>[22m[39m[90m 3 |[39m [36mimport[39m [33mAppSidebarHeaderButtonGroup[39m [36mfrom[39m [32m"./AppSidebarHeaderButtonGroup"[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 4 |[39m
+ [90m 5 |[39m [36minterface[39m [33mAppSidebarHeaderProps[39m {
+ [90m 6 |[39m   title[33m:[39m string[33m;[39m[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./apps/web/components/common/sidebar/header/AppSidebarHeader.tsx [Client Component Browser]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Client Component Browser]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Server Component]
+    ./apps/web/app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./apps/web/components/common/sidebar/header/AppSidebarHeader.tsx [Client Component SSR]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Client Component SSR]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Server Component]
+    ./apps/web/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ [31m[1m⨯[22m[39m ./apps/web/components/common/sidebar/header/AppSidebarHeader.tsx:3:1
+[1m[31mModule not found[39m[22m: Can't resolve [32m'./AppSidebarHeaderButtonGroup'[39m
+[0m [90m 1 |[39m [36mimport[39m { [33mCard[39m[33m,[39m [33mCardContent[39m[33m,[39m [33mCardDescription[39m[33m,[39m [33mCardHeader[39m[33m,[39m [33mCardTitle[39m } [36mfrom[39m [32m"@/components/ui/card"[39m[33m;[39m
+ [90m 2 |[39m [36mimport[39m [33mImage[39m [36mfrom[39m [32m"next/image"[39m[33m;[39m
+[31m[1m>[22m[39m[90m 3 |[39m [36mimport[39m [33mAppSidebarHeaderButtonGroup[39m [36mfrom[39m [32m"./AppSidebarHeaderButtonGroup"[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 4 |[39m
+ [90m 5 |[39m [36minterface[39m [33mAppSidebarHeaderProps[39m {
+ [90m 6 |[39m   title[33m:[39m string[33m;[39m[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./apps/web/components/common/sidebar/header/AppSidebarHeader.tsx [Client Component Browser]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Client Component Browser]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Server Component]
+    ./apps/web/app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./apps/web/components/common/sidebar/header/AppSidebarHeader.tsx [Client Component SSR]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Client Component SSR]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Server Component]
+    ./apps/web/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ [31m[1m⨯[22m[39m ./apps/web/components/common/sidebar/header/AppSidebarHeader.tsx:3:1
+[1m[31mModule not found[39m[22m: Can't resolve [32m'./AppSidebarHeaderButtonGroup'[39m
+[0m [90m 1 |[39m [36mimport[39m { [33mCard[39m[33m,[39m [33mCardContent[39m[33m,[39m [33mCardDescription[39m[33m,[39m [33mCardHeader[39m[33m,[39m [33mCardTitle[39m } [36mfrom[39m [32m"@/components/ui/card"[39m[33m;[39m
+ [90m 2 |[39m [36mimport[39m [33mImage[39m [36mfrom[39m [32m"next/image"[39m[33m;[39m
+[31m[1m>[22m[39m[90m 3 |[39m [36mimport[39m [33mAppSidebarHeaderButtonGroup[39m [36mfrom[39m [32m"./AppSidebarHeaderButtonGroup"[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 4 |[39m
+ [90m 5 |[39m [36minterface[39m [33mAppSidebarHeaderProps[39m {
+ [90m 6 |[39m   title[33m:[39m string[33m;[39m[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./apps/web/components/common/sidebar/header/AppSidebarHeader.tsx [Client Component Browser]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Client Component Browser]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Server Component]
+    ./apps/web/app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./apps/web/components/common/sidebar/header/AppSidebarHeader.tsx [Client Component SSR]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Client Component SSR]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Server Component]
+    ./apps/web/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ [31m[1m⨯[22m[39m ./apps/web/components/common/sidebar/header/AppSidebarHeader.tsx:3:1
+[1m[31mModule not found[39m[22m: Can't resolve [32m'./AppSidebarHeaderButtonGroup'[39m
+[0m [90m 1 |[39m [36mimport[39m { [33mCard[39m[33m,[39m [33mCardContent[39m[33m,[39m [33mCardDescription[39m[33m,[39m [33mCardHeader[39m[33m,[39m [33mCardTitle[39m } [36mfrom[39m [32m"@/components/ui/card"[39m[33m;[39m
+ [90m 2 |[39m [36mimport[39m [33mImage[39m [36mfrom[39m [32m"next/image"[39m[33m;[39m
+[31m[1m>[22m[39m[90m 3 |[39m [36mimport[39m [33mAppSidebarHeaderButtonGroup[39m [36mfrom[39m [32m"./AppSidebarHeaderButtonGroup"[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 4 |[39m
+ [90m 5 |[39m [36minterface[39m [33mAppSidebarHeaderProps[39m {
+ [90m 6 |[39m   title[33m:[39m string[33m;[39m[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./apps/web/components/common/sidebar/header/AppSidebarHeader.tsx [Client Component Browser]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Client Component Browser]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Server Component]
+    ./apps/web/app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./apps/web/components/common/sidebar/header/AppSidebarHeader.tsx [Client Component SSR]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Client Component SSR]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Server Component]
+    ./apps/web/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ [31m[1m⨯[22m[39m ./apps/web/components/common/sidebar/header/AppSidebarHeader.tsx:3:1
+[1m[31mModule not found[39m[22m: Can't resolve [32m'./AppSidebarHeaderButtonGroup'[39m
+[0m [90m 1 |[39m [36mimport[39m { [33mCard[39m[33m,[39m [33mCardContent[39m[33m,[39m [33mCardDescription[39m[33m,[39m [33mCardHeader[39m[33m,[39m [33mCardTitle[39m } [36mfrom[39m [32m"@/components/ui/card"[39m[33m;[39m
+ [90m 2 |[39m [36mimport[39m [33mImage[39m [36mfrom[39m [32m"next/image"[39m[33m;[39m
+[31m[1m>[22m[39m[90m 3 |[39m [36mimport[39m [33mAppSidebarHeaderButtonGroup[39m [36mfrom[39m [32m"./AppSidebarHeaderButtonGroup"[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 4 |[39m
+ [90m 5 |[39m [36minterface[39m [33mAppSidebarHeaderProps[39m {
+ [90m 6 |[39m   title[33m:[39m string[33m;[39m[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./apps/web/components/common/sidebar/header/AppSidebarHeader.tsx [Client Component Browser]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Client Component Browser]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Server Component]
+    ./apps/web/app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./apps/web/components/common/sidebar/header/AppSidebarHeader.tsx [Client Component SSR]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Client Component SSR]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Server Component]
+    ./apps/web/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ [31m[1m⨯[22m[39m ./apps/web/components/common/sidebar/header/AppSidebarHeader.tsx:3:1
+[1m[31mModule not found[39m[22m: Can't resolve [32m'./AppSidebarHeaderButtonGroup'[39m
+[0m [90m 1 |[39m [36mimport[39m { [33mCard[39m[33m,[39m [33mCardContent[39m[33m,[39m [33mCardDescription[39m[33m,[39m [33mCardHeader[39m[33m,[39m [33mCardTitle[39m } [36mfrom[39m [32m"@/components/ui/card"[39m[33m;[39m
+ [90m 2 |[39m [36mimport[39m [33mImage[39m [36mfrom[39m [32m"next/image"[39m[33m;[39m
+[31m[1m>[22m[39m[90m 3 |[39m [36mimport[39m [33mAppSidebarHeaderButtonGroup[39m [36mfrom[39m [32m"./AppSidebarHeaderButtonGroup"[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 4 |[39m
+ [90m 5 |[39m [36minterface[39m [33mAppSidebarHeaderProps[39m {
+ [90m 6 |[39m   title[33m:[39m string[33m;[39m[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./apps/web/components/common/sidebar/header/AppSidebarHeader.tsx [Client Component Browser]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Client Component Browser]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Server Component]
+    ./apps/web/app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./apps/web/components/common/sidebar/header/AppSidebarHeader.tsx [Client Component SSR]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Client Component SSR]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Server Component]
+    ./apps/web/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ [31m[1m⨯[22m[39m ./apps/web/components/common/sidebar/header/AppSidebarHeader.tsx:3:1
+[1m[31mModule not found[39m[22m: Can't resolve [32m'./AppSidebarHeaderButtonGroup'[39m
+[0m [90m 1 |[39m [36mimport[39m { [33mCard[39m[33m,[39m [33mCardContent[39m[33m,[39m [33mCardDescription[39m[33m,[39m [33mCardHeader[39m[33m,[39m [33mCardTitle[39m } [36mfrom[39m [32m"@/components/ui/card"[39m[33m;[39m
+ [90m 2 |[39m [36mimport[39m [33mImage[39m [36mfrom[39m [32m"next/image"[39m[33m;[39m
+[31m[1m>[22m[39m[90m 3 |[39m [36mimport[39m [33mAppSidebarHeaderButtonGroup[39m [36mfrom[39m [32m"./AppSidebarHeaderButtonGroup"[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 4 |[39m
+ [90m 5 |[39m [36minterface[39m [33mAppSidebarHeaderProps[39m {
+ [90m 6 |[39m   title[33m:[39m string[33m;[39m[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./apps/web/components/common/sidebar/header/AppSidebarHeader.tsx [Client Component Browser]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Client Component Browser]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Server Component]
+    ./apps/web/app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./apps/web/components/common/sidebar/header/AppSidebarHeader.tsx [Client Component SSR]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Client Component SSR]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Server Component]
+    ./apps/web/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ [31m[1m⨯[22m[39m ./apps/web/components/common/sidebar/header/AppSidebarHeader.tsx:3:1
+[1m[31mModule not found[39m[22m: Can't resolve [32m'./AppSidebarHeaderButtonGroup'[39m
+[0m [90m 1 |[39m [36mimport[39m { [33mCard[39m[33m,[39m [33mCardContent[39m[33m,[39m [33mCardDescription[39m[33m,[39m [33mCardHeader[39m[33m,[39m [33mCardTitle[39m } [36mfrom[39m [32m"@/components/ui/card"[39m[33m;[39m
+ [90m 2 |[39m [36mimport[39m [33mImage[39m [36mfrom[39m [32m"next/image"[39m[33m;[39m
+[31m[1m>[22m[39m[90m 3 |[39m [36mimport[39m [33mAppSidebarHeaderButtonGroup[39m [36mfrom[39m [32m"./AppSidebarHeaderButtonGroup"[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 4 |[39m
+ [90m 5 |[39m [36minterface[39m [33mAppSidebarHeaderProps[39m {
+ [90m 6 |[39m   title[33m:[39m string[33m;[39m[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./apps/web/components/common/sidebar/header/AppSidebarHeader.tsx [Client Component Browser]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Client Component Browser]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Server Component]
+    ./apps/web/app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./apps/web/components/common/sidebar/header/AppSidebarHeader.tsx [Client Component SSR]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Client Component SSR]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Server Component]
+    ./apps/web/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ [31m[1m⨯[22m[39m ./apps/web/components/common/sidebar/header/AppSidebarHeader.tsx:3:1
+[1m[31mModule not found[39m[22m: Can't resolve [32m'./AppSidebarHeaderButtonGroup'[39m
+[0m [90m 1 |[39m [36mimport[39m { [33mCard[39m[33m,[39m [33mCardContent[39m[33m,[39m [33mCardDescription[39m[33m,[39m [33mCardHeader[39m[33m,[39m [33mCardTitle[39m } [36mfrom[39m [32m"@/components/ui/card"[39m[33m;[39m
+ [90m 2 |[39m [36mimport[39m [33mImage[39m [36mfrom[39m [32m"next/image"[39m[33m;[39m
+[31m[1m>[22m[39m[90m 3 |[39m [36mimport[39m [33mAppSidebarHeaderButtonGroup[39m [36mfrom[39m [32m"./AppSidebarHeaderButtonGroup"[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 4 |[39m
+ [90m 5 |[39m [36minterface[39m [33mAppSidebarHeaderProps[39m {
+ [90m 6 |[39m   title[33m:[39m string[33m;[39m[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./apps/web/components/common/sidebar/header/AppSidebarHeader.tsx [Client Component Browser]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Client Component Browser]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Server Component]
+    ./apps/web/app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./apps/web/components/common/sidebar/header/AppSidebarHeader.tsx [Client Component SSR]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Client Component SSR]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Server Component]
+    ./apps/web/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ [31m[1m⨯[22m[39m ./apps/web/components/common/sidebar/header/AppSidebarHeader.tsx:3:1
+[1m[31mModule not found[39m[22m: Can't resolve [32m'./AppSidebarHeaderButtonGroup'[39m
+[0m [90m 1 |[39m [36mimport[39m { [33mCard[39m[33m,[39m [33mCardContent[39m[33m,[39m [33mCardDescription[39m[33m,[39m [33mCardHeader[39m[33m,[39m [33mCardTitle[39m } [36mfrom[39m [32m"@/components/ui/card"[39m[33m;[39m
+ [90m 2 |[39m [36mimport[39m [33mImage[39m [36mfrom[39m [32m"next/image"[39m[33m;[39m
+[31m[1m>[22m[39m[90m 3 |[39m [36mimport[39m [33mAppSidebarHeaderButtonGroup[39m [36mfrom[39m [32m"./AppSidebarHeaderButtonGroup"[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 4 |[39m
+ [90m 5 |[39m [36minterface[39m [33mAppSidebarHeaderProps[39m {
+ [90m 6 |[39m   title[33m:[39m string[33m;[39m[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./apps/web/components/common/sidebar/header/AppSidebarHeader.tsx [Client Component Browser]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Client Component Browser]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Server Component]
+    ./apps/web/app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./apps/web/components/common/sidebar/header/AppSidebarHeader.tsx [Client Component SSR]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Client Component SSR]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Server Component]
+    ./apps/web/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ [31m[1m⨯[22m[39m ./apps/web/components/common/sidebar/header/AppSidebarHeader.tsx:3:1
+[1m[31mModule not found[39m[22m: Can't resolve [32m'./AppSidebarHeaderButtonGroup'[39m
+[0m [90m 1 |[39m [36mimport[39m { [33mCard[39m[33m,[39m [33mCardContent[39m[33m,[39m [33mCardDescription[39m[33m,[39m [33mCardHeader[39m[33m,[39m [33mCardTitle[39m } [36mfrom[39m [32m"@/components/ui/card"[39m[33m;[39m
+ [90m 2 |[39m [36mimport[39m [33mImage[39m [36mfrom[39m [32m"next/image"[39m[33m;[39m
+[31m[1m>[22m[39m[90m 3 |[39m [36mimport[39m [33mAppSidebarHeaderButtonGroup[39m [36mfrom[39m [32m"./AppSidebarHeaderButtonGroup"[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 4 |[39m
+ [90m 5 |[39m [36minterface[39m [33mAppSidebarHeaderProps[39m {
+ [90m 6 |[39m   title[33m:[39m string[33m;[39m[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./apps/web/components/common/sidebar/header/AppSidebarHeader.tsx [Client Component Browser]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Client Component Browser]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Server Component]
+    ./apps/web/app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./apps/web/components/common/sidebar/header/AppSidebarHeader.tsx [Client Component SSR]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Client Component SSR]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Server Component]
+    ./apps/web/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ [31m[1m⨯[22m[39m ./apps/web/components/common/sidebar/header/AppSidebarHeader.tsx:3:1
+[1m[31mModule not found[39m[22m: Can't resolve [32m'./AppSidebarHeaderButtonGroup'[39m
+[0m [90m 1 |[39m [36mimport[39m { [33mCard[39m[33m,[39m [33mCardContent[39m[33m,[39m [33mCardDescription[39m[33m,[39m [33mCardHeader[39m[33m,[39m [33mCardTitle[39m } [36mfrom[39m [32m"@/components/ui/card"[39m[33m;[39m
+ [90m 2 |[39m [36mimport[39m [33mImage[39m [36mfrom[39m [32m"next/image"[39m[33m;[39m
+[31m[1m>[22m[39m[90m 3 |[39m [36mimport[39m [33mAppSidebarHeaderButtonGroup[39m [36mfrom[39m [32m"./AppSidebarHeaderButtonGroup"[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 4 |[39m
+ [90m 5 |[39m [36minterface[39m [33mAppSidebarHeaderProps[39m {
+ [90m 6 |[39m   title[33m:[39m string[33m;[39m[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./apps/web/components/common/sidebar/header/AppSidebarHeader.tsx [Client Component Browser]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Client Component Browser]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Server Component]
+    ./apps/web/app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./apps/web/components/common/sidebar/header/AppSidebarHeader.tsx [Client Component SSR]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Client Component SSR]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Server Component]
+    ./apps/web/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ [31m[1m⨯[22m[39m ./apps/web/components/common/sidebar/header/AppSidebarHeader.tsx:3:1
+[1m[31mModule not found[39m[22m: Can't resolve [32m'./AppSidebarHeaderButtonGroup'[39m
+[0m [90m 1 |[39m [36mimport[39m { [33mCard[39m[33m,[39m [33mCardContent[39m[33m,[39m [33mCardDescription[39m[33m,[39m [33mCardHeader[39m[33m,[39m [33mCardTitle[39m } [36mfrom[39m [32m"@/components/ui/card"[39m[33m;[39m
+ [90m 2 |[39m [36mimport[39m [33mImage[39m [36mfrom[39m [32m"next/image"[39m[33m;[39m
+[31m[1m>[22m[39m[90m 3 |[39m [36mimport[39m [33mAppSidebarHeaderButtonGroup[39m [36mfrom[39m [32m"./AppSidebarHeaderButtonGroup"[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 4 |[39m
+ [90m 5 |[39m [36minterface[39m [33mAppSidebarHeaderProps[39m {
+ [90m 6 |[39m   title[33m:[39m string[33m;[39m[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./apps/web/components/common/sidebar/header/AppSidebarHeader.tsx [Client Component Browser]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Client Component Browser]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Server Component]
+    ./apps/web/app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./apps/web/components/common/sidebar/header/AppSidebarHeader.tsx [Client Component SSR]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Client Component SSR]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Server Component]
+    ./apps/web/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ [31m[1m⨯[22m[39m ./apps/web/components/common/sidebar/header/AppSidebarHeader.tsx:3:1
+[1m[31mModule not found[39m[22m: Can't resolve [32m'./AppSidebarHeaderButtonGroup'[39m
+[0m [90m 1 |[39m [36mimport[39m { [33mCard[39m[33m,[39m [33mCardContent[39m[33m,[39m [33mCardDescription[39m[33m,[39m [33mCardHeader[39m[33m,[39m [33mCardTitle[39m } [36mfrom[39m [32m"@/components/ui/card"[39m[33m;[39m
+ [90m 2 |[39m [36mimport[39m [33mImage[39m [36mfrom[39m [32m"next/image"[39m[33m;[39m
+[31m[1m>[22m[39m[90m 3 |[39m [36mimport[39m [33mAppSidebarHeaderButtonGroup[39m [36mfrom[39m [32m"./AppSidebarHeaderButtonGroup"[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 4 |[39m
+ [90m 5 |[39m [36minterface[39m [33mAppSidebarHeaderProps[39m {
+ [90m 6 |[39m   title[33m:[39m string[33m;[39m[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./apps/web/components/common/sidebar/header/AppSidebarHeader.tsx [Client Component Browser]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Client Component Browser]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Server Component]
+    ./apps/web/app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./apps/web/components/common/sidebar/header/AppSidebarHeader.tsx [Client Component SSR]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Client Component SSR]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Server Component]
+    ./apps/web/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ [31m[1m⨯[22m[39m ./apps/web/components/common/sidebar/header/AppSidebarHeader.tsx:3:1
+[1m[31mModule not found[39m[22m: Can't resolve [32m'./AppSidebarHeaderButtonGroup'[39m
+[0m [90m 1 |[39m [36mimport[39m { [33mCard[39m[33m,[39m [33mCardContent[39m[33m,[39m [33mCardDescription[39m[33m,[39m [33mCardHeader[39m[33m,[39m [33mCardTitle[39m } [36mfrom[39m [32m"@/components/ui/card"[39m[33m;[39m
+ [90m 2 |[39m [36mimport[39m [33mImage[39m [36mfrom[39m [32m"next/image"[39m[33m;[39m
+[31m[1m>[22m[39m[90m 3 |[39m [36mimport[39m [33mAppSidebarHeaderButtonGroup[39m [36mfrom[39m [32m"./AppSidebarHeaderButtonGroup"[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 4 |[39m
+ [90m 5 |[39m [36minterface[39m [33mAppSidebarHeaderProps[39m {
+ [90m 6 |[39m   title[33m:[39m string[33m;[39m[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./apps/web/components/common/sidebar/header/AppSidebarHeader.tsx [Client Component Browser]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Client Component Browser]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Server Component]
+    ./apps/web/app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./apps/web/components/common/sidebar/header/AppSidebarHeader.tsx [Client Component SSR]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Client Component SSR]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Server Component]
+    ./apps/web/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ [31m[1m⨯[22m[39m ./apps/web/components/common/sidebar/header/AppSidebarHeader.tsx:3:1
+[1m[31mModule not found[39m[22m: Can't resolve [32m'./AppSidebarHeaderButtonGroup'[39m
+[0m [90m 1 |[39m [36mimport[39m { [33mCard[39m[33m,[39m [33mCardContent[39m[33m,[39m [33mCardDescription[39m[33m,[39m [33mCardHeader[39m[33m,[39m [33mCardTitle[39m } [36mfrom[39m [32m"@/components/ui/card"[39m[33m;[39m
+ [90m 2 |[39m [36mimport[39m [33mImage[39m [36mfrom[39m [32m"next/image"[39m[33m;[39m
+[31m[1m>[22m[39m[90m 3 |[39m [36mimport[39m [33mAppSidebarHeaderButtonGroup[39m [36mfrom[39m [32m"./AppSidebarHeaderButtonGroup"[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 4 |[39m
+ [90m 5 |[39m [36minterface[39m [33mAppSidebarHeaderProps[39m {
+ [90m 6 |[39m   title[33m:[39m string[33m;[39m[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./apps/web/components/common/sidebar/header/AppSidebarHeader.tsx [Client Component Browser]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Client Component Browser]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Server Component]
+    ./apps/web/app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./apps/web/components/common/sidebar/header/AppSidebarHeader.tsx [Client Component SSR]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Client Component SSR]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Server Component]
+    ./apps/web/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ [31m[1m⨯[22m[39m ./apps/web/components/common/sidebar/header/AppSidebarHeader.tsx:3:1
+[1m[31mModule not found[39m[22m: Can't resolve [32m'./AppSidebarHeaderButtonGroup'[39m
+[0m [90m 1 |[39m [36mimport[39m { [33mCard[39m[33m,[39m [33mCardContent[39m[33m,[39m [33mCardDescription[39m[33m,[39m [33mCardHeader[39m[33m,[39m [33mCardTitle[39m } [36mfrom[39m [32m"@/components/ui/card"[39m[33m;[39m
+ [90m 2 |[39m [36mimport[39m [33mImage[39m [36mfrom[39m [32m"next/image"[39m[33m;[39m
+[31m[1m>[22m[39m[90m 3 |[39m [36mimport[39m [33mAppSidebarHeaderButtonGroup[39m [36mfrom[39m [32m"./AppSidebarHeaderButtonGroup"[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 4 |[39m
+ [90m 5 |[39m [36minterface[39m [33mAppSidebarHeaderProps[39m {
+ [90m 6 |[39m   title[33m:[39m string[33m;[39m[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./apps/web/components/common/sidebar/header/AppSidebarHeader.tsx [Client Component Browser]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Client Component Browser]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Server Component]
+    ./apps/web/app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./apps/web/components/common/sidebar/header/AppSidebarHeader.tsx [Client Component SSR]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Client Component SSR]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Server Component]
+    ./apps/web/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ [31m[1m⨯[22m[39m ./apps/web/components/common/sidebar/header/AppSidebarHeader.tsx:3:1
+[1m[31mModule not found[39m[22m: Can't resolve [32m'./AppSidebarHeaderButtonGroup'[39m
+[0m [90m 1 |[39m [36mimport[39m { [33mCard[39m[33m,[39m [33mCardContent[39m[33m,[39m [33mCardDescription[39m[33m,[39m [33mCardHeader[39m[33m,[39m [33mCardTitle[39m } [36mfrom[39m [32m"@/components/ui/card"[39m[33m;[39m
+ [90m 2 |[39m [36mimport[39m [33mImage[39m [36mfrom[39m [32m"next/image"[39m[33m;[39m
+[31m[1m>[22m[39m[90m 3 |[39m [36mimport[39m [33mAppSidebarHeaderButtonGroup[39m [36mfrom[39m [32m"./AppSidebarHeaderButtonGroup"[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 4 |[39m
+ [90m 5 |[39m [36minterface[39m [33mAppSidebarHeaderProps[39m {
+ [90m 6 |[39m   title[33m:[39m string[33m;[39m[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./apps/web/components/common/sidebar/header/AppSidebarHeader.tsx [Client Component Browser]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Client Component Browser]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Server Component]
+    ./apps/web/app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./apps/web/components/common/sidebar/header/AppSidebarHeader.tsx [Client Component SSR]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Client Component SSR]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Server Component]
+    ./apps/web/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ [31m[1m⨯[22m[39m ./apps/web/components/common/sidebar/header/AppSidebarHeader.tsx:3:1
+[1m[31mModule not found[39m[22m: Can't resolve [32m'./AppSidebarHeaderButtonGroup'[39m
+[0m [90m 1 |[39m [36mimport[39m { [33mCard[39m[33m,[39m [33mCardContent[39m[33m,[39m [33mCardDescription[39m[33m,[39m [33mCardHeader[39m[33m,[39m [33mCardTitle[39m } [36mfrom[39m [32m"@/components/ui/card"[39m[33m;[39m
+ [90m 2 |[39m [36mimport[39m [33mImage[39m [36mfrom[39m [32m"next/image"[39m[33m;[39m
+[31m[1m>[22m[39m[90m 3 |[39m [36mimport[39m [33mAppSidebarHeaderButtonGroup[39m [36mfrom[39m [32m"./AppSidebarHeaderButtonGroup"[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 4 |[39m
+ [90m 5 |[39m [36minterface[39m [33mAppSidebarHeaderProps[39m {
+ [90m 6 |[39m   title[33m:[39m string[33m;[39m[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./apps/web/components/common/sidebar/header/AppSidebarHeader.tsx [Client Component Browser]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Client Component Browser]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Server Component]
+    ./apps/web/app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./apps/web/components/common/sidebar/header/AppSidebarHeader.tsx [Client Component SSR]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Client Component SSR]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Server Component]
+    ./apps/web/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ [31m[1m⨯[22m[39m ./apps/web/components/common/sidebar/header/AppSidebarHeader.tsx:3:1
+[1m[31mModule not found[39m[22m: Can't resolve [32m'./AppSidebarHeaderButtonGroup'[39m
+[0m [90m 1 |[39m [36mimport[39m { [33mCard[39m[33m,[39m [33mCardContent[39m[33m,[39m [33mCardDescription[39m[33m,[39m [33mCardHeader[39m[33m,[39m [33mCardTitle[39m } [36mfrom[39m [32m"@/components/ui/card"[39m[33m;[39m
+ [90m 2 |[39m [36mimport[39m [33mImage[39m [36mfrom[39m [32m"next/image"[39m[33m;[39m
+[31m[1m>[22m[39m[90m 3 |[39m [36mimport[39m [33mAppSidebarHeaderButtonGroup[39m [36mfrom[39m [32m"./AppSidebarHeaderButtonGroup"[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 4 |[39m
+ [90m 5 |[39m [36minterface[39m [33mAppSidebarHeaderProps[39m {
+ [90m 6 |[39m   title[33m:[39m string[33m;[39m[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./apps/web/components/common/sidebar/header/AppSidebarHeader.tsx [Client Component Browser]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Client Component Browser]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Server Component]
+    ./apps/web/app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./apps/web/components/common/sidebar/header/AppSidebarHeader.tsx [Client Component SSR]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Client Component SSR]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Server Component]
+    ./apps/web/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ [31m[1m⨯[22m[39m ./apps/web/components/common/sidebar/header/AppSidebarHeader.tsx:3:1
+[1m[31mModule not found[39m[22m: Can't resolve [32m'./AppSidebarHeaderButtonGroup'[39m
+[0m [90m 1 |[39m [36mimport[39m { [33mCard[39m[33m,[39m [33mCardContent[39m[33m,[39m [33mCardDescription[39m[33m,[39m [33mCardHeader[39m[33m,[39m [33mCardTitle[39m } [36mfrom[39m [32m"@/components/ui/card"[39m[33m;[39m
+ [90m 2 |[39m [36mimport[39m [33mImage[39m [36mfrom[39m [32m"next/image"[39m[33m;[39m
+[31m[1m>[22m[39m[90m 3 |[39m [36mimport[39m [33mAppSidebarHeaderButtonGroup[39m [36mfrom[39m [32m"./AppSidebarHeaderButtonGroup"[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 4 |[39m
+ [90m 5 |[39m [36minterface[39m [33mAppSidebarHeaderProps[39m {
+ [90m 6 |[39m   title[33m:[39m string[33m;[39m[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./apps/web/components/common/sidebar/header/AppSidebarHeader.tsx [Client Component Browser]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Client Component Browser]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Server Component]
+    ./apps/web/app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./apps/web/components/common/sidebar/header/AppSidebarHeader.tsx [Client Component SSR]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Client Component SSR]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Server Component]
+    ./apps/web/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ [31m[1m⨯[22m[39m ./apps/web/components/common/sidebar/header/AppSidebarHeader.tsx:3:1
+[1m[31mModule not found[39m[22m: Can't resolve [32m'./AppSidebarHeaderButtonGroup'[39m
+[0m [90m 1 |[39m [36mimport[39m { [33mCard[39m[33m,[39m [33mCardContent[39m[33m,[39m [33mCardDescription[39m[33m,[39m [33mCardHeader[39m[33m,[39m [33mCardTitle[39m } [36mfrom[39m [32m"@/components/ui/card"[39m[33m;[39m
+ [90m 2 |[39m [36mimport[39m [33mImage[39m [36mfrom[39m [32m"next/image"[39m[33m;[39m
+[31m[1m>[22m[39m[90m 3 |[39m [36mimport[39m [33mAppSidebarHeaderButtonGroup[39m [36mfrom[39m [32m"./AppSidebarHeaderButtonGroup"[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 4 |[39m
+ [90m 5 |[39m [36minterface[39m [33mAppSidebarHeaderProps[39m {
+ [90m 6 |[39m   title[33m:[39m string[33m;[39m[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./apps/web/components/common/sidebar/header/AppSidebarHeader.tsx [Client Component Browser]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Client Component Browser]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Server Component]
+    ./apps/web/app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./apps/web/components/common/sidebar/header/AppSidebarHeader.tsx [Client Component SSR]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Client Component SSR]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Server Component]
+    ./apps/web/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ [31m[1m⨯[22m[39m ./apps/web/components/common/sidebar/header/AppSidebarHeader.tsx:3:1
+[1m[31mModule not found[39m[22m: Can't resolve [32m'./AppSidebarHeaderButtonGroup'[39m
+[0m [90m 1 |[39m [36mimport[39m { [33mCard[39m[33m,[39m [33mCardContent[39m[33m,[39m [33mCardDescription[39m[33m,[39m [33mCardHeader[39m[33m,[39m [33mCardTitle[39m } [36mfrom[39m [32m"@/components/ui/card"[39m[33m;[39m
+ [90m 2 |[39m [36mimport[39m [33mImage[39m [36mfrom[39m [32m"next/image"[39m[33m;[39m
+[31m[1m>[22m[39m[90m 3 |[39m [36mimport[39m [33mAppSidebarHeaderButtonGroup[39m [36mfrom[39m [32m"./AppSidebarHeaderButtonGroup"[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 4 |[39m
+ [90m 5 |[39m [36minterface[39m [33mAppSidebarHeaderProps[39m {
+ [90m 6 |[39m   title[33m:[39m string[33m;[39m[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./apps/web/components/common/sidebar/header/AppSidebarHeader.tsx [Client Component Browser]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Client Component Browser]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Server Component]
+    ./apps/web/app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./apps/web/components/common/sidebar/header/AppSidebarHeader.tsx [Client Component SSR]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Client Component SSR]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Server Component]
+    ./apps/web/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ [31m[1m⨯[22m[39m ./apps/web/components/common/sidebar/header/AppSidebarHeader.tsx:3:1
+[1m[31mModule not found[39m[22m: Can't resolve [32m'./AppSidebarHeaderButtonGroup'[39m
+[0m [90m 1 |[39m [36mimport[39m { [33mCard[39m[33m,[39m [33mCardContent[39m[33m,[39m [33mCardDescription[39m[33m,[39m [33mCardHeader[39m[33m,[39m [33mCardTitle[39m } [36mfrom[39m [32m"@/components/ui/card"[39m[33m;[39m
+ [90m 2 |[39m [36mimport[39m [33mImage[39m [36mfrom[39m [32m"next/image"[39m[33m;[39m
+[31m[1m>[22m[39m[90m 3 |[39m [36mimport[39m [33mAppSidebarHeaderButtonGroup[39m [36mfrom[39m [32m"./AppSidebarHeaderButtonGroup"[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 4 |[39m
+ [90m 5 |[39m [36minterface[39m [33mAppSidebarHeaderProps[39m {
+ [90m 6 |[39m   title[33m:[39m string[33m;[39m[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./apps/web/components/common/sidebar/header/AppSidebarHeader.tsx [Client Component Browser]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Client Component Browser]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Server Component]
+    ./apps/web/app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./apps/web/components/common/sidebar/header/AppSidebarHeader.tsx [Client Component SSR]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Client Component SSR]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Server Component]
+    ./apps/web/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ [31m[1m⨯[22m[39m ./apps/web/components/common/sidebar/header/AppSidebarHeader.tsx:3:1
+[1m[31mModule not found[39m[22m: Can't resolve [32m'./AppSidebarHeaderButtonGroup'[39m
+[0m [90m 1 |[39m [36mimport[39m { [33mCard[39m[33m,[39m [33mCardContent[39m[33m,[39m [33mCardDescription[39m[33m,[39m [33mCardHeader[39m[33m,[39m [33mCardTitle[39m } [36mfrom[39m [32m"@/components/ui/card"[39m[33m;[39m
+ [90m 2 |[39m [36mimport[39m [33mImage[39m [36mfrom[39m [32m"next/image"[39m[33m;[39m
+[31m[1m>[22m[39m[90m 3 |[39m [36mimport[39m [33mAppSidebarHeaderButtonGroup[39m [36mfrom[39m [32m"./AppSidebarHeaderButtonGroup"[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 4 |[39m
+ [90m 5 |[39m [36minterface[39m [33mAppSidebarHeaderProps[39m {
+ [90m 6 |[39m   title[33m:[39m string[33m;[39m[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./apps/web/components/common/sidebar/header/AppSidebarHeader.tsx [Client Component Browser]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Client Component Browser]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Server Component]
+    ./apps/web/app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./apps/web/components/common/sidebar/header/AppSidebarHeader.tsx [Client Component SSR]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Client Component SSR]
+    ./apps/web/components/common/sidebar/AppSidebar.tsx [Server Component]
+    ./apps/web/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ [32m[1m✓[22m[39m Compiled in 14ms
+ GET / [32m200[39m in 66ms[2m (compile: 25ms, render: 42ms)[22m
+ [32m[1m✓[22m[39m Compiled in 17ms
+ [32m[1m✓[22m[39m Compiled in 12ms
+ [32m[1m✓[22m[39m Compiled in 20ms
+ [32m[1m✓[22m[39m Compiled in 23ms
+ [32m[1m✓[22m[39m Compiled in 17ms
+ [32m[1m✓[22m[39m Compiled in 17ms
+ [32m[1m✓[22m[39m Compiled in 31ms
+ [32m[1m✓[22m[39m Compiled in 31ms
+ [32m[1m✓[22m[39m Compiled in 62ms
+ [32m[1m✓[22m[39m Compiled in 11ms
+ [32m[1m✓[22m[39m Compiled in 40ms
+ [32m[1m✓[22m[39m Compiled in 28ms
+ [32m[1m✓[22m[39m Compiled in 63ms
+ [32m[1m✓[22m[39m Compiled in 13ms
+ [32m[1m✓[22m[39m Compiled in 23ms
+ [32m[1m✓[22m[39m Compiled in 19ms
+ [32m[1m✓[22m[39m Compiled in 29ms
+ GET / [32m200[39m in 68ms[2m (compile: 38ms, render: 31ms)[22m
+ [32m[1m✓[22m[39m Compiled in 26ms
+ [32m[1m✓[22m[39m Compiled in 11ms
+ [32m[1m✓[22m[39m Compiled in 18ms
+ [32m[1m✓[22m[39m Compiled in 16ms
+ [32m[1m✓[22m[39m Compiled in 20ms
+ [32m[1m✓[22m[39m Compiled in 16ms
+ GET / [32m200[39m in 55ms[2m (compile: 22ms, render: 33ms)[22m
+ [32m[1m✓[22m[39m Compiled in 55ms
+ [32m[1m✓[22m[39m Compiled in 29ms
+ [31m[1m⨯[22m[39m ./apps/web/components/common/sidebar/AppSidebar.tsx:7:1
+[1m[31mModule not found[39m[22m: Can't resolve [32m'./footer/AppSidebarFooterButtonGroup'[39m
+[0m [90m  5 |[39m [36mimport[39m [33mAppSidebarHeader[39m [36mfrom[39m [32m"./header/AppSidebarHeader"[39m[33m;[39m
+ [90m  6 |[39m [36mimport[39m { [33mCircle[39m } [36mfrom[39m [32m"lucide-react"[39m[33m;[39m
+[31m[1m>[22m[39m[90m  7 |[39m [36mimport[39m [33mAppSidebarFooterButtonGroup[39m [36mfrom[39m [32m"./footer/AppSidebarFooterButtonGroup"[39m[33m;[39m
+ [90m    |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m  8 |[39m
+ [90m  9 |[39m [36mexport[39m [36mfunction[39m [33mAppSidebar[39m() {
+ [90m 10 |[39m   [36mconst[39m [isCollapsed[33m,[39m setIsCollapsed] [33m=[39m useState([36mfalse[39m)[33m;[39m[0m
+
+
+
+Import trace:
+  Server Component:
+    ./apps/web/components/common/sidebar/AppSidebar.tsx
+    ./apps/web/app/layout.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ [31m[1m⨯[22m[39m ./apps/web/components/common/sidebar/AppSidebar.tsx:7:1
+[1m[31mModule not found[39m[22m: Can't resolve [32m'./footer/AppSidebarFooterButtonGroup'[39m
+[0m [90m  5 |[39m [36mimport[39m [33mAppSidebarHeader[39m [36mfrom[39m [32m"./header/AppSidebarHeader"[39m[33m;[39m
+ [90m  6 |[39m [36mimport[39m { [33mCircle[39m } [36mfrom[39m [32m"lucide-react"[39m[33m;[39m
+[31m[1m>[22m[39m[90m  7 |[39m [36mimport[39m [33mAppSidebarFooterButtonGroup[39m [36mfrom[39m [32m"./footer/AppSidebarFooterButtonGroup"[39m[33m;[39m
+ [90m    |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m  8 |[39m
+ [90m  9 |[39m [36mexport[39m [36mfunction[39m [33mAppSidebar[39m() {
+ [90m 10 |[39m   [36mconst[39m [isCollapsed[33m,[39m setIsCollapsed] [33m=[39m useState([36mfalse[39m)[33m;[39m[0m
+
+
+
+Import trace:
+  Server Component:
+    ./apps/web/components/common/sidebar/AppSidebar.tsx
+    ./apps/web/app/layout.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ [31m[1m⨯[22m[39m ./apps/web/components/common/sidebar/AppSidebar.tsx:7:1
+[1m[31mModule not found[39m[22m: Can't resolve [32m'./footer/AppSidebarFooterButtonGroup'[39m
+[0m [90m  5 |[39m [36mimport[39m [33mAppSidebarHeader[39m [36mfrom[39m [32m"./header/AppSidebarHeader"[39m[33m;[39m
+ [90m  6 |[39m [36mimport[39m { [33mCircle[39m } [36mfrom[39m [32m"lucide-react"[39m[33m;[39m
+[31m[1m>[22m[39m[90m  7 |[39m [36mimport[39m [33mAppSidebarFooterButtonGroup[39m [36mfrom[39m [32m"./footer/AppSidebarFooterButtonGroup"[39m[33m;[39m
+ [90m    |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m  8 |[39m
+ [90m  9 |[39m [36mexport[39m [36mfunction[39m [33mAppSidebar[39m() {
+ [90m 10 |[39m   [36mconst[39m [isCollapsed[33m,[39m setIsCollapsed] [33m=[39m useState([36mfalse[39m)[33m;[39m[0m
+
+
+
+Import trace:
+  Server Component:
+    ./apps/web/components/common/sidebar/AppSidebar.tsx
+    ./apps/web/app/layout.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ [31m[1m⨯[22m[39m ./apps/web/components/common/sidebar/AppSidebar.tsx:7:1
+[1m[31mModule not found[39m[22m: Can't resolve [32m'./footer/AppSidebarFooterButtonGroup'[39m
+[0m [90m  5 |[39m [36mimport[39m [33mAppSidebarHeader[39m [36mfrom[39m [32m"./header/AppSidebarHeader"[39m[33m;[39m
+ [90m  6 |[39m [36mimport[39m { [33mCircle[39m } [36mfrom[39m [32m"lucide-react"[39m[33m;[39m
+[31m[1m>[22m[39m[90m  7 |[39m [36mimport[39m [33mAppSidebarFooterButtonGroup[39m [36mfrom[39m [32m"./footer/AppSidebarFooterButtonGroup"[39m[33m;[39m
+ [90m    |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m  8 |[39m
+ [90m  9 |[39m [36mexport[39m [36mfunction[39m [33mAppSidebar[39m() {
+ [90m 10 |[39m   [36mconst[39m [isCollapsed[33m,[39m setIsCollapsed] [33m=[39m useState([36mfalse[39m)[33m;[39m[0m
+
+
+
+Import trace:
+  Server Component:
+    ./apps/web/components/common/sidebar/AppSidebar.tsx
+    ./apps/web/app/layout.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ [31m[1m⨯[22m[39m ./apps/web/components/common/sidebar/AppSidebar.tsx:7:1
+[1m[31mModule not found[39m[22m: Can't resolve [32m'./footer/AppSidebarFooterButtonGroup'[39m
+[0m [90m  5 |[39m [36mimport[39m [33mAppSidebarHeader[39m [36mfrom[39m [32m"./header/AppSidebarHeader"[39m[33m;[39m
+ [90m  6 |[39m [36mimport[39m { [33mCircle[39m } [36mfrom[39m [32m"lucide-react"[39m[33m;[39m
+[31m[1m>[22m[39m[90m  7 |[39m [36mimport[39m [33mAppSidebarFooterButtonGroup[39m [36mfrom[39m [32m"./footer/AppSidebarFooterButtonGroup"[39m[33m;[39m
+ [90m    |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m  8 |[39m
+ [90m  9 |[39m [36mexport[39m [36mfunction[39m [33mAppSidebar[39m() {
+ [90m 10 |[39m   [36mconst[39m [isCollapsed[33m,[39m setIsCollapsed] [33m=[39m useState([36mfalse[39m)[33m;[39m[0m
+
+
+
+Import trace:
+  Server Component:
+    ./apps/web/components/common/sidebar/AppSidebar.tsx
+    ./apps/web/app/layout.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ [31m[1m⨯[22m[39m ./apps/web/components/common/sidebar/AppSidebar.tsx:7:1
+[1m[31mModule not found[39m[22m: Can't resolve [32m'./footer/AppSidebarFooterButtonGroup'[39m
+[0m [90m  5 |[39m [36mimport[39m [33mAppSidebarHeader[39m [36mfrom[39m [32m"./header/AppSidebarHeader"[39m[33m;[39m
+ [90m  6 |[39m [36mimport[39m { [33mCircle[39m } [36mfrom[39m [32m"lucide-react"[39m[33m;[39m
+[31m[1m>[22m[39m[90m  7 |[39m [36mimport[39m [33mAppSidebarFooterButtonGroup[39m [36mfrom[39m [32m"./footer/AppSidebarFooterButtonGroup"[39m[33m;[39m
+ [90m    |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m  8 |[39m
+ [90m  9 |[39m [36mexport[39m [36mfunction[39m [33mAppSidebar[39m() {
+ [90m 10 |[39m   [36mconst[39m [isCollapsed[33m,[39m setIsCollapsed] [33m=[39m useState([36mfalse[39m)[33m;[39m[0m
+
+
+
+Import trace:
+  Server Component:
+    ./apps/web/components/common/sidebar/AppSidebar.tsx
+    ./apps/web/app/layout.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ [31m[1m⨯[22m[39m ./apps/web/components/common/sidebar/AppSidebar.tsx:7:1
+[1m[31mModule not found[39m[22m: Can't resolve [32m'./footer/AppSidebarFooterButtonGroup'[39m
+[0m [90m  5 |[39m [36mimport[39m [33mAppSidebarHeader[39m [36mfrom[39m [32m"./header/AppSidebarHeader"[39m[33m;[39m
+ [90m  6 |[39m [36mimport[39m { [33mCircle[39m } [36mfrom[39m [32m"lucide-react"[39m[33m;[39m
+[31m[1m>[22m[39m[90m  7 |[39m [36mimport[39m [33mAppSidebarFooterButtonGroup[39m [36mfrom[39m [32m"./footer/AppSidebarFooterButtonGroup"[39m[33m;[39m
+ [90m    |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m  8 |[39m
+ [90m  9 |[39m [36mexport[39m [36mfunction[39m [33mAppSidebar[39m() {
+ [90m 10 |[39m   [36mconst[39m [isCollapsed[33m,[39m setIsCollapsed] [33m=[39m useState([36mfalse[39m)[33m;[39m[0m
+
+
+
+Import trace:
+  Server Component:
+    ./apps/web/components/common/sidebar/AppSidebar.tsx
+    ./apps/web/app/layout.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ [31m[1m⨯[22m[39m ./apps/web/components/common/sidebar/AppSidebar.tsx:7:1
+[1m[31mModule not found[39m[22m: Can't resolve [32m'./footer/AppSidebarFooterButtonGroup'[39m
+[0m [90m  5 |[39m [36mimport[39m [33mAppSidebarHeader[39m [36mfrom[39m [32m"./header/AppSidebarHeader"[39m[33m;[39m
+ [90m  6 |[39m [36mimport[39m { [33mCircle[39m } [36mfrom[39m [32m"lucide-react"[39m[33m;[39m
+[31m[1m>[22m[39m[90m  7 |[39m [36mimport[39m [33mAppSidebarFooterButtonGroup[39m [36mfrom[39m [32m"./footer/AppSidebarFooterButtonGroup"[39m[33m;[39m
+ [90m    |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m  8 |[39m
+ [90m  9 |[39m [36mexport[39m [36mfunction[39m [33mAppSidebar[39m() {
+ [90m 10 |[39m   [36mconst[39m [isCollapsed[33m,[39m setIsCollapsed] [33m=[39m useState([36mfalse[39m)[33m;[39m[0m
+
+
+
+Import trace:
+  Server Component:
+    ./apps/web/components/common/sidebar/AppSidebar.tsx
+    ./apps/web/app/layout.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ [31m[1m⨯[22m[39m ./apps/web/components/common/sidebar/AppSidebar.tsx:7:1
+[1m[31mModule not found[39m[22m: Can't resolve [32m'./footer/AppSidebarFooterButtonGroup'[39m
+[0m [90m  5 |[39m [36mimport[39m [33mAppSidebarHeader[39m [36mfrom[39m [32m"./header/AppSidebarHeader"[39m[33m;[39m
+ [90m  6 |[39m [36mimport[39m { [33mCircle[39m } [36mfrom[39m [32m"lucide-react"[39m[33m;[39m
+[31m[1m>[22m[39m[90m  7 |[39m [36mimport[39m [33mAppSidebarFooterButtonGroup[39m [36mfrom[39m [32m"./footer/AppSidebarFooterButtonGroup"[39m[33m;[39m
+ [90m    |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m  8 |[39m
+ [90m  9 |[39m [36mexport[39m [36mfunction[39m [33mAppSidebar[39m() {
+ [90m 10 |[39m   [36mconst[39m [isCollapsed[33m,[39m setIsCollapsed] [33m=[39m useState([36mfalse[39m)[33m;[39m[0m
+
+
+
+Import trace:
+  Server Component:
+    ./apps/web/components/common/sidebar/AppSidebar.tsx
+    ./apps/web/app/layout.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ [31m[1m⨯[22m[39m ./apps/web/components/common/sidebar/AppSidebar.tsx:7:1
+[1m[31mModule not found[39m[22m: Can't resolve [32m'./footer/AppSidebarFooterButtonGroup'[39m
+[0m [90m  5 |[39m [36mimport[39m [33mAppSidebarHeader[39m [36mfrom[39m [32m"./header/AppSidebarHeader"[39m[33m;[39m
+ [90m  6 |[39m [36mimport[39m { [33mCircle[39m } [36mfrom[39m [32m"lucide-react"[39m[33m;[39m
+[31m[1m>[22m[39m[90m  7 |[39m [36mimport[39m [33mAppSidebarFooterButtonGroup[39m [36mfrom[39m [32m"./footer/AppSidebarFooterButtonGroup"[39m[33m;[39m
+ [90m    |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m  8 |[39m
+ [90m  9 |[39m [36mexport[39m [36mfunction[39m [33mAppSidebar[39m() {
+ [90m 10 |[39m   [36mconst[39m [isCollapsed[33m,[39m setIsCollapsed] [33m=[39m useState([36mfalse[39m)[33m;[39m[0m
+
+
+
+Import trace:
+  Server Component:
+    ./apps/web/components/common/sidebar/AppSidebar.tsx
+    ./apps/web/app/layout.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ [31m[1m⨯[22m[39m ./apps/web/components/common/sidebar/AppSidebar.tsx:7:1
+[1m[31mModule not found[39m[22m: Can't resolve [32m'./footer/AppSidebarFooterButtonGroup'[39m
+[0m [90m  5 |[39m [36mimport[39m [33mAppSidebarHeader[39m [36mfrom[39m [32m"./header/AppSidebarHeader"[39m[33m;[39m
+ [90m  6 |[39m [36mimport[39m { [33mCircle[39m } [36mfrom[39m [32m"lucide-react"[39m[33m;[39m
+[31m[1m>[22m[39m[90m  7 |[39m [36mimport[39m [33mAppSidebarFooterButtonGroup[39m [36mfrom[39m [32m"./footer/AppSidebarFooterButtonGroup"[39m[33m;[39m
+ [90m    |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m  8 |[39m
+ [90m  9 |[39m [36mexport[39m [36mfunction[39m [33mAppSidebar[39m() {
+ [90m 10 |[39m   [36mconst[39m [isCollapsed[33m,[39m setIsCollapsed] [33m=[39m useState([36mfalse[39m)[33m;[39m[0m
+
+
+
+Import trace:
+  Server Component:
+    ./apps/web/components/common/sidebar/AppSidebar.tsx
+    ./apps/web/app/layout.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ [31m[1m⨯[22m[39m ./apps/web/components/common/sidebar/AppSidebar.tsx:7:1
+[1m[31mModule not found[39m[22m: Can't resolve [32m'./footer/AppSidebarFooterButtonGroup'[39m
+[0m [90m  5 |[39m [36mimport[39m [33mAppSidebarHeader[39m [36mfrom[39m [32m"./header/AppSidebarHeader"[39m[33m;[39m
+ [90m  6 |[39m [36mimport[39m { [33mCircle[39m } [36mfrom[39m [32m"lucide-react"[39m[33m;[39m
+[31m[1m>[22m[39m[90m  7 |[39m [36mimport[39m [33mAppSidebarFooterButtonGroup[39m [36mfrom[39m [32m"./footer/AppSidebarFooterButtonGroup"[39m[33m;[39m
+ [90m    |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m  8 |[39m
+ [90m  9 |[39m [36mexport[39m [36mfunction[39m [33mAppSidebar[39m() {
+ [90m 10 |[39m   [36mconst[39m [isCollapsed[33m,[39m setIsCollapsed] [33m=[39m useState([36mfalse[39m)[33m;[39m[0m
+
+
+
+Import trace:
+  Server Component:
+    ./apps/web/components/common/sidebar/AppSidebar.tsx
+    ./apps/web/app/layout.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ [31m[1m⨯[22m[39m ./apps/web/components/common/sidebar/AppSidebar.tsx:7:1
+[1m[31mModule not found[39m[22m: Can't resolve [32m'./footer/AppSidebarFooterButtonGroup'[39m
+[0m [90m  5 |[39m [36mimport[39m [33mAppSidebarHeader[39m [36mfrom[39m [32m"./header/AppSidebarHeader"[39m[33m;[39m
+ [90m  6 |[39m [36mimport[39m { [33mCircle[39m } [36mfrom[39m [32m"lucide-react"[39m[33m;[39m
+[31m[1m>[22m[39m[90m  7 |[39m [36mimport[39m [33mAppSidebarFooterButtonGroup[39m [36mfrom[39m [32m"./footer/AppSidebarFooterButtonGroup"[39m[33m;[39m
+ [90m    |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m  8 |[39m
+ [90m  9 |[39m [36mexport[39m [36mfunction[39m [33mAppSidebar[39m() {
+ [90m 10 |[39m   [36mconst[39m [isCollapsed[33m,[39m setIsCollapsed] [33m=[39m useState([36mfalse[39m)[33m;[39m[0m
+
+
+
+Import trace:
+  Server Component:
+    ./apps/web/components/common/sidebar/AppSidebar.tsx
+    ./apps/web/app/layout.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ [31m[1m⨯[22m[39m ./apps/web/components/common/sidebar/AppSidebar.tsx:7:1
+[1m[31mModule not found[39m[22m: Can't resolve [32m'./footer/AppSidebarFooterButtonGroup'[39m
+[0m [90m  5 |[39m [36mimport[39m [33mAppSidebarHeader[39m [36mfrom[39m [32m"./header/AppSidebarHeader"[39m[33m;[39m
+ [90m  6 |[39m [36mimport[39m { [33mCircle[39m } [36mfrom[39m [32m"lucide-react"[39m[33m;[39m
+[31m[1m>[22m[39m[90m  7 |[39m [36mimport[39m [33mAppSidebarFooterButtonGroup[39m [36mfrom[39m [32m"./footer/AppSidebarFooterButtonGroup"[39m[33m;[39m
+ [90m    |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m  8 |[39m
+ [90m  9 |[39m [36mexport[39m [36mfunction[39m [33mAppSidebar[39m() {
+ [90m 10 |[39m   [36mconst[39m [isCollapsed[33m,[39m setIsCollapsed] [33m=[39m useState([36mfalse[39m)[33m;[39m[0m
+
+
+
+Import trace:
+  Server Component:
+    ./apps/web/components/common/sidebar/AppSidebar.tsx
+    ./apps/web/app/layout.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ [31m[1m⨯[22m[39m ./apps/web/components/common/sidebar/AppSidebar.tsx:7:1
+[1m[31mModule not found[39m[22m: Can't resolve [32m'./footer/AppSidebarFooterButtonGroup'[39m
+[0m [90m  5 |[39m [36mimport[39m [33mAppSidebarHeader[39m [36mfrom[39m [32m"./header/AppSidebarHeader"[39m[33m;[39m
+ [90m  6 |[39m [36mimport[39m { [33mCircle[39m } [36mfrom[39m [32m"lucide-react"[39m[33m;[39m
+[31m[1m>[22m[39m[90m  7 |[39m [36mimport[39m [33mAppSidebarFooterButtonGroup[39m [36mfrom[39m [32m"./footer/AppSidebarFooterButtonGroup"[39m[33m;[39m
+ [90m    |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m  8 |[39m
+ [90m  9 |[39m [36mexport[39m [36mfunction[39m [33mAppSidebar[39m() {
+ [90m 10 |[39m   [36mconst[39m [isCollapsed[33m,[39m setIsCollapsed] [33m=[39m useState([36mfalse[39m)[33m;[39m[0m
+
+
+
+Import trace:
+  Server Component:
+    ./apps/web/components/common/sidebar/AppSidebar.tsx
+    ./apps/web/app/layout.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ [31m[1m⨯[22m[39m ./apps/web/components/common/sidebar/AppSidebar.tsx:7:1
+[1m[31mModule not found[39m[22m: Can't resolve [32m'./footer/AppSidebarFooterButtonGroup'[39m
+[0m [90m  5 |[39m [36mimport[39m [33mAppSidebarHeader[39m [36mfrom[39m [32m"./header/AppSidebarHeader"[39m[33m;[39m
+ [90m  6 |[39m [36mimport[39m { [33mCircle[39m } [36mfrom[39m [32m"lucide-react"[39m[33m;[39m
+[31m[1m>[22m[39m[90m  7 |[39m [36mimport[39m [33mAppSidebarFooterButtonGroup[39m [36mfrom[39m [32m"./footer/AppSidebarFooterButtonGroup"[39m[33m;[39m
+ [90m    |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m  8 |[39m
+ [90m  9 |[39m [36mexport[39m [36mfunction[39m [33mAppSidebar[39m() {
+ [90m 10 |[39m   [36mconst[39m [isCollapsed[33m,[39m setIsCollapsed] [33m=[39m useState([36mfalse[39m)[33m;[39m[0m
+
+
+
+Import trace:
+  Server Component:
+    ./apps/web/components/common/sidebar/AppSidebar.tsx
+    ./apps/web/app/layout.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ [31m[1m⨯[22m[39m ./apps/web/components/common/sidebar/AppSidebar.tsx:7:1
+[1m[31mModule not found[39m[22m: Can't resolve [32m'./footer/AppSidebarFooterButtonGroup'[39m
+[0m [90m  5 |[39m [36mimport[39m [33mAppSidebarHeader[39m [36mfrom[39m [32m"./header/AppSidebarHeader"[39m[33m;[39m
+ [90m  6 |[39m [36mimport[39m { [33mCircle[39m } [36mfrom[39m [32m"lucide-react"[39m[33m;[39m
+[31m[1m>[22m[39m[90m  7 |[39m [36mimport[39m [33mAppSidebarFooterButtonGroup[39m [36mfrom[39m [32m"./footer/AppSidebarFooterButtonGroup"[39m[33m;[39m
+ [90m    |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m  8 |[39m
+ [90m  9 |[39m [36mexport[39m [36mfunction[39m [33mAppSidebar[39m() {
+ [90m 10 |[39m   [36mconst[39m [isCollapsed[33m,[39m setIsCollapsed] [33m=[39m useState([36mfalse[39m)[33m;[39m[0m
+
+
+
+Import trace:
+  Server Component:
+    ./apps/web/components/common/sidebar/AppSidebar.tsx
+    ./apps/web/app/layout.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ [31m[1m⨯[22m[39m ./apps/web/components/common/sidebar/AppSidebar.tsx:7:1
+[1m[31mModule not found[39m[22m: Can't resolve [32m'./footer/AppSidebarFooterButtonGroup'[39m
+[0m [90m  5 |[39m [36mimport[39m [33mAppSidebarHeader[39m [36mfrom[39m [32m"./header/AppSidebarHeader"[39m[33m;[39m
+ [90m  6 |[39m [36mimport[39m { [33mCircle[39m } [36mfrom[39m [32m"lucide-react"[39m[33m;[39m
+[31m[1m>[22m[39m[90m  7 |[39m [36mimport[39m [33mAppSidebarFooterButtonGroup[39m [36mfrom[39m [32m"./footer/AppSidebarFooterButtonGroup"[39m[33m;[39m
+ [90m    |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m  8 |[39m
+ [90m  9 |[39m [36mexport[39m [36mfunction[39m [33mAppSidebar[39m() {
+ [90m 10 |[39m   [36mconst[39m [isCollapsed[33m,[39m setIsCollapsed] [33m=[39m useState([36mfalse[39m)[33m;[39m[0m
+
+
+
+Import trace:
+  Server Component:
+    ./apps/web/components/common/sidebar/AppSidebar.tsx
+    ./apps/web/app/layout.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ [31m[1m⨯[22m[39m ./apps/web/components/common/sidebar/AppSidebar.tsx:7:1
+[1m[31mModule not found[39m[22m: Can't resolve [32m'./footer/AppSidebarFooterButtonGroup'[39m
+[0m [90m  5 |[39m [36mimport[39m [33mAppSidebarHeader[39m [36mfrom[39m [32m"./header/AppSidebarHeader"[39m[33m;[39m
+ [90m  6 |[39m [36mimport[39m { [33mCircle[39m } [36mfrom[39m [32m"lucide-react"[39m[33m;[39m
+[31m[1m>[22m[39m[90m  7 |[39m [36mimport[39m [33mAppSidebarFooterButtonGroup[39m [36mfrom[39m [32m"./footer/AppSidebarFooterButtonGroup"[39m[33m;[39m
+ [90m    |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m  8 |[39m
+ [90m  9 |[39m [36mexport[39m [36mfunction[39m [33mAppSidebar[39m() {
+ [90m 10 |[39m   [36mconst[39m [isCollapsed[33m,[39m setIsCollapsed] [33m=[39m useState([36mfalse[39m)[33m;[39m[0m
+
+
+
+Import trace:
+  Server Component:
+    ./apps/web/components/common/sidebar/AppSidebar.tsx
+    ./apps/web/app/layout.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ [31m[1m⨯[22m[39m ./apps/web/components/common/sidebar/AppSidebar.tsx:7:1
+[1m[31mModule not found[39m[22m: Can't resolve [32m'./footer/AppSidebarFooterButtonGroup'[39m
+[0m [90m  5 |[39m [36mimport[39m [33mAppSidebarHeader[39m [36mfrom[39m [32m"./header/AppSidebarHeader"[39m[33m;[39m
+ [90m  6 |[39m [36mimport[39m { [33mCircle[39m } [36mfrom[39m [32m"lucide-react"[39m[33m;[39m
+[31m[1m>[22m[39m[90m  7 |[39m [36mimport[39m [33mAppSidebarFooterButtonGroup[39m [36mfrom[39m [32m"./footer/AppSidebarFooterButtonGroup"[39m[33m;[39m
+ [90m    |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m  8 |[39m
+ [90m  9 |[39m [36mexport[39m [36mfunction[39m [33mAppSidebar[39m() {
+ [90m 10 |[39m   [36mconst[39m [isCollapsed[33m,[39m setIsCollapsed] [33m=[39m useState([36mfalse[39m)[33m;[39m[0m
+
+
+
+Import trace:
+  Server Component:
+    ./apps/web/components/common/sidebar/AppSidebar.tsx
+    ./apps/web/app/layout.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ [31m[1m⨯[22m[39m ./apps/web/components/common/sidebar/AppSidebar.tsx:7:1
+[1m[31mModule not found[39m[22m: Can't resolve [32m'./footer/AppSidebarFooterButtonGroup'[39m
+[0m [90m  5 |[39m [36mimport[39m [33mAppSidebarHeader[39m [36mfrom[39m [32m"./header/AppSidebarHeader"[39m[33m;[39m
+ [90m  6 |[39m [36mimport[39m { [33mCircle[39m } [36mfrom[39m [32m"lucide-react"[39m[33m;[39m
+[31m[1m>[22m[39m[90m  7 |[39m [36mimport[39m [33mAppSidebarFooterButtonGroup[39m [36mfrom[39m [32m"./footer/AppSidebarFooterButtonGroup"[39m[33m;[39m
+ [90m    |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m  8 |[39m
+ [90m  9 |[39m [36mexport[39m [36mfunction[39m [33mAppSidebar[39m() {
+ [90m 10 |[39m   [36mconst[39m [isCollapsed[33m,[39m setIsCollapsed] [33m=[39m useState([36mfalse[39m)[33m;[39m[0m
+
+
+
+Import trace:
+  Server Component:
+    ./apps/web/components/common/sidebar/AppSidebar.tsx
+    ./apps/web/app/layout.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ [31m[1m⨯[22m[39m ./apps/web/components/common/sidebar/AppSidebar.tsx:7:1
+[1m[31mModule not found[39m[22m: Can't resolve [32m'./footer/AppSidebarFooterButtonGroup'[39m
+[0m [90m  5 |[39m [36mimport[39m [33mAppSidebarHeader[39m [36mfrom[39m [32m"./header/AppSidebarHeader"[39m[33m;[39m
+ [90m  6 |[39m [36mimport[39m { [33mCircle[39m } [36mfrom[39m [32m"lucide-react"[39m[33m;[39m
+[31m[1m>[22m[39m[90m  7 |[39m [36mimport[39m [33mAppSidebarFooterButtonGroup[39m [36mfrom[39m [32m"./footer/AppSidebarFooterButtonGroup"[39m[33m;[39m
+ [90m    |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m  8 |[39m
+ [90m  9 |[39m [36mexport[39m [36mfunction[39m [33mAppSidebar[39m() {
+ [90m 10 |[39m   [36mconst[39m [isCollapsed[33m,[39m setIsCollapsed] [33m=[39m useState([36mfalse[39m)[33m;[39m[0m
+
+
+
+Import trace:
+  Server Component:
+    ./apps/web/components/common/sidebar/AppSidebar.tsx
+    ./apps/web/app/layout.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ [31m[1m⨯[22m[39m ./apps/web/components/common/sidebar/AppSidebar.tsx:7:1
+[1m[31mModule not found[39m[22m: Can't resolve [32m'./footer/AppSidebarFooterButtonGroup'[39m
+[0m [90m  5 |[39m [36mimport[39m [33mAppSidebarHeader[39m [36mfrom[39m [32m"./header/AppSidebarHeader"[39m[33m;[39m
+ [90m  6 |[39m [36mimport[39m { [33mCircle[39m } [36mfrom[39m [32m"lucide-react"[39m[33m;[39m
+[31m[1m>[22m[39m[90m  7 |[39m [36mimport[39m [33mAppSidebarFooterButtonGroup[39m [36mfrom[39m [32m"./footer/AppSidebarFooterButtonGroup"[39m[33m;[39m
+ [90m    |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m  8 |[39m
+ [90m  9 |[39m [36mexport[39m [36mfunction[39m [33mAppSidebar[39m() {
+ [90m 10 |[39m   [36mconst[39m [isCollapsed[33m,[39m setIsCollapsed] [33m=[39m useState([36mfalse[39m)[33m;[39m[0m
+
+
+
+Import trace:
+  Server Component:
+    ./apps/web/components/common/sidebar/AppSidebar.tsx
+    ./apps/web/app/layout.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ [31m[1m⨯[22m[39m ./apps/web/components/common/sidebar/AppSidebar.tsx:7:1
+[1m[31mModule not found[39m[22m: Can't resolve [32m'./footer/AppSidebarFooterButtonGroup'[39m
+[0m [90m  5 |[39m [36mimport[39m [33mAppSidebarHeader[39m [36mfrom[39m [32m"./header/AppSidebarHeader"[39m[33m;[39m
+ [90m  6 |[39m [36mimport[39m { [33mCircle[39m } [36mfrom[39m [32m"lucide-react"[39m[33m;[39m
+[31m[1m>[22m[39m[90m  7 |[39m [36mimport[39m [33mAppSidebarFooterButtonGroup[39m [36mfrom[39m [32m"./footer/AppSidebarFooterButtonGroup"[39m[33m;[39m
+ [90m    |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m  8 |[39m
+ [90m  9 |[39m [36mexport[39m [36mfunction[39m [33mAppSidebar[39m() {
+ [90m 10 |[39m   [36mconst[39m [isCollapsed[33m,[39m setIsCollapsed] [33m=[39m useState([36mfalse[39m)[33m;[39m[0m
+
+
+
+Import trace:
+  Server Component:
+    ./apps/web/components/common/sidebar/AppSidebar.tsx
+    ./apps/web/app/layout.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ [31m[1m⨯[22m[39m ./apps/web/components/common/sidebar/AppSidebar.tsx:7:1
+[1m[31mModule not found[39m[22m: Can't resolve [32m'./footer/AppSidebarFooterButtonGroup'[39m
+[0m [90m  5 |[39m [36mimport[39m [33mAppSidebarHeader[39m [36mfrom[39m [32m"./header/AppSidebarHeader"[39m[33m;[39m
+ [90m  6 |[39m [36mimport[39m { [33mCircle[39m } [36mfrom[39m [32m"lucide-react"[39m[33m;[39m
+[31m[1m>[22m[39m[90m  7 |[39m [36mimport[39m [33mAppSidebarFooterButtonGroup[39m [36mfrom[39m [32m"./footer/AppSidebarFooterButtonGroup"[39m[33m;[39m
+ [90m    |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m  8 |[39m
+ [90m  9 |[39m [36mexport[39m [36mfunction[39m [33mAppSidebar[39m() {
+ [90m 10 |[39m   [36mconst[39m [isCollapsed[33m,[39m setIsCollapsed] [33m=[39m useState([36mfalse[39m)[33m;[39m[0m
+
+
+
+Import trace:
+  Server Component:
+    ./apps/web/components/common/sidebar/AppSidebar.tsx
+    ./apps/web/app/layout.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ [31m[1m⨯[22m[39m ./apps/web/components/common/sidebar/AppSidebar.tsx:7:1
+[1m[31mModule not found[39m[22m: Can't resolve [32m'./footer/AppSidebarFooterButtonGroup'[39m
+[0m [90m  5 |[39m [36mimport[39m [33mAppSidebarHeader[39m [36mfrom[39m [32m"./header/AppSidebarHeader"[39m[33m;[39m
+ [90m  6 |[39m [36mimport[39m { [33mCircle[39m } [36mfrom[39m [32m"lucide-react"[39m[33m;[39m
+[31m[1m>[22m[39m[90m  7 |[39m [36mimport[39m [33mAppSidebarFooterButtonGroup[39m [36mfrom[39m [32m"./footer/AppSidebarFooterButtonGroup"[39m[33m;[39m
+ [90m    |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m  8 |[39m
+ [90m  9 |[39m [36mexport[39m [36mfunction[39m [33mAppSidebar[39m() {
+ [90m 10 |[39m   [36mconst[39m [isCollapsed[33m,[39m setIsCollapsed] [33m=[39m useState([36mfalse[39m)[33m;[39m[0m
+
+
+
+Import trace:
+  Server Component:
+    ./apps/web/components/common/sidebar/AppSidebar.tsx
+    ./apps/web/app/layout.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ [31m[1m⨯[22m[39m ./apps/web/components/common/sidebar/AppSidebar.tsx:7:1
+[1m[31mModule not found[39m[22m: Can't resolve [32m'./footer/AppSidebarFooterButtonGroup'[39m
+[0m [90m  5 |[39m [36mimport[39m [33mAppSidebarHeader[39m [36mfrom[39m [32m"./header/AppSidebarHeader"[39m[33m;[39m
+ [90m  6 |[39m [36mimport[39m { [33mCircle[39m } [36mfrom[39m [32m"lucide-react"[39m[33m;[39m
+[31m[1m>[22m[39m[90m  7 |[39m [36mimport[39m [33mAppSidebarFooterButtonGroup[39m [36mfrom[39m [32m"./footer/AppSidebarFooterButtonGroup"[39m[33m;[39m
+ [90m    |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m  8 |[39m
+ [90m  9 |[39m [36mexport[39m [36mfunction[39m [33mAppSidebar[39m() {
+ [90m 10 |[39m   [36mconst[39m [isCollapsed[33m,[39m setIsCollapsed] [33m=[39m useState([36mfalse[39m)[33m;[39m[0m
+
+
+
+Import trace:
+  Server Component:
+    ./apps/web/components/common/sidebar/AppSidebar.tsx
+    ./apps/web/app/layout.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ [31m[1m⨯[22m[39m ./apps/web/components/common/sidebar/AppSidebar.tsx:7:1
+[1m[31mModule not found[39m[22m: Can't resolve [32m'./footer/AppSidebarFooterButtonGroup'[39m
+[0m [90m  5 |[39m [36mimport[39m [33mAppSidebarHeader[39m [36mfrom[39m [32m"./header/AppSidebarHeader"[39m[33m;[39m
+ [90m  6 |[39m [36mimport[39m { [33mCircle[39m } [36mfrom[39m [32m"lucide-react"[39m[33m;[39m
+[31m[1m>[22m[39m[90m  7 |[39m [36mimport[39m [33mAppSidebarFooterButtonGroup[39m [36mfrom[39m [32m"./footer/AppSidebarFooterButtonGroup"[39m[33m;[39m
+ [90m    |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m  8 |[39m
+ [90m  9 |[39m [36mexport[39m [36mfunction[39m [33mAppSidebar[39m() {
+ [90m 10 |[39m   [36mconst[39m [isCollapsed[33m,[39m setIsCollapsed] [33m=[39m useState([36mfalse[39m)[33m;[39m[0m
+
+
+
+Import trace:
+  Server Component:
+    ./apps/web/components/common/sidebar/AppSidebar.tsx
+    ./apps/web/app/layout.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ [32m[1m✓[22m[39m Compiled in 67ms
+ GET / [32m200[39m in 66ms[2m (compile: 42ms, render: 24ms)[22m
+ GET / [32m200[39m in 140ms[2m (compile: 3ms, render: 137ms)[22m
+ [32m[1m✓[22m[39m Compiled in 25ms
+ [32m[1m✓[22m[39m Compiled in 16ms
+ [32m[1m✓[22m[39m Compiled in 23ms
+ [32m[1m✓[22m[39m Compiled in 12ms
+ [32m[1m✓[22m[39m Compiled in 62ms
+ [32m[1m✓[22m[39m Compiled in 20ms
+ [32m[1m✓[22m[39m Compiled in 14ms
+ [32m[1m✓[22m[39m Compiled in 14ms
+ [32m[1m✓[22m[39m Compiled in 14ms
+ [32m[1m✓[22m[39m Compiled in 29ms
+ [32m[1m✓[22m[39m Compiled in 81ms
+ [32m[1m✓[22m[39m Compiled in 21ms
+ [32m[1m✓[22m[39m Compiled in 29ms
+ GET / [32m200[39m in 126ms[2m (compile: 44ms, render: 82ms)[22m
+ [32m[1m✓[22m[39m Compiled in 28ms
+ [32m[1m✓[22m[39m Compiled in 26ms
+ [32m[1m✓[22m[39m Compiled in 16ms
+ [32m[1m✓[22m[39m Compiled in 49ms
+ [32m[1m✓[22m[39m Compiled in 14ms
+ [32m[1m✓[22m[39m Compiled in 29ms
+ [32m[1m✓[22m[39m Compiled in 21ms
+ [32m[1m✓[22m[39m Compiled in 18ms
+ GET / [32m200[39m in 123ms[2m (compile: 42ms, render: 81ms)[22m
+ [32m[1m✓[22m[39m Compiled in 17ms
+ [32m[1m✓[22m[39m Compiled in 16ms
+ [32m[1m✓[22m[39m Compiled in 19ms
+ [32m[1m✓[22m[39m Compiled in 15ms
+ [32m[1m✓[22m[39m Compiled in 14ms
+ GET / [32m200[39m in 74ms[2m (compile: 45ms, render: 29ms)[22m
+ [32m[1m✓[22m[39m Compiled in 60ms
+ [32m[1m✓[22m[39m Compiled in 26ms
+ [32m[1m✓[22m[39m Compiled in 21ms
+ [32m[1m✓[22m[39m Compiled in 21ms
+ [32m[1m✓[22m[39m Compiled in 13ms
+ [32m[1m✓[22m[39m Compiled in 15ms
+ [32m[1m✓[22m[39m Compiled in 25ms
+ [32m[1m✓[22m[39m Compiled in 24ms
+ [32m[1m✓[22m[39m Compiled in 18ms
+ [32m[1m✓[22m[39m Compiled in 41ms
+ [32m[1m✓[22m[39m Compiled in 11ms
+ [32m[1m✓[22m[39m Compiled in 21ms
+ [32m[1m✓[22m[39m Compiled in 11ms
+ [32m[1m✓[22m[39m Compiled in 43ms
+ [32m[1m✓[22m[39m Compiled in 38ms
+ [32m[1m✓[22m[39m Compiled in 25ms
+ [32m[1m✓[22m[39m Compiled in 14ms
+ [32m[1m✓[22m[39m Compiled in 15ms
+ [32m[1m✓[22m[39m Compiled in 45ms
+ [32m[1m✓[22m[39m Compiled in 29ms
+ [32m[1m✓[22m[39m Compiled in 19ms
+ [32m[1m✓[22m[39m Compiled in 19ms
+ [32m[1m✓[22m[39m Compiled in 39ms
+ [32m[1m✓[22m[39m Compiled in 39ms
+ [32m[1m✓[22m[39m Compiled in 18ms
+ [32m[1m✓[22m[39m Compiled in 23ms
+ [32m[1m✓[22m[39m Compiled in 16ms
+ [32m[1m✓[22m[39m Compiled in 13ms
+ [32m[1m✓[22m[39m Compiled in 16ms
+ [32m[1m✓[22m[39m Compiled in 21ms
+ [32m[1m✓[22m[39m Compiled in 12ms
+ [32m[1m✓[22m[39m Compiled in 43ms
+ GET / [32m200[39m in 97ms[2m (compile: 45ms, render: 51ms)[22m
+ [33m[1m⚠[22m[39m Fast Refresh had to perform a full reload due to a runtime error.
+ [32m[1m✓[22m[39m Compiled in 38ms
+ GET / [32m200[39m in 154ms[2m (compile: 45ms, render: 109ms)[22m
+ GET / [32m200[39m in 46ms[2m (compile: 23ms, render: 23ms)[22m
+ [32m[1m✓[22m[39m Compiled in 29ms
+ [32m[1m✓[22m[39m Compiled in 31ms
+ [32m[1m✓[22m[39m Compiled in 32ms
+ [32m[1m✓[22m[39m Compiled in 17ms
+
+thread 'tokio-runtime-worker' (74952074) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/operation/mod.rs:452:9:
+Item already exists
+ [32m[1m✓[22m[39m Compiled in 43ms
+ [32m[1m✓[22m[39m Compiled in 23ms
+ [32m[1m✓[22m[39m Compiled in 24ms
+ [32m[1m✓[22m[39m Compiled in 12ms
+ [32m[1m✓[22m[39m Compiled in 58ms
+ [32m[1m✓[22m[39m Compiled in 17ms
+ [32m[1m✓[22m[39m Compiled in 77ms
+ [32m[1m✓[22m[39m Compiled in 19ms
+ [32m[1m✓[22m[39m Compiled in 98ms
+ [32m[1m✓[22m[39m Compiled in 40ms
+ [32m[1m✓[22m[39m Compiled in 28ms
+ [32m[1m✓[22m[39m Compiled in 23ms
+ [32m[1m✓[22m[39m Compiled in 15ms
+ [32m[1m✓[22m[39m Compiled in 18ms
+ [32m[1m✓[22m[39m Compiled in 25ms
+ [32m[1m✓[22m[39m Compiled in 20ms
+ [32m[1m✓[22m[39m Compiled in 16ms
+ [32m[1m✓[22m[39m Compiled in 24ms
+ [32m[1m✓[22m[39m Compiled in 30ms
+ [32m[1m✓[22m[39m Compiled in 42ms
+ [32m[1m✓[22m[39m Compiled in 13ms
+ [32m[1m✓[22m[39m Compiled in 34ms
+ GET / [32m200[39m in 60ms[2m (compile: 36ms, render: 23ms)[22m
+ [32m[1m✓[22m[39m Compiled in 71ms
+ [32m[1m✓[22m[39m Compiled in 17ms
+
+thread 'tokio-runtime-worker' (74952069) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/operation/mod.rs:452:9:
+Item already exists
+ [32m[1m✓[22m[39m Compiled in 38ms
+ [32m[1m✓[22m[39m Compiled in 48ms
+ [32m[1m✓[22m[39m Compiled in 22ms
+ [32m[1m✓[22m[39m Compiled in 26ms
+ [32m[1m✓[22m[39m Compiled in 94ms
+ [32m[1m✓[22m[39m Compiled in 82ms
+ [32m[1m✓[22m[39m Compiled in 59ms
+ [32m[1m✓[22m[39m Compiled in 76ms
+ [32m[1m✓[22m[39m Compiled in 31ms
+ [32m[1m✓[22m[39m Compiled in 72ms
+ [33m[1m⚠[22m[39m Fast Refresh had to perform a full reload due to a runtime error.
+ [32m[1m✓[22m[39m Compiled in 100ms
+ GET / [32m200[39m in 321ms[2m (compile: 101ms, render: 220ms)[22m
+ [32m[1m✓[22m[39m Compiled in 39ms
+ [32m[1m✓[22m[39m Compiled in 51ms
+ [32m[1m✓[22m[39m Compiled in 91ms
+ [32m[1m✓[22m[39m Compiled in 16ms
+ [32m[1m✓[22m[39m Compiled in 28ms
+
+thread 'tokio-runtime-worker' (74952071) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/operation/mod.rs:452:9:
+Item already exists
+ [32m[1m✓[22m[39m Compiled in 103ms
+ [32m[1m✓[22m[39m Compiled in 97ms
+ [32m[1m✓[22m[39m Compiled in 52ms
+ [32m[1m✓[22m[39m Compiled in 28ms
+ [32m[1m✓[22m[39m Compiled in 25ms
+ [32m[1m✓[22m[39m Compiled in 35ms
+ [32m[1m✓[22m[39m Compiled in 72ms
+ [32m[1m✓[22m[39m Compiled in 16ms
