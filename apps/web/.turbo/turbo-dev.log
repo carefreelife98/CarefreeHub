@@ -2,22 +2,20 @@
 > web@0.1.0 dev /Users/carefreelife/Desktop/CarefreeHub/apps/web
 > next dev
 
-[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
-   [1m[38;2;173;127;168m▲ Next.js 16.0.1[39m[22m (Turbopack)
-   - Local:        http://localhost:3000
-   - Network:      http://192.0.0.2:3000
+   [1m[38;2;173;127;168m▲ Next.js 16.0.7[39m[22m (Turbopack)
+   - Local:         http://localhost:3000
+   - Network:       http://192.0.0.2:3000
 
  [32m[1m✓[22m[39m Starting...
- [32m[1m✓[22m[39m Ready in 587ms
-Error: Turbopack build failed with 1 errors:
-./apps/web/app
-Error: Next.js inferred your workspace root, but it may not be correct.
-    We couldn't find the Next.js package ([1m[31mnext/package.json[39m[22m) from the project directory: [1m[31m/Users/carefreelife/Desktop/CarefreeHub/apps/web/app[39m[22m
-     To fix this, set [32mturbopack.root[39m in your Next.js config, or ensure the Next.js package is resolvable from this directory.
-    Note: For security and performance reasons, files outside of the project directory will not be compiled.
-    See [1m[31mhttps://nextjs.org/docs/app/api-reference/config/next-config-js/turbopack#root-directory[39m[22m for more information.
-
-    at [3mignore-listed frames[23m
-[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
-[?25h
-[41m[30m ELIFECYCLE [39m[49m [31mCommand failed with exit code 1.[39m
+ [32m[1m✓[22m[39m Ready in 1320ms
+ GET / [32m200[39m in 1821ms[2m (compile: 1681ms, render: 140ms)[22m
+ [33m[1m⚠[22m[39m Cross origin request detected from 127.0.0.1 to /_next/* resource. In a future major version of Next.js, you will need to explicitly configure "allowedDevOrigins" in next.config to allow this.
+Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
+ GET /sw.js [33m404[39m in 491ms[2m (compile: 448ms, render: 43ms)[22m
+ GET / [32m200[39m in 46ms[2m (compile: 5ms, render: 41ms)[22m
+ [32m[1m✓[22m[39m Compiled in 48ms
+ [32m[1m✓[22m[39m Compiled in 28ms
+ [32m[1m✓[22m[39m Compiled in 35ms
+ [32m[1m✓[22m[39m Compiled in 44ms
+ [32m[1m✓[22m[39m Compiled in 37ms
+ [32m[1m✓[22m[39m Compiled in 36ms

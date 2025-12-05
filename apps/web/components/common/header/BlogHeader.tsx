@@ -20,7 +20,7 @@ export default function BlogHeader() {
   return (
     <div className="w-full flex flex-row justify-between items-center px-6">
       <div
-        className={`text-xl font-bold whitespace-nowrap ${isOpen ? "opacity-0" : "opacity-100"} cursor-default`}
+        className={`min-w-32 text-xl font-bold whitespace-nowrap ${isOpen ? "opacity-0" : "opacity-100"} cursor-default`}
       >
         Carefree Hub
       </div>
@@ -29,9 +29,11 @@ export default function BlogHeader() {
           <HeaderNavigationMenu />
         </div>
       </div>
-      <Button variant="ghost" size="icon" onClick={handleSearch}>
-        <Search className="h-4 w-4" />
-      </Button>
+      <div className="min-w-32 flex flex-row justify-end items-center">
+        <Button variant="ghost" size="icon" onClick={handleSearch}>
+          <Search className="h-4 w-4" />
+        </Button>
+      </div>
     </div>
   )
 }
