@@ -5,6 +5,7 @@ import HeaderNavigationMenu from "./HeaderNavigationMenu"
 import { Button } from "@/components/ui/button"
 import { useSidebar } from "@/components/ui/sidebar"
 import { toast } from "sonner"
+import { ScrollProgress } from "@/components/ui/scroll-progress"
 
 export default function BlogHeader() {
   const { state } = useSidebar()
@@ -18,7 +19,7 @@ export default function BlogHeader() {
   }
 
   return (
-    <div className="w-full flex flex-row justify-between items-center px-6">
+    <div className="w-full flex flex-row justify-between items-center px-6 relative z-50">
       <div
         className={`min-w-32 text-xl font-bold whitespace-nowrap ${isOpen ? "opacity-0" : "opacity-100"} cursor-default`}
       >
@@ -34,6 +35,7 @@ export default function BlogHeader() {
           <Search className="h-4 w-4" />
         </Button>
       </div>
+      <ScrollProgress />
     </div>
   )
 }
