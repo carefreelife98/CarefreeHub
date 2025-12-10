@@ -1,4 +1,6 @@
 export const siteConfig = {
+  name: "Carefree Hub",
+  url: "https://carefree-hub.vercel.app/",
   logo: {
     src: "/logo.png",
     alt: "Carefree Hub",
@@ -6,6 +8,10 @@ export const siteConfig = {
   meta: {
     title: "Carefree Hub",
     description: "Carefree Hub is a platform for creating and sharing carefree life",
+  },
+  author: {
+    name: "Carefreelife98",
+    twitter: "@carefreelife98",
   },
   header: {
     author: {

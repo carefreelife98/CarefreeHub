@@ -1,37 +1,29 @@
-import { ChevronRightIcon } from "lucide-react";
-import { Button } from "../ui/button";
-import Link from "next/link";
-import { SimplePost } from "../common/post/SimplePost";
+import { SimplePost } from "../common/post/SimplePost"
+import { posts } from "#site/content"
 
 export function MainHotPost() {
-
-  const posts = [
-    {
-      title: "Post 1",
-      createdBy: "John Doe",
-      linkUrl: "https://www.google.com",
-    },
-    {
-      title: "Post 2",
-      createdBy: "John Doe",
-      linkUrl: "https://www.google.com",
-    },
-    {
-      title: "Post 3",
-      createdBy: "John Doe",
-      linkUrl: "https://www.google.com",
-    },
-  ];
+  // 임시로 최신 3개 포스트 표시 (추후 조회수 기반으로 변경 가능)
+  const hotPosts = posts
+    .filter((post) => post.published)
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+    .slice(0, 3)
 
   return (
     <div className="w-full flex flex-col items-start justify-start gap-4">
       <div className="w-full flex flex-row items-center justify-between">
-        <span className="text-sm whitespace-nowrap font-bold text-muted-foreground">인기 게시글</span>
+        <span className="text-sm whitespace-nowrap font-bold text-muted-foreground">
+          인기 게시글
+        </span>
       </div>
 
       <div className="w-full">
-        {posts.map((post, idx) => (
-          <SimplePost key={idx} title={post.title} createdBy={post.createdBy} linkUrl={post.linkUrl} />
+        {hotPosts.map((post) => (
+          <SimplePost
+            key={post.slug}
+            title={post.title}
+            createdBy={post.author}
+            linkUrl={`/posts/${post.slug}`}
+          />
         ))}
       </div>
     </div>

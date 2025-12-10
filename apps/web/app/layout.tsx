@@ -8,8 +8,49 @@ import { Toaster } from "@/components/ui/sonner"
 import { ScrollArea } from "@/components/ui/scroll-area"
 
 export const metadata: Metadata = {
-  title: siteConfig.meta.title,
+  metadataBase: new URL(siteConfig.url),
+  title: {
+    default: siteConfig.meta.title,
+    template: `%s | ${siteConfig.meta.title}`,
+  },
   description: siteConfig.meta.description,
+  keywords: ["블로그", "기술 블로그", "개발", "프로그래밍", "Frontend", "Backend"],
+  authors: [{ name: siteConfig.author.name }],
+  creator: siteConfig.author.name,
+  openGraph: {
+    type: "website",
+    locale: "ko_KR",
+    url: siteConfig.url,
+    title: siteConfig.meta.title,
+    description: siteConfig.meta.description,
+    siteName: siteConfig.name,
+    images: [
+      {
+        url: "/og-default.png",
+        width: 1200,
+        height: 630,
+        alt: siteConfig.meta.title,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteConfig.meta.title,
+    description: siteConfig.meta.description,
+    images: ["/og-default.png"],
+    creator: siteConfig.author.twitter,
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 }
 
 export default function RootLayout({
@@ -18,7 +59,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang="ko">
       <body>
         <SidebarProvider>
           <AppSidebar />
