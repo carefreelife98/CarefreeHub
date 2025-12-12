@@ -1,0 +1,194 @@
+---
+title: "Spring MVC 요청(Request) 처리"
+description: "@RequestMapping, HTTP 메서드 매핑, PathVariable, 요청 파라미터 처리 방법"
+date: 2023-05-02
+categories: ["spring"]
+tags: ["Spring", "Java", "MVC", "Request"]
+author: "Carefreelife98"
+thumbnail: "/images/Spring/SpringMVC/getmapping.png"
+published: true
+---
+
+# @RequestMapping 다중 설정
+
+```java
+@RequestMapping({"/carefree/v1", "/carefree/v3"})
+```
+
+- @RequestMapping() 은 대부분의 속성을 배열[]로 제공한다
+- 따라서 중괄호{} 안에 , 로 분리된 서로 다른 여러 URL을 지정할 수 있다
+- 그 결과로 서로 다른 URL에 요청이 오더라도 같은 메소드를 실행하여 같은 값을 반환할 수 있다
+
+# HTTP 메서드
+
+- `@RequestMapping`에 `method`속성으로 HTTP 메서드를 지정하여 각 HTTP 요청을 분류하여 호출 여부를 정할 수 있다
+  - method 속성의 지정이 없을 경우 모든 HTTP 요청을 허용, 메서드 호출
+
+```java
+@RequestMapping(value = "/carefree", method = RequestMethod.GET)
+// 'method = ' 에 특정된 HTTP 메서드 요청만 허용하여 호출됨
+// GET, HEAD, POST, PUT, PATCH, DELETE 메서드가 있다
+```
+
+- 만약 특정된 메서드 외의 요청을 하면 MVC는 HTTP 405 (Method Not Allowed)를 반환한다
+
+# HTTP 메서드 매핑 간편하게 사용하기
+
+HTTP 메서드를 축약한 애노테이션:
+
+- `@GetMapping`
+- `@PostMapping`
+- `@PutMapping`
+- `@DeleteMapping`
+- `@PatchMapping`
+
+```java
+@GetMapping(value = "/carefree-v2")
+public String mappingGetV2() {
+  log.info("carefree-v2");
+  return "ok";
+}
+```
+
+![GetMapping의 내부 모습](/images/Spring/SpringMVC/getmapping.png)
+
+같은 URL을 지정 하더라도 HTTP 축약 애노테이션의 종류에 따라 다른 메서드를 호출 할 수 있다.
+
+![같은 URL이지만 다른 메서드 호출](/images/Spring/SpringMVC/sameurl.png)
+
+# PathVariable(경로 변수)
+
+최근 HTTP API는 다음과 같이 리소스 경로에 식별자를 넣는 스타일을 선호한다:
+- /carefree/user1
+- /members/2
+
+@RequestMapping은 @PathVariable(경로 변수)를 사용하여 URL 경로를 템플릿화 할 수 있다.
+
+```java
+@GetMapping("/carefree/{userId}")
+public String mappingPath(@PathVariable("userId") String data) {
+    log.info("mappingPath userId={}", data);
+    return "ok";
+}
+```
+
+만약 @PathVariable의 이름과 파라미터의 이름이 같으면 생략이 가능하다:
+
+```java
+// 생략 전
+public String mappingPath(@PathVariable("userId") String userId)
+// 생략 후
+public String mappingPath(@PathVariable String userId)
+```
+
+# @PathVariable 다중 사용
+
+```java
+@GetMapping("/carefree/users/{userId}/orders/{orderId}")
+public String mappingPath(
+        @PathVariable String userId,
+        @PathVariable Long orderId) {
+    log.info("mappingPath userId={}, orderId={}", userId, orderId);
+    return "ok";
+}
+```
+
+# 특정 헤더 조건 매핑
+
+HTTP 요청에 특정 헤더가 포함되어있는 경우 실행:
+
+```java
+/**
+ * 특정 헤더로 추가 매핑
+ * headers="mode",
+ * headers="!mode"
+ * headers="mode=debug"
+ * headers="mode!=debug"
+ */
+@GetMapping(value = "/mapping-header", headers = "mode=debug")
+public String mappingHeader() {
+    log.info("mappingHeader");
+    return "ok";
+}
+```
+
+# 미디어 타입 조건 매핑
+
+## Content-Type 헤더 기반
+
+HTTP 요청의 Content-Type 헤더를 기반하여 미디어 타입으로 매핑. 같지 않을 경우 HTTP 415(Unsupported Media Type) 반환.
+
+```java
+/**
+ * consumes="application/json"
+ * consumes="!application/json"
+ * consumes="application/*"
+ * MediaType.APPLICATION_JSON_VALUE
+ */
+@PostMapping(value = "/mapping-consume", consumes = "application/json")
+public String mappingConsumes() {
+    log.info("mappingConsumes");
+    return "ok";
+}
+```
+
+## Accept 헤더 기반
+
+HTTP 요청의 Accept 헤더를 기반하여 미디어 타입으로 매핑. 같지 않을 경우 HTTP 406(Not Acceptable) 반환.
+
+```java
+/**
+ * produces = "text/html"
+ * produces = "!text/html"
+ * produces = "text/*"
+ */
+@PostMapping(value = "/mapping-produce", produces = "text/html")
+public String mappingProduces(){
+    log.info("mappingProduces");
+    return "ok";
+}
+```
+
+# HTTP Request Header 조회
+
+애노테이션 기반의 스프링 컨트롤러는 다양한 파라미터를 지원하여 HTTP Request Header 의 많은 정보를 받아올 수 있다.
+
+- **HTTPServletRequest / HTTPServletResponse**
+- **HttpMethod**: Get, Post, Put, Patch, Delete 등의 HTTP Method를 조회
+- **Locale**: Locale 정보를 조회 (각 나라별 언어 정보)
+- **@RequestHeader MultiValueMap\<String, String\> headerMap**: 모든 HTTP Header를 MultiValueMap 형식으로 조회
+
+### MultiValueMap이란?
+
+Map과 유사하나, 하나의 키에 여러 값을 받을 수 있다:
+
+```java
+MultiValueMap<String, String> map = new LinkedMultiValueMap();
+map.add("keyA", "value1");
+map.add("keyA", "value2");
+
+List<String> values = map.get("keyA"); // 실행결과: [value1,value2]
+```
+
+# HTTP 요청 파라미터
+
+클라이언트에서 서버로 요청 데이터를 전달할 때 주로 사용하는 세가지 방법:
+
+1. **GET - Query Parameter**
+   - /url?username=carefree&age=26
+   - message body 없이 URL의 Query Parameter 에 데이터를 포함해서 전달
+   - 검색, 필터, 페이징 등에서 많이 사용
+
+2. **POST - HTML Form**
+   - content-type: application/x-www-form-urlencoded
+   - 메시지 바디에 QueryParameter 형식으로 전달
+   - 회원가입, 상품 주문 등의 작업에서 많이 사용
+
+3. **HTTP message body 에 데이터를 직접 담아서 요청**
+   - HTTP API 에서 주로 사용 (JSON, XML, TEXT)
+   - 데이터 형식을 주로 JSON 사용
+   - POST, PUT, PATCH
+
+---
+
+`참고:` [Inflearn - 김영한님 강의](https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-mvc-1/dashboard)

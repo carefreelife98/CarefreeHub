@@ -1,0 +1,23 @@
+---
+title: "AWS SAA - Network"
+description: "VPC Gateway Endpoint를 활용한 S3 Private Network 연결 방법"
+date: 2023-09-10
+categories: ["aws-saa"]
+tags: ["AWS", "SAA", "Network", "VPC"]
+author: "Carefreelife98"
+thumbnail: "/images/aws-saa2.png"
+published: true
+---
+
+# Network
+
+## S3 VPC Gateway Endpoint
+
+EC2에서 돌아가는 Application이 S3에 저장된 Logs를 처리할 때, EC2 Instance가 인터넷 연결 없이 S3에 Access하는 방법:
+
+- VPC ↔ S3 간 인터넷을 통하지 않는 연결은 **S3 VPC Gateway Endpoint**이다
+- S3 버킷에 대한 게이트웨이 VPC 엔드포인트를 생성
+
+---
+
+**AWS-SAA 개인 학습 관련 포스트입니다.**

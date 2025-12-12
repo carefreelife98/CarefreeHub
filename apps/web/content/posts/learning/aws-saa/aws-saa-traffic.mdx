@@ -1,0 +1,47 @@
+---
+title: "AWS SAA - 대규모 Traffic 처리"
+description: "SQS, SNS, Aurora를 활용한 대규모 트래픽 처리 및 확장성 솔루션"
+date: 2023-09-10
+categories: ["aws-saa"]
+tags: ["AWS", "SAA", "Traffic", "SQS", "Aurora"]
+author: "Carefreelife98"
+thumbnail: "/images/aws-saa2.png"
+published: true
+---
+
+# 대규모 Traffic 처리
+
+## SQS + SNS - 솔루션 분리
+
+메시지 수집 Application을 통해 회사에 들어오는 메시지 수집 시 (수십 개의 다른 Application과 Microservice가 해당 메시지를 소비, 메시지 수가 급격하게 변함):
+
+- 여러 SQS 구독이 있는 SNS 주제에 메시지를 게시
+- 메시지 소비 주체인 Application이 대기열의 메시지를 처리하도록 구성
+  - 들어오는 요청을 SQS로 라우팅하게 되면 회사는 처리 application에서 작업 요청을 분리할 수 있음
+  - 대기열 크기에 따라 인스턴스 수를 확장하여 고가용성 제공 가능
+
+> **솔루션의 분리 = SQS**
+
+## SQS 기반 Auto Scaling
+
+분산 Application의 탄력성과 확장성을 극대화하려면:
+
+- **복원력과 확장성을 극대화하기 위한 최상의 솔루션은 SQS 대기열**을 작업의 대상으로 사용하는 것
+  - 노드에서 기본 서버가 분리되어 독립적으로 확장 가능
+- SQS 대기열의 크기를 기반으로 Auto Scaling Group을 구성
+  - 기본 서버 또는 노드의 Workload보다 실제 Workload를 더 잘 나타내는 지표임
+  - 가변 워크로드 처리 및 컴퓨팅 노드를 자동 확장/축소하여 비용 최소화
+
+## Amazon Aurora - 읽기 워크로드 확장
+
+전자 상거래 애플리케이션의 MySQL 데이터베이스 성능이 저하되는 경우 (쓰기보다 더 많은 읽기 요청):
+
+- 다중 AZ 배포와 함께 **Amazon Aurora**를 사용
+- Aurora 복제본을 사용하여 Aurora Auto Scaling을 구성
+- Aurora는 RDS에서 MySQL보다 5배 향상된 성능을 제공
+
+> **고가용성 유지 = 다중 AZ 배포**
+
+---
+
+**AWS-SAA 개인 학습 관련 포스트입니다.**

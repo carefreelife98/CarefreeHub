@@ -3,6 +3,7 @@ import { ThumbnailPost } from "../common/post/ThumbnailPost"
 import { Button } from "../ui/button"
 import Link from "next/link"
 import { posts } from "#site/content"
+import { getCategoryColor } from "@/config/categories"
 
 export function MainLatestPost() {
   const latestPosts = posts
@@ -13,9 +14,7 @@ export function MainLatestPost() {
   return (
     <div>
       <div className="w-full flex flex-row items-center justify-between">
-        <h1 className="text-xl whitespace-nowrap font-bold text-muted-foreground">
-          최근 게시글
-        </h1>
+        <h1 className="text-xl whitespace-nowrap font-bold text-muted-foreground">최근 게시글</h1>
         <Button variant="ghost" size="sm">
           <Link href="/posts" className="flex flex-row items-center justify-center gap-2">
             <span>전체 보기</span>
@@ -32,12 +31,15 @@ export function MainLatestPost() {
             createdAt={new Date(post.date).toLocaleDateString("ko-KR")}
             createdBy={post.author}
             updatedAt={
-              post.updated
-                ? new Date(post.updated).toLocaleDateString("ko-KR")
-                : undefined
+              post.updated ? new Date(post.updated).toLocaleDateString("ko-KR") : undefined
             }
             thumbnailUrl={post.thumbnail || "https://picsum.photos/200/300"}
             linkUrl={`/posts/${post.slug}`}
+            chips={post.categories.map((cat) => ({
+              label: cat,
+              href: `/posts/category/${cat.toLowerCase()}`,
+              color: getCategoryColor(cat.toLowerCase()),
+            }))}
           />
         ))}
       </div>

@@ -1,43 +1,43 @@
 "use client"
 
-import { useCallback, useEffect, useRef, useState } from "react";
-import { CardContent } from "../ui/card";
-import { Carousel, CarouselContent, CarouselItem, type CarouselApi } from "../ui/carousel";
-import { Card } from "../ui/card";
-import { Progress } from "../ui/progress";
-import emblaAutoplay from "embla-carousel-autoplay";
+import { useCallback, useEffect, useRef, useState } from "react"
+import { CardContent } from "../ui/card"
+import { Carousel, CarouselContent, CarouselItem, type CarouselApi } from "../ui/carousel"
+import { Card } from "../ui/card"
+import { Progress } from "../ui/progress"
+import emblaAutoplay from "embla-carousel-autoplay"
 
-const SLIDE_COUNT = 5;
-const AUTOPLAY_DELAY = 3000;
+const SLIDE_COUNT = 5
+const AUTOPLAY_DELAY = 3000
 
 export function MainCarousel() {
-  const [api, setApi] = useState<CarouselApi>();
-  const [current, setCurrent] = useState(0);
-  const autoplayPlugin = useRef(emblaAutoplay({ delay: AUTOPLAY_DELAY, stopOnInteraction: false }));
+  const [api, setApi] = useState<CarouselApi>()
+  const [current, setCurrent] = useState(0)
+  const autoplayPlugin = useRef(emblaAutoplay({ delay: AUTOPLAY_DELAY, stopOnInteraction: false }))
 
   const onSelect = useCallback(() => {
-    if (!api) return;
-    setCurrent(api.selectedScrollSnap());
-  }, [api]);
+    if (!api) return
+    setCurrent(api.selectedScrollSnap())
+  }, [api])
 
   useEffect(() => {
-    if (!api) return;
+    if (!api) return
 
-    onSelect();
-    api.on("select", onSelect);
+    onSelect()
+    api.on("select", onSelect)
 
     return () => {
-      api.off("select", onSelect);
-    };
-  }, [api, onSelect]);
+      api.off("select", onSelect)
+    }
+  }, [api, onSelect])
 
   const handleMouseEnter = () => {
-    autoplayPlugin.current.stop();
-  };
+    autoplayPlugin.current.stop()
+  }
 
   const handleMouseLeave = () => {
-    autoplayPlugin.current.play();
-  };
+    autoplayPlugin.current.play()
+  }
 
   return (
     <div className="w-full" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>

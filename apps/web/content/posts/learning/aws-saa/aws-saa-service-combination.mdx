@@ -1,0 +1,57 @@
+---
+title: "AWS SAA - Service 조합 문제"
+description: "S3 Events, SQS, Lambda, API Gateway, DynamoDB 등 AWS 서비스 조합 솔루션"
+date: 2023-09-10
+categories: ["aws-saa"]
+tags: ["AWS", "SAA", "SQS", "Lambda", "DynamoDB"]
+author: "Carefreelife98"
+thumbnail: "/images/aws-saa2.png"
+published: true
+---
+
+# Service 조합 문제
+
+## S3 Events → SQS Queue → Lambda
+
+큰 이미지를 더 작은 압축 이미지로 변환하는 마이크로서비스를 설계할 때 (상태 비저장 구성 요소 사용):
+
+1. Amazon SQS 대기열을 생성
+2. 이미지가 S3에 업로드될 때 SQS 대기열에 알림을 보내도록 S3 구성
+3. Amazon SQS 대기열을 호출 소스로 사용하도록 Lambda 함수를 구성
+4. SQS 메시지가 성공적으로 처리되면 대기열에서 메시지를 삭제
+
+> SQS 대기열을 생성하고 이미지가 S3에 업로드될 때 SQS 대기열에 알림을 보내도록 S3 버킷을 구성하면 Lambda 함수가 상태 비저장 및 내구성 방식으로 트리거됨
+
+## S3 + CloudFront + API Gateway + Lambda + DynamoDB
+
+하루 1회 웹 사이트를 시작하고 피크 시간 동안 밀리초 지연 시간으로 시간당 수백만 개의 요청을 처리해야 하는 경우:
+
+**정답 솔루션:**
+- Amazon S3 버킷을 사용하여 웹 사이트의 정적 콘텐츠를 호스팅
+- Amazon CloudFront 배포를 배포. S3를 오리진으로 설정
+- 백엔드 API에 Amazon API Gateway 및 AWS Lambda 함수를 사용
+- Amazon DynamoDB에 데이터를 저장
+
+> - 정적인 웹사이트 요소들은 S3 + CloudFront로 빠르게 제공
+> - API Gateway에서 Lambda 함수를 호출해 DynamoDB에 데이터 저장
+> - DynamoDB는 확장성이 뛰어나고 밀리초 단위 액세스를 지원하는 데이터베이스
+
+**주의 사항:**
+- S3+CloudFront 조합은 정적 웹 사이트 호스팅만을 위한 것
+- RDS 사용 시 Auto Scaling 기능을 사용한다는 언급이 있어야 함
+
+## SQS Queue + Lambda - 대용량 데이터 처리
+
+Lambda 함수를 사용하여 Amazon Aurora PostgreSQL 데이터베이스에 대용량 데이터를 로드할 때 확장성을 개선하려면:
+
+1. 두 개의 Lambda 함수를 설정
+2. 정보를 수신할 하나의 기능을 구성
+3. 정보를 데이터베이스에 로드하도록 다른 기능을 구성
+4. **Amazon Simple Queue Service(Amazon SQS) 대기열**을 사용하여 Lambda 함수를 통합
+
+> 대기열(SQS)로 병목 현상을 방지할 수 있습니다.
+> **대량의 데이터 처리 + 확장성 개선 = SQS queue + Lambda 조합**
+
+---
+
+**AWS-SAA 개인 학습 관련 포스트입니다.**

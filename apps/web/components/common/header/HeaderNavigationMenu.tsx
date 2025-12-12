@@ -2,14 +2,7 @@
 
 import * as React from "react"
 import Link from "next/link"
-import {
-  CircleCheckIcon,
-  CircleHelpIcon,
-  CircleIcon,
-  GithubIcon,
-  LinkedinIcon,
-  MailIcon,
-} from "lucide-react"
+import { GithubIcon, LinkedinIcon, MailIcon } from "lucide-react"
 import { useIsMobile } from "@/hooks/use-mobile"
 import {
   NavigationMenu,
@@ -23,24 +16,7 @@ import { Card } from "@/components/ui/card"
 import { useRouter } from "next/navigation"
 import { siteConfig } from "@/config/site"
 import BlogHeaderLogoList from "./CareerLogoList"
-
-const postCategories: { title: string; href: string; description: string }[] = [
-  {
-    title: "AI",
-    href: "/posts/ai",
-    description: "AI 관련 소식, 트렌드, 기술 등",
-  },
-  {
-    title: "Development",
-    href: "/posts/dev",
-    description: "기술 포스팅",
-  },
-  {
-    title: "Life",
-    href: "/posts/life",
-    description: "공개 일기",
-  },
-]
+import { categoryTree } from "@/config/categories"
 
 export default function HeaderNavigationMenu() {
   const isMobile = useIsMobile()
@@ -84,9 +60,13 @@ export default function HeaderNavigationMenu() {
           <NavigationMenuTrigger>포스트</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid gap-2 sm:w-[400px] md:w-[500px] md:grid-cols-2 lg:w-[400px]">
-              {postCategories.map((postCategory, index) => (
-                <ListItem key={index} title={postCategory.title} href={postCategory.href}>
-                  {postCategory.description}
+              {categoryTree.map((category) => (
+                <ListItem
+                  key={category.slug}
+                  title={category.name}
+                  href={`/posts/category/${category.slug}`}
+                >
+                  {category.description || ""}
                 </ListItem>
               ))}
             </ul>

@@ -1,0 +1,94 @@
+---
+title: "Spring MVC 컨트롤러"
+description: "@RequestMapping과 @RestController를 활용한 Spring MVC 컨트롤러 구현 방법"
+date: 2023-05-01
+categories: ["spring"]
+tags: ["Spring", "Java", "MVC", "Controller"]
+author: "Carefreelife98"
+thumbnail: "/images/Spring/SpringMVC/rest_controller_1.png"
+published: true
+---
+
+# @RequestMapping
+
+> @RequestMapping 은 애노테이션을 활용한 스프링의 매우 유연하고 실용적인 컨트롤러이다.
+
+핸들러 매핑과 핸들러 어댑터 선정 기준에서 가장 높은 우선순위를 가진 `@RequestMappingHandlerMapping` / `@RequestMappingHandlerAdapter` 는 @RequestMapping 을 기반으로 만든 이름이다.
+
+```java
+@Controller
+public class CarefreeLifeMemberFormControllerV1 {
+
+   @RequestMapping("/springmvc/CarefreeLife/V1/members/new-form")
+   public ModelAndView process() {
+       return new ModelAndView("new-form");
+   }
+}
+```
+
+## @Controller
+
+- 클래스 레벨에 지정
+- 내부에 Component 애노테이션이 포함되어 있어서 Component Scan의 대상이 된다
+- 스프링이 실행되는 순간 Component Scan에 의해 자동으로 스프링 빈으로 등록된다
+- 스프링 MVC에서 애노테이션 기반 컨트롤러로 인식하게 해준다
+
+## @RequestMapping("URL")
+
+- 클래스 레벨, 메서드 레벨 지정 가능
+- 요청 정보를 매핑한다. 해당 URL이 호출되면 실행할 메소드를 지정
+- 애노테이션을 기반으로 동작하므로 실행 메서드의 이름은 원하는 대로 지어도 된다
+- 배열로 지정되어 있어 여러 URL을 지정할 수 있다
+  - ex. `@RequestMapping({"/carefree/v1", "/carefree/v3"})`
+
+### URL 통합 및 조합 기능
+
+```java
+@RequestMapping("/springmvc/CarefreeLife/V1")
+public class CarefreeLifeMemberControllerV3 {
+
+    @GetMapping("/member-form")
+    public String memberForm() {
+        return "member-form";
+    }
+
+    @GetMapping
+    public String members(Model model){
+        ...
+        return "members";
+    }
+
+    @PostMapping("/save")
+    public String saveMember(
+            @RequestParam("username") String username,
+            @RequestParam("age") int age,
+            Model model) {
+        ...
+        return "save-result";
+    }
+}
+```
+
+- 컨트롤러의 클래스 레벨에 적용시켜 메서드 단위가 아닌 클래스 단위로 통합이 가능하다
+- 중복되는 상위 URL을 하나로 묶어 클래스 레벨에 적용 후 메서드 단위로 추가 URL을 지정하여 조합도 가능하다
+
+예시:
+- 클래스 레벨 `@RequestMapping("/springmvc/v2/members")`: 공통된 상위 URL 지정
+- 메서드 레벨 `@RequestMapping("/new-form")` → `/springmvc/v2/members/new-form`
+- 메서드 레벨 `@RequestMapping("/save")` → `/springmvc/v2/members/save`
+- 메서드 레벨 `@RequestMapping` → `/springmvc/v2/members`
+
+# @RestController
+
+- 일반적으로 스프링의 `@Controller` 애노테이션을 사용하면 반환 값으로 view의 이름을 반환한다
+  - 이 경우 뷰 리졸버를 통해 뷰를 렌더링하여 화면에 띄워주게 된다
+- 하지만 `@RestController`를 사용하게 되면 반환값으로 view의 이름이 아닌 String을 반환하게 된다
+  - 이 경우 반환된 String을 HTTP Message Body에 즉각 삽입하여 HTTP response를 하게 된다
+
+![RestController 사용 예시](/images/Spring/SpringMVC/rest_controller_1.png)
+
+![HTTP Message Body에 삽입된 결과](/images/Spring/SpringMVC/rest_controller_2.png)
+
+---
+
+`참고:` [Inflearn - 김영한님 강의](https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-mvc-1/dashboard)

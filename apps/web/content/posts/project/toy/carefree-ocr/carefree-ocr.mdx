@@ -1,0 +1,53 @@
+---
+title: "Carefree OCR - Naver Clova OCR API 활용 프로젝트"
+description: "이미지에서 텍스트를 추출하는 OCR 서비스를 Spring Boot와 Naver Clova API로 구현"
+date: 2023-12-02
+categories: ["carefree-ocr"]
+tags: ["Spring Boot", "OCR", "Naver Clova", "AWS"]
+author: "Carefreelife98"
+thumbnail: "/images/Projects/ToyProjects/CarefreeOCR0.png"
+published: true
+---
+
+# Toy Project - Carefree OCR
+
+![Carefree OCR](/images/Projects/ToyProjects/CarefreeOCR0.png)
+
+> 어머니께서 평소 Excel을 사용하여 작업하시는데, **책자 내부에 존재하는 Data들을 일일히 손으로 Typing하여 Excel에 옮기시는 모습이 힘들어 보였다.**
+>
+> 이에 이번 토이 프로젝트 - [Carefree OCR]을 진행하게 되었다.
+
+## Main Idea & Tools
+
+휴대폰의 Camera를 사용하여 찍은 책자 이미지를 OCR 기술을 이용해서 Web 화면에 띄어준다면, 해당 Text만 복사하여 어머니께서 잘 사용하실 수 있을 것.
+
+**Tools:**
+- **Naver Cloud Platform - Naver Clova OCR API**
+  - 부분 유료 / API 호출 당 지불
+- **AWS EC2 - t2.micro / Amazon linux 2**
+  - Tomcat
+- **Github Actions**
+  - Workflow File
+  - Github Secrets
+- **Spring Boot 3.1.5**
+  - Dependencies:
+    - spring-boot-starter-thymeleaf
+    - spring-boot-starter-web
+    - json-simple
+    - lombok
+
+## Project Structure
+
+![Project Structure](/images/Projects/ToyProjects/CarefreeOCR1.png)
+
+> 초기 계획은 Docker Hub에 버전 별 이미지 저장 후 ArgoCD를 통해 배포할 계획이었으나 AWS ECR / EKS와 같은 컨테이너 서비스를 사용하자니 비용이 발생함.
+
+- **Github Actions를 통해 특정 Tag를 가진 EC2에 직접 Application을 Build하여 Spring Boot 내장 Tomcat 서버에 띄우기로 했다.**
+- Docker Hub에는 Image만 Build 후 업로드
+  - Project Backup 비슷한 개념으로 사용
+
+## Clova OCR API 사용하기
+
+NCP 자체에서 Sample code를 제공하고 설명 또한 잘 되어 있어 비슷한 프로젝트를 진행한다면 공식 Document를 참고하면 좋다.
+
+> 참고: [NCP - Clova OCR](https://guide.ncloud-docs.com/docs/ko/clovaocr-overview)

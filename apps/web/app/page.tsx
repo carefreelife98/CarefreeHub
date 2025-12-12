@@ -1,9 +1,9 @@
 "use client"
 
-import { MainCarousel } from "@/components/main/MainCarousel";
-import { MainHotPost } from "@/components/main/MainHotPost";
-import { MainLatestPost } from "@/components/main/MainLatestPost";
-import { Separator } from "@/components/ui/separator";
+import { MainCarousel } from "@/components/main/MainCarousel"
+import { MainHotPost } from "@/components/main/MainHotPost"
+import { MainLatestPost } from "@/components/main/MainLatestPost"
+import { Separator } from "@/components/ui/separator"
 
 export default function Home() {
   return (

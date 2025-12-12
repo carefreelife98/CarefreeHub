@@ -1,5 +1,4 @@
 import { defineConfig, defineCollection, s } from "velite"
-import rehypePrettyCode from "rehype-pretty-code"
 import rehypeSlug from "rehype-slug"
 import rehypeAutolinkHeadings from "rehype-autolink-headings"
 
@@ -18,7 +17,9 @@ const posts = defineCollection({
       tags: s.array(s.string()).default([]),
       author: s.string().default("Carefreelife98"),
       thumbnail: s.string().optional(),
-      body: s.markdown(),
+      code: s.mdx(),
+      body: s.raw(),
+      toc: s.toc(),
     })
     .transform((data) => {
       // s.path()는 "posts/hello-velite" 형태로 반환하므로 마지막 segment만 사용
@@ -43,18 +44,6 @@ export default defineConfig({
   },
   collections: { posts },
   mdx: {
-    rehypePlugins: [
-      rehypeSlug,
-      [rehypePrettyCode, { theme: "github-dark" }],
-      [
-        rehypeAutolinkHeadings,
-        {
-          behavior: "wrap",
-          properties: {
-            className: ["anchor"],
-          },
-        },
-      ],
-    ],
+    rehypePlugins: [rehypeSlug],
   },
 })

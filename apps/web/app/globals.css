@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@plugin "@tailwindcss/typography";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -119,4 +120,94 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* ============================================
+   Notion-style Prose Customizations
+   @tailwindcss/typography 기반 + 노션 스타일 오버라이드
+   ============================================ */
+
+/* Heading anchor scroll offset */
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4,
+.prose h5,
+.prose h6 {
+  scroll-margin-top: 6rem;
+}
+
+/* H2 좌측 포인트 바 */
+.prose h2 {
+  @apply relative pl-4;
+}
+.prose h2::before {
+  content: "";
+  @apply absolute left-0 top-1 bottom-1 w-1 bg-primary rounded-full;
+}
+
+/* Blockquote - 노션 callout 스타일 */
+.prose blockquote {
+  @apply bg-muted/50 rounded-r-lg not-italic;
+}
+
+
+/* 코드블록은 MDX 컴포넌트(CodeBlock, InlineCode)에서 처리 */
+/* prose 기본 code 스타일 제거 (MDX 컴포넌트가 처리) */
+.prose code::before,
+.prose code::after {
+  content: none !important;
+}
+.prose :where(code):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
+  background: transparent;
+  padding: 0;
+  font-weight: inherit;
+}
+
+/* Images - 둥근 모서리 */
+.prose img {
+  @apply rounded-lg border border-border/50 shadow-sm;
+}
+
+/* Tables - 호버 효과 */
+.prose tr:hover td {
+  @apply bg-muted/30;
+}
+
+/* Anchor links */
+.prose .anchor {
+  @apply no-underline hover:text-primary transition-colors;
+}
+
+/* ============================================
+   Collapsible Animations
+   ============================================ */
+@keyframes collapsible-down {
+  from {
+    height: 0;
+    opacity: 0;
+  }
+  to {
+    height: var(--radix-collapsible-content-height);
+    opacity: 1;
+  }
+}
+
+@keyframes collapsible-up {
+  from {
+    height: var(--radix-collapsible-content-height);
+    opacity: 1;
+  }
+  to {
+    height: 0;
+    opacity: 0;
+  }
+}
+
+.animate-collapsible-down {
+  animation: collapsible-down 0.2s ease-out;
+}
+
+.animate-collapsible-up {
+  animation: collapsible-up 0.2s ease-out;
 }

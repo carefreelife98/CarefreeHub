@@ -55,6 +55,15 @@ CarefreeHub/
 └── packages/                   # Shared packages (empty)
 ```
 
+## Development Rules
+
+### UI Components
+
+- **shadcn/ui 우선 사용**: 새 컴포넌트 구현 시 https://ui.shadcn.com/ 컴포넌트 우선 활용
+- **설치되지 않은 shadcn/ui 컴포넌트는 설치 허용**: `npx shadcn@latest add [component]`
+- **커스텀 컴포넌트**: shadcn/ui에 없는 경우에만 직접 구현
+- **Radix UI 직접 사용**: shadcn/ui wrapper가 불필요한 경우 Radix 직접 사용 가능
+
 ## Key Patterns
 
 ### Styling

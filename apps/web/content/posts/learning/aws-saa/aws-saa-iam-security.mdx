@@ -1,0 +1,60 @@
+---
+title: "AWS SAA - IAM / Security"
+description: "AWS Organizations, Secrets Manager, Network Firewall 등 IAM 및 보안 관련 솔루션"
+date: 2023-09-10
+categories: ["aws-saa"]
+tags: ["AWS", "SAA", "IAM", "Security"]
+author: "Carefreelife98"
+thumbnail: "/images/aws-saa2.png"
+published: true
+---
+
+# IAM / 보안
+
+## AWS Organizations
+
+AWS Organizations를 사용하여 여러 부서의 AWS 계정 관리. 관리 계정에 대한 Access를 AWS Organization의 조직 내 계정 사용자로만 제한하려면:
+
+- `aws:PrincipalOrgID`라는 새로운 조건 키를 S3 버킷 정책에 추가
+
+## AWS Secrets Manager - 자격 증명 교체
+
+여러 AWS Region에서 RDS에 대한 자격 증명 교체를 최소한의 운영 오버헤드로 수행하려면:
+
+- 자격 증명을 ASM(AWS Secrets Manager)에 암호로 저장
+- 필요한 Region에 대해 다중 Region 비밀 복제 사용
+- 일정에 따라 보안 암호를 교체하도록 ASM 구성
+  - Secrets Manager를 사용하면 데이터베이스 자격 증명, API 키 및 기타 비밀을 저장, 검색, 관리 및 교체할 수 있다
+
+## AWS Network Firewall - 트래픽 검사 및 필터링
+
+프로덕션 VPC로 들어오고 나가는 트래픽을 보호하려면:
+
+- **AWS 네트워크 방화벽**을 사용하여 프로덕션 VPC에 대한 트래픽 검사 및 트래픽 필터링에 필요한 규칙을 생성
+  - AWS Network Firewall은 필요에 따라 검사와 필터링을 모두 지원
+  - VPC 경계에서 네트워크 트래픽을 필터링할 수 있다
+
+> **참고**
+> - `GuardDuty`: 계정 보호 서비스
+> - `트래픽 미러링`: 네트워크 트래픽 복사 서비스
+> - `Firewall Manager`: 중앙에서 방화벽 규칙 관리하는 서비스
+
+## IAM 역할 - EC2와 S3 연결
+
+EC2가 S3에 액세스하도록 하려면:
+
+1. Amazon S3에 대한 액세스 권한을 부여하는 IAM Profile 역할을 생성
+2. EC2에 IAM 인스턴스 프로파일을 연결
+3. S3에 대한 권한을 확인
+
+## CloudWatch 대시보드 공유
+
+AWS 계정이 없는 제품 관리자에게 CloudWatch 대시보드 액세스를 제공하려면:
+
+- CloudWatch 콘솔에서 대시보드를 공유
+- 제품 관리자의 이메일 주소를 입력하고 공유 단계를 완료
+- 대시보드에 대한 공유 가능한 링크를 제품 관리자에게 제공
+
+---
+
+**AWS-SAA 개인 학습 관련 포스트입니다.**

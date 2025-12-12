@@ -1,0 +1,51 @@
+---
+title: "Kubernetes - MSA(Microservice Architecture)"
+description: "마이크로서비스 아키텍처의 특징, 장점, 그리고 컨테이너 환경에서의 적용"
+date: 2023-07-07
+categories: ["cloudwave"]
+tags: ["Kubernetes", "MSA", "Microservices", "Architecture"]
+author: "Carefreelife98"
+thumbnail: "/images/CloudWave/Kubernetes/MicroserviceArchitecture.jpg"
+published: true
+---
+
+# Microservice Architecture (MSA)
+
+Software Application을 구축하는 하나의 Architecture Style로, Application을 작고 독립적인 단위(Microservice)로 나누는 접근 방식이다. 각각의 Microservice는 자체적, 독립적으로 배포 및 실행될 수 있다.
+
+![Microservice Architecture](/images/CloudWave/Kubernetes/MicroserviceArchitecture.jpg)
+
+## MSA의 특징 및 장점 5가지
+
+### 1. 느슨한 결합 (Loosely Coupled)
+
+![Loosely Coupled](/images/CloudWave/Kubernetes/LooselyCoupled.png)
+
+- **각각의 Microservices들은 독립적으로 작동하므로 다른 서비스와 느슨하게 결합**된다.
+- 시스템의 그 어떤 부분도 추가 변경할 필요 없이 특정 서비스를 변경하고 바로 배포할 수 있다.
+- 따라서 한 서비스의 변경이 다른 서비스에 영향을 미치는 일이 적다.
+- 강한 결합은 변경을 더 어렵게 하며 시험 가능성(testability)를 지연시킨다.
+
+### 응집력 (High-Cohesion)
+
+![High-Cohesion](/images/CloudWave/Kubernetes/HighCohesion.png)
+
+도메인은 다수의 경계가 있는 컨텍스트로 구성됨.
+
+![Bounded Context](/images/CloudWave/Kubernetes/BoundedContext.png)
+
+- Bounded Context(결정 경계)는 명료한 경계에 의해 강제된 구체적인 책임을 구분
+- **서로 의존하여 같이 변경되어야 할 서비스들을 하나의 서비스 안에 담는 것**
+  - **SOLID 원칙 중 단일 책임 원칙(Single Responsibility)**
+  - **하나의 마이크로 서비스 안에는 함께 변경되는 것들을 같은 곳에 모아 놓는다**
+- 설계 시 주의할 점은 업무 도메인을 정의하고, 해당 **업무 도메인 내부에서의 변경을 고려해 각각의 Microservice를 분리**해놓아야 한다.
+
+### 2. 독립적 배포
+
+![Microservice Development Lifecycle](/images/CloudWave/Kubernetes/MicroserviceDevelopmentLifecycle.png)
+
+- 각 Microservice는 독립적으로 배포될 수 있다.
+- **애플리케이션의 일부만 업데이트하거나 확장할 수 있으므로 전체 애플리케이션을 다시 배포할 필요가 없다.**
+  - **전체 빌드(Build)가 아닌, 서비스 단위의 빌드 및 배포**
+  - 컨테이너 환경에 매우 적합
+  - **Test Code 또는 TDD**가 필요

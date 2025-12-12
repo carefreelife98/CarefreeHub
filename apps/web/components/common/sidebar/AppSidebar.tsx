@@ -4,20 +4,21 @@ import {
   SidebarContent,
   SidebarHeader,
   SidebarFooter,
-  SidebarGroup,
   Sidebar,
   useSidebar,
 } from "@/components/ui/sidebar"
 import AppSidebarHeader from "./header/AppSidebarHeader"
 import AppSidebarFooter from "./footer/AppSidebarFooter"
+import { CategoryNav } from "./content/CategoryNav"
 import Logo from "../icons/Logo"
 import { SidebarIcon } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { useRouter } from "next/navigation"
 
 export function AppSidebar() {
   const { state, toggleSidebar } = useSidebar()
   const isExpanded = state === "expanded"
-
+  const router = useRouter()
   return (
     <Sidebar collapsible="icon" className="">
       <SidebarHeader className="flex flex-col">
@@ -27,7 +28,8 @@ export function AppSidebar() {
         >
           {/* Logo - GPU 가속 transform + opacity 사용 */}
           <div
-            className={`overflow-hidden will-change-transform transition-[width,opacity] duration-300 ease-[cubic-bezier(0.32,0.72,0,1)] flex items-center gap-2 h-8 ${isExpanded ? "w-auto opacity-100" : "w-0 opacity-0"}`}
+            className={`overflow-hidden will-change-transform transition-[width,opacity] duration-300 ease-[cubic-bezier(0.32,0.72,0,1)] flex items-center gap-2 h-8 hover:cursor-pointer ${isExpanded ? "w-auto opacity-100" : "w-0 opacity-0"}`}
+            onClick={() => router.push("/")}
           >
             <Logo
               className={`w-8 h-8 shrink-0 transition-[transform,opacity] duration-300 ease-[cubic-bezier(0.32,0.72,0,1)] transform-gpu ${isExpanded ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-4"}`}
@@ -65,8 +67,7 @@ export function AppSidebar() {
       </SidebarHeader>
 
       <SidebarContent>
-        <SidebarGroup />
-        <SidebarGroup />
+        <CategoryNav />
       </SidebarContent>
 
       {/* Footer - 동일한 grid 패턴 */}

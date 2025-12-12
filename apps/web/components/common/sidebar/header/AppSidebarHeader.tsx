@@ -1,27 +1,31 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import Image from "next/image"
 import { siteConfig } from "@/config/site"
 import { BorderBeam } from "@/components/ui/border-beam"
 
 export default function AppSidebarHeader() {
   return (
-    <Card className="relative">
-      <BorderBeam duration={8} size={200} borderWidth={2} />
-      <CardHeader>
-        <Image
-          src="/user/author.jpeg"
-          alt="author-image"
-          width={256}
-          height={256}
-          className="rounded-full"
-        />
-        <CardTitle className="text-xl font-semibold text-center">
-          {siteConfig.header.author.title}
-        </CardTitle>
-        <CardDescription className="text-center text-sm text-muted-foreground">
-          {siteConfig.header.author.job}
-        </CardDescription>
-        <CardDescription className="text-center">
+    <Card className="relative p-0">
+      <BorderBeam duration={8} size={100} borderWidth={1.5} />
+      <CardHeader className="p-3 gap-2">
+        <div className="flex flex-row items-center gap-3">
+          <Image
+            src="/user/author.jpeg"
+            alt="author-image"
+            width={48}
+            height={48}
+            className="rounded-full shrink-0"
+          />
+          <div className="flex flex-col min-w-0">
+            <CardTitle className="text-sm font-semibold truncate">
+              {siteConfig.header.author.title}
+            </CardTitle>
+            <CardDescription className="text-xs text-center text-muted-foreground truncate">
+              {siteConfig.header.author.job}
+            </CardDescription>
+          </div>
+        </div>
+        <CardDescription className="text-xs text-center line-clamp-2 py-2">
           {siteConfig.header.author.description}
         </CardDescription>
       </CardHeader>

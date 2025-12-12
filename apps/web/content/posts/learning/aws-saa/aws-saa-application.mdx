@@ -1,0 +1,24 @@
+---
+title: "AWS SAA - Application"
+description: "CloudFront를 활용한 정적/동적 콘텐츠 성능 최적화"
+date: 2023-09-10
+categories: ["aws-saa"]
+tags: ["AWS", "SAA", "Application", "CloudFront"]
+author: "Carefreelife98"
+thumbnail: "/images/aws-saa2.png"
+published: true
+---
+
+# Application
+
+## CloudFront - 정적/동적 데이터 성능 개선
+
+ALB 뒤의 EC2에서 Web Application 호스팅 중, Web Application의 정적 데이터는 S3에 저장. 정적/동적 데이터의 성능 개선 및 대기 시간의 감소를 위해:
+
+- **S3 및 ALB를 오리진으로 포함하는 Amazon CloudFront 배포**를 생성
+- CloudFront 배포로 트래픽을 라우팅하도록 Route 53을 구성
+- 정적 콘텐츠는 S3의 CloudFront 엣지 위치에서 캐싱하고, ALB 뒤의 동적 콘텐츠는 EC2에서 처리
+
+---
+
+**AWS-SAA 개인 학습 관련 포스트입니다.**
