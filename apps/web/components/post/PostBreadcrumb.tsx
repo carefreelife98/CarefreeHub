@@ -23,7 +23,7 @@ export function PostBreadcrumb({ category, isCurrentPage = false }: PostBreadcru
   }
 
   return (
-    <Breadcrumb className="mb-6">
+    <Breadcrumb className="mb-6 pb-1 border-b">
       <BreadcrumbList>
         <BreadcrumbItem>
           <BreadcrumbLink asChild>

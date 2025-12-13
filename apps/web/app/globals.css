@@ -137,10 +137,27 @@
   scroll-margin-top: 6rem;
 }
 
-/* H2 좌측 포인트 바 */
-.prose h2 {
-  @apply relative pl-4;
+/* Heading 크기 한 단계씩 축소 */
+.prose h1 {
+  @apply text-2xl;
 }
+.prose h2 {
+  @apply text-xl relative pl-4;
+}
+.prose h3 {
+  @apply text-lg;
+}
+.prose h4 {
+  @apply text-base;
+}
+.prose h5 {
+  @apply text-sm;
+}
+.prose h6 {
+  @apply text-xs;
+}
+
+/* H2 좌측 포인트 바 */
 .prose h2::before {
   content: "";
   @apply absolute left-0 top-1 bottom-1 w-1 bg-primary rounded-full;
