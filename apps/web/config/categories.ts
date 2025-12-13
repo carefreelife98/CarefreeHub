@@ -1,4 +1,4 @@
-import { LucideIcon, Server, Briefcase, BookOpen, Folder } from "lucide-react"
+import { LucideIcon, Server, Briefcase, BookOpen, Folder, Megaphone } from "lucide-react"
 
 /**
  * 카테고리 노드 타입
@@ -85,10 +85,19 @@ export const categoryTree: CategoryNode[] = [
         slug: "cloudwave",
         color: "bg-orange-500/15 text-orange-600 dark:text-orange-400",
       },
+    ],
+  },
+  {
+    name: "Seminar",
+    slug: "seminar",
+    icon: Megaphone,
+    color: "bg-red-500/15 text-red-600 dark:text-red-400",
+    description: "세미나 후기 및 관련 정보",
+    children: [
       {
-        name: "AWS SAA",
-        slug: "aws-saa",
-        color: "bg-yellow-500/15 text-yellow-600 dark:text-yellow-400",
+        name: "Goorm",
+        slug: "goorm",
+        color: "bg-neutral-200/50 text-neutral-800 dark:bg-neutral-700/50 dark:text-neutral-200",
       },
     ],
   },

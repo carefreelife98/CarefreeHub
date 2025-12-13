@@ -90,6 +90,18 @@ export function CJIcon({ size = 24 }: { size?: number }) {
   )
 }
 
+export function GoormIcon({ size = 24 }: { size?: number }) {
+  return (
+    <img
+      src="/logo/goorm-logo.jpeg"
+      alt="Goorm"
+      width={size}
+      height={size}
+      style={{ borderRadius: "4px" }}
+    />
+  )
+}
+
 // ============================================
 // 카테고리 아이콘 매핑
 // ============================================
@@ -113,6 +125,7 @@ export const categoryIcons: Record<string, React.ComponentType<{ size?: number }
   // Learning 관련
   cloudwave: CJIcon,
   "aws-saa": AWSIcon,
+  goorm: GoormIcon,
 }
 
 /**
