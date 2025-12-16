@@ -1,3 +1,4 @@
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import type { Metadata } from "next"
 import { Suspense } from "react"
 import "./globals.css"
@@ -76,6 +77,7 @@ export default function RootLayout({
           </SidebarInset>
         </SidebarProvider>
         <Toaster />
+        <SpeedInsights />
       </body>
     </html>
   )
