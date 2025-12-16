@@ -1,6 +1,6 @@
 export const siteConfig = {
   name: "Carefree Hub",
-  url: "https://carefree-hub.vercel.app/",
+  url: "https://www.carefreelab.cloud",
   logo: {
     src: "/logo.png",
     alt: "Carefree Hub",
