@@ -1,7 +1,6 @@
-import { ThumbnailPost } from "@/components/common/post/ThumbnailPost"
-import { PostPagination } from "@/components/common/post/PostPagination"
-import { getPaginatedPosts, getTotalPages } from "@/lib/posts"
-import { getCategoryColor } from "@/config/categories"
+import { ThumbnailPost, PostPagination } from "@features/post"
+import { getPaginatedPosts, getTotalPages } from "@shared/lib"
+import { getCategoryColor } from "@shared/config"
 import { notFound } from "next/navigation"
 import type { Metadata } from "next"
 

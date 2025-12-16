@@ -1,11 +1,11 @@
 import type { Metadata } from "next"
+import { Suspense } from "react"
 import "./globals.css"
-import { SidebarInset, SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar"
-import { AppSidebar } from "@/components/common/sidebar/AppSidebar"
-import { siteConfig } from "@/config/site"
-import BlogHeader from "@/components/common/header/BlogHeader"
-import { Toaster } from "@/components/ui/sonner"
-import { ScrollArea } from "@/components/ui/scroll-area"
+import { SidebarInset, SidebarProvider, Toaster } from "@shared/ui"
+import { AppSidebar } from "@features/sidebar"
+import { siteConfig } from "@shared/config"
+import { BlogHeader } from "@widgets/header"
+import { GoogleAnalyticsProvider } from "@features/analytics"
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -61,6 +61,9 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body>
+        <Suspense fallback={null}>
+          <GoogleAnalyticsProvider />
+        </Suspense>
         <SidebarProvider>
           <AppSidebar />
           <SidebarInset className="flex flex-col h-screen max-h-screen min-w-0">

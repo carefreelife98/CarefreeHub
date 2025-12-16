@@ -1,5 +1,5 @@
 import { posts } from "#site/content"
-import { siteConfig } from "@/config/site"
+import { siteConfig } from "@shared/config"
 import { MetadataRoute } from "next"
 
 export default function sitemap(): MetadataRoute.Sitemap {

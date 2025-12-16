@@ -1,12 +1,14 @@
 import { posts } from "#site/content"
 import { notFound } from "next/navigation"
 import { Metadata } from "next"
-import { siteConfig } from "@/config/site"
-import { PostBreadcrumb } from "@/components/post/PostBreadcrumb"
-import { PostHeader } from "@/components/post/PostHeader"
-import { PostTags } from "@/components/post/PostTags"
-import { MDXContent } from "@/components/mdx/MDXContent"
-import { ResizablePostLayout } from "@/components/post/ResizablePostLayout"
+import { siteConfig } from "@shared/config"
+import {
+  PostBreadcrumb,
+  PostHeader,
+  PostTags,
+  MDXContent,
+  ResizablePostLayout,
+} from "@features/post"
 
 export async function generateStaticParams() {
   return posts.map((post) => ({

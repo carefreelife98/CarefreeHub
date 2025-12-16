@@ -1,8 +1,6 @@
-import { MainCarousel } from "@/components/main/MainCarousel"
-import { MainHotPost } from "@/components/main/MainHotPost"
-import { MainLatestPost } from "@/components/main/MainLatestPost"
-import { Separator } from "@/components/ui/separator"
-import { getFeaturedPosts } from "@/lib/posts"
+import { MainCarousel, MainHotPost, MainLatestPost } from "@widgets/main-section"
+import { Separator } from "@shared/ui"
+import { getFeaturedPosts } from "@shared/lib"
 
 export default function Home() {
   const featuredPosts = getFeaturedPosts(5)

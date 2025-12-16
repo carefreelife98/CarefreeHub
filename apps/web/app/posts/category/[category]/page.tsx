@@ -1,14 +1,12 @@
 import { posts } from "#site/content"
-import { GridPost } from "@/components/common/post/GridPost"
-import { PostBreadcrumb } from "@/components/post/PostBreadcrumb"
-import { PostListHeader } from "@/components/post/PostListHeader"
+import { GridPost, PostBreadcrumb, PostListHeader } from "@features/post"
 import {
   findCategoryBySlug,
   getCategoryWithDescendants,
   getCategoryIcon,
   getCategoryColor,
-} from "@/config/categories"
-import { getCategoryCustomIcon } from "@/components/common/icons/CategoryIcons"
+} from "@shared/config"
+import { getCategoryCustomIcon } from "@shared/icons"
 
 export async function generateStaticParams() {
   const categories = Array.from(new Set(posts.flatMap((post) => post.categories)))

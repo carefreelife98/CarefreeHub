@@ -1,6 +1,5 @@
 import { posts } from "#site/content"
-import { ThumbnailPost } from "@/components/common/post/ThumbnailPost"
-import { PostListHeader } from "@/components/post/PostListHeader"
+import { ThumbnailPost, PostListHeader } from "@features/post"
 
 export async function generateStaticParams() {
   const tags = Array.from(new Set(posts.flatMap((post) => post.tags)))
