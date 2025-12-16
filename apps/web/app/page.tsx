@@ -1,14 +1,15 @@
-"use client"
-
 import { MainCarousel } from "@/components/main/MainCarousel"
 import { MainHotPost } from "@/components/main/MainHotPost"
 import { MainLatestPost } from "@/components/main/MainLatestPost"
 import { Separator } from "@/components/ui/separator"
+import { getFeaturedPosts } from "@/lib/posts"
 
 export default function Home() {
+  const featuredPosts = getFeaturedPosts(5)
+
   return (
-    <div className="w-full flex flex-col items-center px-32 gap-16 py-8">
-      <MainCarousel />
+    <div className="w-full flex flex-col items-center px-4 md:px-8 lg:px-16 xl:px-32 gap-16 py-8">
+      <MainCarousel posts={featuredPosts} />
       <div className="w-full flex flex-row items-start justify-between gap-4 h-full">
         <div className="flex-[2] flex-col">
           <MainLatestPost />

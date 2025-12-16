@@ -1,6 +1,7 @@
 import { defineConfig, defineCollection, s } from "velite"
 import rehypeSlug from "rehype-slug"
 import rehypeAutolinkHeadings from "rehype-autolink-headings"
+import remarkGfm from "remark-gfm"
 
 const posts = defineCollection({
   name: "Post",
@@ -17,6 +18,7 @@ const posts = defineCollection({
       tags: s.array(s.string()).default([]),
       author: s.string().default("Carefreelife98"),
       thumbnail: s.string().optional(),
+      featured: s.number().optional(),
       code: s.mdx(),
       body: s.raw(),
       toc: s.toc(),
@@ -44,6 +46,7 @@ export default defineConfig({
   },
   collections: { posts },
   mdx: {
+    remarkPlugins: [remarkGfm],
     rehypePlugins: [rehypeSlug],
   },
 })

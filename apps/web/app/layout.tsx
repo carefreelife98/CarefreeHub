@@ -63,7 +63,7 @@ export default function RootLayout({
       <body>
         <SidebarProvider>
           <AppSidebar />
-          <SidebarInset className="flex flex-col h-screen min-w-0">
+          <SidebarInset className="flex flex-col h-screen max-h-screen min-w-0">
             <header className="sticky top-0 z-30 bg-background">
               <BlogHeader />
             </header>
