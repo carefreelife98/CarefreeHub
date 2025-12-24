@@ -1,12 +1,12 @@
-import type { RecapConfig, SlideConfig } from "../model/types"
+import type { RecapConfig, SlideConfig } from "../../model/types"
 import { getBlogRecapStats } from "./get-recap-stats"
 
-// 슬라이드 컴포넌트들 (동적 import를 위해 string으로 참조)
-import { IntroSlide } from "../ui/slides/IntroSlide"
-import { StatsSlide } from "../ui/slides/StatsSlide"
-import { ChartSlide } from "../ui/slides/ChartSlide"
-import { HighlightSlide } from "../ui/slides/HighlightSlide"
-import { OutroSlide } from "../ui/slides/OutroSlide"
+// 슬라이드 컴포넌트들
+import { IntroSlide } from "../../ui/slides/IntroSlide"
+import { StatsSlide } from "../../ui/slides/StatsSlide"
+import { ChartSlide } from "../../ui/slides/ChartSlide"
+import { HighlightSlide } from "../../ui/slides/HighlightSlide"
+import { OutroSlide } from "../../ui/slides/OutroSlide"
 
 import type {
   IntroSlideData,
@@ -14,7 +14,7 @@ import type {
   ChartSlideData,
   HighlightSlideData,
   OutroSlideData,
-} from "../model/types"
+} from "../../model/types"
 
 /**
  * 블로그 Recap 설정 생성
@@ -244,7 +244,7 @@ export function createBlogRecapConfig(year: number): RecapConfig {
 
   return {
     id: `blog-recap-${year}`,
-    title: `${year} Recap`,
+    title: `${year} Tech Blog Recap`,
     slides,
     theme: {
       primary: "#3b82f6",

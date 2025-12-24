@@ -6,10 +6,9 @@ import { ArrowRight, Sparkles } from "lucide-react"
 
 interface RecapBannerProps {
   year: number
-  postCount: number
 }
 
-export function RecapBanner({ year, postCount }: RecapBannerProps) {
+export function RecapBanner({ year }: RecapBannerProps) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -43,11 +42,9 @@ export function RecapBanner({ year, postCount }: RecapBannerProps) {
                 </span>
               </div>
               <h3 className="text-xl md:text-2xl font-bold text-white mb-2">
-                올해의 기록을 돌아보세요
+                올해 개발자 채승민의 성장 기록
               </h3>
-              <p className="text-white/60 text-sm">
-                {postCount}개의 글과 함께 한 해를 되돌아봅니다
-              </p>
+              <p className="text-white/60 text-sm">한 해를 회고하고 내년을 준비합니다</p>
             </div>
 
             <motion.div

@@ -1,5 +1,10 @@
 import { notFound } from "next/navigation"
-import { RecapContainer, createBlogRecapConfig, getAvailableRecapYears } from "@features/recap"
+import {
+  RecapContainer,
+  createBlogRecapConfig,
+  createGeneralRecapConfig,
+  getAvailableRecapYears,
+} from "@features/recap"
 
 interface RecapPageProps {
   params: Promise<{ year: string }>
@@ -31,7 +36,8 @@ export default async function RecapPage({ params }: RecapPageProps) {
     notFound()
   }
 
-  const config = createBlogRecapConfig(year)
+  // const config = createBlogRecapConfig(year)
+  const config = createGeneralRecapConfig(year)
 
   return <RecapContainer config={config} />
 }

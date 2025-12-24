@@ -76,7 +76,6 @@ export default function HeaderNavigationMenu() {
             <span className="flex items-center gap-1.5">
               <ScrollText className="w-4 h-4" />
               Recap
-              <Sparkles className="w-3 h-3 text-amber-400" />
             </span>
           </NavigationMenuTrigger>
           <NavigationMenuContent>
@@ -91,9 +90,7 @@ export default function HeaderNavigationMenu() {
                       <ScrollText className="w-5 h-5 text-amber-500" />
                       <span className="font-medium">연간 Recap</span>
                     </div>
-                    <p className="text-muted-foreground text-sm">
-                      한 해를 돌아보는 인터랙티브 화면
-                    </p>
+                    <p className="text-muted-foreground text-sm">한 해를 돌아보는 공간</p>
                   </Link>
                 </NavigationMenuLink>
               </li>

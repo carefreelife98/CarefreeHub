@@ -6,7 +6,7 @@ import type {
   MonthlyActivity,
   TagStat,
   PostHighlight,
-} from "../model/types"
+} from "../../model/types"
 
 const MONTH_NAMES = [
   "1월",
