@@ -39,6 +39,11 @@ export interface BackgroundConfig {
 }
 
 /**
+ * 슬라이드 테마
+ */
+export type SlideTheme = "dark" | "light"
+
+/**
  * 슬라이드 기본 Props
  * 모든 슬라이드 컴포넌트는 이 props를 받습니다.
  */
@@ -51,6 +56,8 @@ export interface BaseSlideProps<T = unknown> {
   index: number
   /** 총 슬라이드 수 */
   totalSlides: number
+  /** 슬라이드 테마 (밝은/어두운) */
+  theme?: SlideTheme
   /** 다음 슬라이드로 이동 */
   onNext?: () => void
   /** 이전 슬라이드로 이동 */
@@ -75,6 +82,8 @@ export interface SlideConfig<T = unknown> {
   animation?: AnimationConfig
   /** 배경 설정 (선택) */
   background?: BackgroundConfig
+  /** 슬라이드 테마 - dark: 어두운 배경, light: 밝은 배경 */
+  theme?: SlideTheme
 }
 
 /**

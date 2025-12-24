@@ -5,9 +5,10 @@ import type { BaseSlideProps, IntroSlideData } from "../../model/types"
 import { RecapNavigation } from "../RecapNavigation"
 import { useIsMobile } from "@/src/shared/hooks"
 
-export function IntroSlide({ data, isActive }: BaseSlideProps<IntroSlideData>) {
+export function IntroSlide({ data, isActive, theme = "dark" }: BaseSlideProps<IntroSlideData>) {
   const { year, title, subtitle } = data
   const isMobile = useIsMobile()
+  const isDark = theme === "dark"
 
   return (
     <div className="flex flex-col items-center justify-center text-center px-8 max-w-3xl mx-auto">
@@ -61,7 +62,9 @@ export function IntroSlide({ data, isActive }: BaseSlideProps<IntroSlideData>) {
           transition={{ delay: 1.2, duration: 0.6 }}
         >
           <motion.span
-            className="text-white/40 text-sm font-light tracking-wide"
+            className={`text-sm font-light tracking-wide ${
+              isDark ? "text-white/40" : "text-neutral-400"
+            }`}
             animate={{ opacity: [0.4, 0.7, 0.4] }}
             transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
           >
@@ -69,7 +72,7 @@ export function IntroSlide({ data, isActive }: BaseSlideProps<IntroSlideData>) {
           </motion.span>
         </motion.div>
       ) : (
-        <RecapNavigation />
+        <RecapNavigation theme={theme} />
       )}
     </div>
   )

@@ -17,8 +17,12 @@ import {
 } from "recharts"
 import type { BaseSlideProps, ChartSlideData } from "../../model/types"
 
-export function ChartSlide({ data, isActive }: BaseSlideProps<ChartSlideData>) {
+export function ChartSlide({ data, isActive, theme = "dark" }: BaseSlideProps<ChartSlideData>) {
   const { title, subtitle, chartType, data: chartData } = data
+  const isDark = theme === "dark"
+
+  const tickColor = isDark ? "rgba(255,255,255,0.5)" : "rgba(0,0,0,0.5)"
+  const axisColor = isDark ? "rgba(255,255,255,0.1)" : "rgba(0,0,0,0.1)"
 
   const renderChart = () => {
     switch (chartType) {
@@ -28,13 +32,13 @@ export function ChartSlide({ data, isActive }: BaseSlideProps<ChartSlideData>) {
             <BarChart data={chartData} margin={{ top: 20, right: 20, bottom: 20, left: 20 }}>
               <XAxis
                 dataKey="name"
-                tick={{ fill: "rgba(255,255,255,0.5)", fontSize: 12 }}
-                axisLine={{ stroke: "rgba(255,255,255,0.1)" }}
+                tick={{ fill: tickColor, fontSize: 12 }}
+                axisLine={{ stroke: axisColor }}
                 tickLine={false}
               />
               <YAxis
-                tick={{ fill: "rgba(255,255,255,0.5)", fontSize: 12 }}
-                axisLine={{ stroke: "rgba(255,255,255,0.1)" }}
+                tick={{ fill: tickColor, fontSize: 12 }}
+                axisLine={{ stroke: axisColor }}
                 tickLine={false}
               />
               <Bar
@@ -82,13 +86,13 @@ export function ChartSlide({ data, isActive }: BaseSlideProps<ChartSlideData>) {
             <LineChart data={chartData} margin={{ top: 20, right: 20, bottom: 20, left: 20 }}>
               <XAxis
                 dataKey="name"
-                tick={{ fill: "rgba(255,255,255,0.5)", fontSize: 12 }}
-                axisLine={{ stroke: "rgba(255,255,255,0.1)" }}
+                tick={{ fill: tickColor, fontSize: 12 }}
+                axisLine={{ stroke: axisColor }}
                 tickLine={false}
               />
               <YAxis
-                tick={{ fill: "rgba(255,255,255,0.5)", fontSize: 12 }}
-                axisLine={{ stroke: "rgba(255,255,255,0.1)" }}
+                tick={{ fill: tickColor, fontSize: 12 }}
+                axisLine={{ stroke: axisColor }}
                 tickLine={false}
               />
               <Line
@@ -116,13 +120,13 @@ export function ChartSlide({ data, isActive }: BaseSlideProps<ChartSlideData>) {
               </defs>
               <XAxis
                 dataKey="name"
-                tick={{ fill: "rgba(255,255,255,0.5)", fontSize: 12 }}
-                axisLine={{ stroke: "rgba(255,255,255,0.1)" }}
+                tick={{ fill: tickColor, fontSize: 12 }}
+                axisLine={{ stroke: axisColor }}
                 tickLine={false}
               />
               <YAxis
-                tick={{ fill: "rgba(255,255,255,0.5)", fontSize: 12 }}
-                axisLine={{ stroke: "rgba(255,255,255,0.1)" }}
+                tick={{ fill: tickColor, fontSize: 12 }}
+                axisLine={{ stroke: axisColor }}
                 tickLine={false}
               />
               <Area
@@ -143,7 +147,9 @@ export function ChartSlide({ data, isActive }: BaseSlideProps<ChartSlideData>) {
   return (
     <div className="flex flex-col items-center justify-center text-center px-8 max-w-4xl mx-auto w-full">
       <motion.h2
-        className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4"
+        className={`text-3xl md:text-4xl lg:text-5xl font-bold mb-4 ${
+          isDark ? "text-white" : "text-neutral-900"
+        }`}
         initial={{ opacity: 0, y: 20 }}
         animate={isActive ? { opacity: 1, y: 0 } : {}}
         transition={{ delay: 0.2, duration: 0.6 }}
@@ -153,7 +159,7 @@ export function ChartSlide({ data, isActive }: BaseSlideProps<ChartSlideData>) {
 
       {subtitle && (
         <motion.p
-          className="text-lg md:text-xl text-white/50 mb-12"
+          className={`text-lg md:text-xl mb-12 ${isDark ? "text-white/50" : "text-neutral-500"}`}
           initial={{ opacity: 0, y: 20 }}
           animate={isActive ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.3, duration: 0.6 }}
@@ -184,7 +190,9 @@ export function ChartSlide({ data, isActive }: BaseSlideProps<ChartSlideData>) {
               className="w-3 h-3 rounded-full"
               style={{ backgroundColor: item.color ?? "#3b82f6" }}
             />
-            <span className="text-sm text-white/60">{item.name}</span>
+            <span className={`text-sm ${isDark ? "text-white/60" : "text-neutral-600"}`}>
+              {item.name}
+            </span>
           </div>
         ))}
       </motion.div>

@@ -1,14 +1,23 @@
 "use client"
 
 import { motion } from "motion/react"
+import type { SlideTheme } from "../model/types"
 
 interface RecapProgressProps {
   currentIndex: number
   totalSlides: number
   onGoTo: (index: number) => void
+  theme?: SlideTheme
 }
 
-export function RecapProgress({ currentIndex, totalSlides, onGoTo }: RecapProgressProps) {
+export function RecapProgress({
+  currentIndex,
+  totalSlides,
+  onGoTo,
+  theme = "dark",
+}: RecapProgressProps) {
+  const isDark = theme === "dark"
+
   return (
     <motion.div
       className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 
@@ -22,7 +31,15 @@ export function RecapProgress({ currentIndex, totalSlides, onGoTo }: RecapProgre
           key={index}
           onClick={() => onGoTo(index)}
           className={`w-2 h-2 rounded-full transition-all duration-300 cursor-pointer
-            ${index === currentIndex ? "bg-white w-6" : "bg-white/30 hover:bg-white/50"}`}
+            ${
+              index === currentIndex
+                ? isDark
+                  ? "bg-white w-6"
+                  : "bg-neutral-800 w-6"
+                : isDark
+                  ? "bg-white/30 hover:bg-white/50"
+                  : "bg-neutral-400/50 hover:bg-neutral-500"
+            }`}
           aria-label={`슬라이드 ${index + 1}로 이동`}
         />
       ))}

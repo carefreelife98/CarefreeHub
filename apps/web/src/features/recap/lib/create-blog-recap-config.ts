@@ -25,7 +25,7 @@ export function createBlogRecapConfig(year: number): RecapConfig {
 
   const slides: SlideConfig<unknown>[] = []
 
-  // 1. 인트로 슬라이드
+  // 1. 인트로 슬라이드 (어두운 배경)
   slides.push({
     id: "intro",
     component: IntroSlide,
@@ -38,6 +38,7 @@ export function createBlogRecapConfig(year: number): RecapConfig {
       type: "gradient",
       gradient: "linear-gradient(135deg, #0f0f0f 0%, #1a1a2e 100%)",
     },
+    theme: "dark",
     animation: {
       enter: "fade",
       duration: 0.8,
@@ -46,7 +47,7 @@ export function createBlogRecapConfig(year: number): RecapConfig {
     },
   })
 
-  // 2. 총 포스트 수 통계
+  // 2. 총 포스트 수 통계 (밝은 배경으로 전환)
   slides.push({
     id: "total-stats",
     component: StatsSlide,
@@ -60,8 +61,9 @@ export function createBlogRecapConfig(year: number): RecapConfig {
     } satisfies StatsSlideData,
     background: {
       type: "gradient",
-      gradient: "linear-gradient(135deg, #1a1a2e 0%, #16213e 100%)",
+      gradient: "linear-gradient(180deg, #1a1a2e 0%, #fafafa 30%, #fafafa 100%)",
     },
+    theme: "light",
     animation: {
       enter: "slide-up",
       duration: 0.6,
@@ -70,7 +72,7 @@ export function createBlogRecapConfig(year: number): RecapConfig {
     },
   })
 
-  // 3. 카테고리 분포 차트
+  // 3. 카테고리 분포 차트 (밝은 배경)
   if (stats.categoryBreakdown.length > 0) {
     slides.push({
       id: "category-chart",
@@ -96,9 +98,10 @@ export function createBlogRecapConfig(year: number): RecapConfig {
         })),
       } satisfies ChartSlideData,
       background: {
-        type: "gradient",
-        gradient: "linear-gradient(135deg, #16213e 0%, #1a1a2e 100%)",
+        type: "solid",
+        color: "#fafafa",
       },
+      theme: "light",
       animation: {
         enter: "slide-up",
         duration: 0.6,
@@ -106,7 +109,7 @@ export function createBlogRecapConfig(year: number): RecapConfig {
     })
   }
 
-  // 4. 월별 활동 차트
+  // 4. 월별 활동 차트 (밝은 배경)
   const activeMonths = stats.monthlyActivity.filter((m) => m.postCount > 0)
   if (activeMonths.length > 0) {
     slides.push({
@@ -119,13 +122,14 @@ export function createBlogRecapConfig(year: number): RecapConfig {
         data: stats.monthlyActivity.map((m) => ({
           name: m.monthName,
           value: m.postCount,
-          color: m.postCount > 0 ? "#3b82f6" : "#374151",
+          color: m.postCount > 0 ? "#3b82f6" : "#e5e7eb",
         })),
       } satisfies ChartSlideData,
       background: {
-        type: "gradient",
-        gradient: "linear-gradient(135deg, #1a1a2e 0%, #0f172a 100%)",
+        type: "solid",
+        color: "#fafafa",
       },
+      theme: "light",
       animation: {
         enter: "slide-up",
         duration: 0.6,
@@ -133,7 +137,7 @@ export function createBlogRecapConfig(year: number): RecapConfig {
     })
   }
 
-  // 5. 인기 태그
+  // 5. 인기 태그 (밝은 배경)
   if (stats.topTags.length > 0) {
     slides.push({
       id: "top-tags",
@@ -148,9 +152,10 @@ export function createBlogRecapConfig(year: number): RecapConfig {
         })),
       } satisfies StatsSlideData,
       background: {
-        type: "gradient",
-        gradient: "linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%)",
+        type: "solid",
+        color: "#fafafa",
       },
+      theme: "light",
       animation: {
         enter: "slide-up",
         duration: 0.6,
@@ -201,9 +206,10 @@ export function createBlogRecapConfig(year: number): RecapConfig {
         items: highlightItems,
       } satisfies HighlightSlideData,
       background: {
-        type: "gradient",
-        gradient: "linear-gradient(135deg, #1e1b4b 0%, #312e81 100%)",
+        type: "solid",
+        color: "#fafafa",
       },
+      theme: "light",
       animation: {
         enter: "slide-up",
         duration: 0.6,
@@ -213,7 +219,7 @@ export function createBlogRecapConfig(year: number): RecapConfig {
     })
   }
 
-  // 7. 아웃트로
+  // 7. 아웃트로 (밝은 배경)
   slides.push({
     id: "outro",
     component: OutroSlide,
@@ -224,9 +230,10 @@ export function createBlogRecapConfig(year: number): RecapConfig {
       showShareButton: true,
     } satisfies OutroSlideData,
     background: {
-      type: "gradient",
-      gradient: "linear-gradient(135deg, #312e81 0%, #1e1b4b 50%, #0f0f0f 100%)",
+      type: "solid",
+      color: "#fafafa",
     },
+    theme: "light",
     animation: {
       enter: "fade",
       duration: 1,

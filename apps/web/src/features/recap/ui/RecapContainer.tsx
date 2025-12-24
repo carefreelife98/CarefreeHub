@@ -191,6 +191,7 @@ export function RecapContainer({ config }: RecapContainerProps) {
             isActive={true}
             index={currentIndex}
             totalSlides={totalSlides}
+            theme={currentSlide.theme ?? "dark"}
             onNext={goNext}
             onPrev={goPrev}
             onGoTo={goToSlide}
@@ -199,7 +200,12 @@ export function RecapContainer({ config }: RecapContainerProps) {
       </AnimatePresence>
 
       {/* 프로그레스 */}
-      <RecapProgress currentIndex={currentIndex} totalSlides={totalSlides} onGoTo={goToSlide} />
+      <RecapProgress
+        currentIndex={currentIndex}
+        totalSlides={totalSlides}
+        onGoTo={goToSlide}
+        theme={currentSlide.theme ?? "dark"}
+      />
     </div>
   )
 }

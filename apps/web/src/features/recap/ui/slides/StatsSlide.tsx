@@ -26,13 +26,16 @@ function AnimatedNumber({ value, isActive }: { value: number | string; isActive:
   return <motion.span>{rounded}</motion.span>
 }
 
-export function StatsSlide({ data, isActive }: BaseSlideProps<StatsSlideData>) {
+export function StatsSlide({ data, isActive, theme = "dark" }: BaseSlideProps<StatsSlideData>) {
   const { title, stats } = data
+  const isDark = theme === "dark"
 
   return (
     <div className="flex flex-col items-center justify-center text-center px-8 max-w-4xl mx-auto">
       <motion.h2
-        className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-16"
+        className={`text-3xl md:text-4xl lg:text-5xl font-bold mb-16 ${
+          isDark ? "text-white" : "text-neutral-900"
+        }`}
         initial={{ opacity: 0, y: 20 }}
         animate={isActive ? { opacity: 1, y: 0 } : {}}
         transition={{ delay: 0.2, duration: 0.6 }}
@@ -45,18 +48,22 @@ export function StatsSlide({ data, isActive }: BaseSlideProps<StatsSlideData>) {
           <motion.div
             key={stat.label}
             className={`flex flex-col items-center p-6 rounded-2xl
-              ${stat.highlight ? "bg-white/10 backdrop-blur-sm" : ""}`}
+              ${stat.highlight ? (isDark ? "bg-white/10" : "bg-neutral-100") : ""} backdrop-blur-sm`}
             initial={{ opacity: 0, y: 30 }}
             animate={isActive ? { opacity: 1, y: 0 } : {}}
             transition={{ delay: 0.4 + index * 0.15, duration: 0.6 }}
           >
             <div className="flex items-baseline gap-1">
               {stat.prefix && (
-                <span className="text-2xl md:text-3xl text-white/60">{stat.prefix}</span>
+                <span
+                  className={`text-2xl md:text-3xl ${isDark ? "text-white/60" : "text-neutral-500"}`}
+                >
+                  {stat.prefix}
+                </span>
               )}
               <span
                 className={`text-5xl md:text-6xl lg:text-7xl font-bold
-                  ${stat.highlight ? "text-white" : "text-white/90"}`}
+                  ${stat.highlight ? "" : isDark ? "text-white/90" : "text-neutral-800"}`}
                 style={
                   stat.highlight
                     ? {
@@ -70,10 +77,18 @@ export function StatsSlide({ data, isActive }: BaseSlideProps<StatsSlideData>) {
                 <AnimatedNumber value={stat.value} isActive={isActive} />
               </span>
               {stat.suffix && (
-                <span className="text-2xl md:text-3xl text-white/60 ml-1">{stat.suffix}</span>
+                <span
+                  className={`text-2xl md:text-3xl ml-1 ${isDark ? "text-white/60" : "text-neutral-500"}`}
+                >
+                  {stat.suffix}
+                </span>
               )}
             </div>
-            <span className="text-lg md:text-xl text-white/50 mt-3 font-medium">{stat.label}</span>
+            <span
+              className={`text-lg md:text-xl mt-3 font-medium ${isDark ? "text-white/50" : "text-neutral-500"}`}
+            >
+              {stat.label}
+            </span>
           </motion.div>
         ))}
       </div>

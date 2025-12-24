@@ -5,8 +5,9 @@ import { Share2, X } from "lucide-react"
 import Link from "next/link"
 import type { BaseSlideProps, OutroSlideData } from "../../model/types"
 
-export function OutroSlide({ data, isActive }: BaseSlideProps<OutroSlideData>) {
+export function OutroSlide({ data, isActive, theme = "dark" }: BaseSlideProps<OutroSlideData>) {
   const { title, subtitle, message, showShareButton } = data
+  const isDark = theme === "dark"
 
   const handleShare = async () => {
     if (navigator.share) {
@@ -38,7 +39,9 @@ export function OutroSlide({ data, isActive }: BaseSlideProps<OutroSlideData>) {
       </motion.div>
 
       <motion.h2
-        className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6"
+        className={`text-4xl md:text-5xl lg:text-6xl font-bold mb-6 ${
+          isDark ? "text-white" : "text-neutral-900"
+        }`}
         initial={{ opacity: 0, y: 20 }}
         animate={isActive ? { opacity: 1, y: 0 } : {}}
         transition={{ delay: 0.4, duration: 0.6 }}
@@ -48,7 +51,7 @@ export function OutroSlide({ data, isActive }: BaseSlideProps<OutroSlideData>) {
 
       {subtitle && (
         <motion.p
-          className="text-xl md:text-2xl text-white/70 mb-4"
+          className={`text-xl md:text-2xl mb-4 ${isDark ? "text-white/70" : "text-neutral-600"}`}
           initial={{ opacity: 0, y: 20 }}
           animate={isActive ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.6, duration: 0.6 }}
@@ -59,7 +62,7 @@ export function OutroSlide({ data, isActive }: BaseSlideProps<OutroSlideData>) {
 
       {message && (
         <motion.p
-          className="text-lg text-white/50 mb-12"
+          className={`text-lg mb-12 ${isDark ? "text-white/50" : "text-neutral-500"}`}
           initial={{ opacity: 0 }}
           animate={isActive ? { opacity: 1 } : {}}
           transition={{ delay: 0.8, duration: 0.6 }}
@@ -76,9 +79,8 @@ export function OutroSlide({ data, isActive }: BaseSlideProps<OutroSlideData>) {
       >
         {showShareButton && (
           <motion.button
-            className="flex items-center gap-2 px-8 py-4 rounded-full 
-              bg-white text-black font-semibold text-lg
-              hover:bg-white/90 transition-all duration-200"
+            className={`flex items-center gap-2 px-8 py-4 rounded-full font-semibold text-lg transition-all duration-200
+              ${isDark ? "bg-white text-black hover:bg-white/90" : "bg-neutral-900 text-white hover:bg-neutral-800"}`}
             onClick={handleShare}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -90,9 +92,12 @@ export function OutroSlide({ data, isActive }: BaseSlideProps<OutroSlideData>) {
 
         <Link href="/">
           <motion.button
-            className="flex items-center gap-2 px-8 py-4 rounded-full 
-              bg-white/10 text-white font-semibold text-lg
-              border border-white/20 hover:bg-white/20 transition-all duration-200"
+            className={`flex items-center gap-2 px-8 py-4 rounded-full font-semibold text-lg border transition-all duration-200
+              ${
+                isDark
+                  ? "bg-white/10 text-white border-white/20 hover:bg-white/20"
+                  : "bg-neutral-100 text-neutral-700 border-neutral-200 hover:bg-neutral-200"
+              }`}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
