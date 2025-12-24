@@ -33,7 +33,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
   const LucideIcon = getCategoryIcon(category)
 
   return (
-    <div className="flex flex-col gap-4">
+    <div className="w-full flex flex-col gap-4">
       <PostBreadcrumb category={category} isCurrentPage />
 
       <PostListHeader
@@ -44,24 +44,30 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
         svgIcon={CustomIcon ? <CustomIcon size={24} /> : undefined}
       />
 
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
-        {categoryPosts.map((post) => (
-          <GridPost
-            key={post.slug}
-            title={post.title}
-            description={post.description}
-            author={post.author}
-            createdAt={new Date(post.date).toLocaleDateString("ko-KR")}
-            thumbnailUrl={post.thumbnail || "https://picsum.photos/200/300"}
-            linkUrl={`/posts/${post.slug}`}
-            chips={post.categories.map((cat) => ({
-              label: cat,
-              href: `/posts/category/${cat.toLowerCase()}`,
-              color: getCategoryColor(cat.toLowerCase()),
-            }))}
-          />
-        ))}
-      </div>
+      {categoryPosts.length === 0 ? (
+        <div className="flex flex-col h-full gap-4 items-center justify-center">
+          <p className="text-muted-foreground">아직 등록된 포스트가 없습니다 🥲</p>
+        </div>
+      ) : (
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
+          {categoryPosts.map((post) => (
+            <GridPost
+              key={post.slug}
+              title={post.title}
+              description={post.description}
+              author={post.author}
+              createdAt={new Date(post.date).toLocaleDateString("ko-KR")}
+              thumbnailUrl={post.thumbnail || "https://picsum.photos/200/300"}
+              linkUrl={`/posts/${post.slug}`}
+              chips={post.categories.map((cat) => ({
+                label: cat,
+                href: `/posts/category/${cat.toLowerCase()}`,
+                color: getCategoryColor(cat.toLowerCase()),
+              }))}
+            />
+          ))}
+        </div>
+      )}
     </div>
   )
 }

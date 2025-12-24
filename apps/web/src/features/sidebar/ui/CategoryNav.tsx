@@ -140,7 +140,7 @@ function CategoryNavItem({ node, level = 0 }: CategoryNavItemProps) {
 export function CategoryNav() {
   return (
     <SidebarGroup>
-      <SidebarGroupLabel>Categories</SidebarGroupLabel>
+      <SidebarGroupLabel>카테고리</SidebarGroupLabel>
       <SidebarMenu>
         {categoryTree.map((node) => (
           <CategoryNavItem key={node.slug} node={node} />

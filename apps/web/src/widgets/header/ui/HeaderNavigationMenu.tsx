@@ -44,7 +44,7 @@ export default function HeaderNavigationMenu() {
                 </NavigationMenuLink>
               </li>
               <ListItem href="/about/introduction" title="자기 소개">
-                제가 누군지 소개할게요
+                저를 소개할게요
               </ListItem>
               <ListItem href="/about/skills" title="기술 스택">
                 제가 사용하는 기술 스택을 소개할게요
