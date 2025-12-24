@@ -2,9 +2,12 @@
 
 import { motion } from "motion/react"
 import type { BaseSlideProps, IntroSlideData } from "../../model/types"
+import { RecapNavigation } from "../RecapNavigation"
+import { useIsMobile } from "@/src/shared/hooks"
 
 export function IntroSlide({ data, isActive }: BaseSlideProps<IntroSlideData>) {
   const { year, title, subtitle } = data
+  const isMobile = useIsMobile()
 
   return (
     <div className="flex flex-col items-center justify-center text-center px-8 max-w-3xl mx-auto">
@@ -50,20 +53,24 @@ export function IntroSlide({ data, isActive }: BaseSlideProps<IntroSlideData>) {
           {subtitle}
         </motion.p>
       )}
-
-      <motion.div
-        className="mt-12 flex flex-col items-center gap-2"
-        initial={{ opacity: 0 }}
-        animate={isActive ? { opacity: 1 } : {}}
-        transition={{ delay: 1.2, duration: 0.6 }}
-      >
+      {isMobile ? (
         <motion.div
-          className="w-px h-12 bg-gradient-to-b from-transparent via-white/30 to-transparent"
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-        />
-        <span className="text-white/30 text-sm">스와이프하여 시작</span>
-      </motion.div>
+          className="mt-16"
+          initial={{ opacity: 0 }}
+          animate={isActive ? { opacity: 1 } : {}}
+          transition={{ delay: 1.2, duration: 0.6 }}
+        >
+          <motion.span
+            className="text-white/40 text-sm font-light tracking-wide"
+            animate={{ opacity: [0.4, 0.7, 0.4] }}
+            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+          >
+            화면을 탭하여 시작
+          </motion.span>
+        </motion.div>
+      ) : (
+        <RecapNavigation />
+      )}
     </div>
   )
 }

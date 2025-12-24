@@ -3,7 +3,6 @@
 import { useState, useCallback, useEffect } from "react"
 import { motion, AnimatePresence } from "motion/react"
 import type { RecapConfig, SlideConfig, BaseSlideProps } from "../model/types"
-import { RecapNavigation } from "./RecapNavigation"
 import { RecapProgress } from "./RecapProgress"
 
 interface RecapContainerProps {
@@ -143,8 +142,36 @@ export function RecapContainer({ config }: RecapContainerProps) {
 
   const SlideComponent = currentSlide.component as React.ComponentType<BaseSlideProps<unknown>>
 
+  // 화면 탭 핸들러 (좌측: 이전, 우측: 다음)
+  const handleClick = useCallback(
+    (e: React.MouseEvent<HTMLDivElement>) => {
+      const target = e.target as HTMLElement
+      // 버튼이나 링크 클릭 시 무시
+      if (target.closest("button") || target.closest("a") || target.closest('[role="button"]')) {
+        return
+      }
+
+      const { clientX } = e
+      const { innerWidth } = window
+      const clickPosition = clientX / innerWidth
+
+      if (clickPosition < 0.3) {
+        goPrev()
+      } else if (clickPosition > 0.7) {
+        goNext()
+      } else {
+        // 중앙 탭 시 다음으로
+        goNext()
+      }
+    },
+    [goNext, goPrev]
+  )
+
   return (
-    <div className="fixed inset-0 overflow-hidden z-50 bg-[#0f0f0f]">
+    <div
+      className="fixed inset-0 overflow-hidden z-50 bg-[#0f0f0f] cursor-pointer"
+      onClick={handleClick}
+    >
       <AnimatePresence mode="wait" initial={false}>
         <motion.div
           key={currentSlide.id}
@@ -170,14 +197,6 @@ export function RecapContainer({ config }: RecapContainerProps) {
           />
         </motion.div>
       </AnimatePresence>
-
-      {/* 네비게이션 */}
-      <RecapNavigation
-        currentIndex={currentIndex}
-        totalSlides={totalSlides}
-        onNext={goNext}
-        onPrev={goPrev}
-      />
 
       {/* 프로그레스 */}
       <RecapProgress currentIndex={currentIndex} totalSlides={totalSlides} onGoTo={goToSlide} />
