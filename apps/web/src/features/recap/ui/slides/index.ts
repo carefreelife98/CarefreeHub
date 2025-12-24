@@ -1,0 +1,6 @@
+export { IntroSlide } from "./IntroSlide"
+export { StatsSlide } from "./StatsSlide"
+export { ChartSlide } from "./ChartSlide"
+export { HighlightSlide } from "./HighlightSlide"
+export { OutroSlide } from "./OutroSlide"
+export { CustomSlide } from "./CustomSlide"

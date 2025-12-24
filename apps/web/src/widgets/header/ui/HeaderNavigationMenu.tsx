@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import Link from "next/link"
-import { GithubIcon, LinkedinIcon, MailIcon } from "lucide-react"
+import { GithubIcon, LinkedinIcon, MailIcon, ScrollText, Sparkles } from "lucide-react"
 import { useIsMobile } from "@shared/hooks"
 import {
   NavigationMenu,
@@ -68,6 +68,48 @@ export default function HeaderNavigationMenu() {
                   {category.description || ""}
                 </ListItem>
               ))}
+            </ul>
+          </NavigationMenuContent>
+        </NavigationMenuItem>
+        <NavigationMenuItem>
+          <NavigationMenuTrigger>
+            <span className="flex items-center gap-1.5">
+              <ScrollText className="w-4 h-4" />
+              Recap
+              <Sparkles className="w-3 h-3 text-amber-400" />
+            </span>
+          </NavigationMenuTrigger>
+          <NavigationMenuContent>
+            <ul className="grid gap-2 w-[300px]">
+              <li>
+                <NavigationMenuLink asChild>
+                  <Link
+                    href="/recap"
+                    className="block p-4 rounded-md hover:bg-muted transition-colors"
+                  >
+                    <div className="flex items-center gap-2 mb-2">
+                      <ScrollText className="w-5 h-5 text-amber-500" />
+                      <span className="font-medium">연간 Recap</span>
+                    </div>
+                    <p className="text-muted-foreground text-sm">
+                      한 해를 돌아보는 인터랙티브 화면
+                    </p>
+                  </Link>
+                </NavigationMenuLink>
+              </li>
+              <li>
+                <NavigationMenuLink asChild>
+                  <Link
+                    href="/posts/category/recap"
+                    className="block p-4 rounded-md hover:bg-muted transition-colors"
+                  >
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="font-medium">회고 포스트</span>
+                    </div>
+                    <p className="text-muted-foreground text-sm">상세한 회고 글 모음</p>
+                  </Link>
+                </NavigationMenuLink>
+              </li>
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>

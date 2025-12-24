@@ -6,3 +6,4 @@
 export { MainCarousel } from "./ui/MainCarousel"
 export { MainHotPost } from "./ui/MainHotPost"
 export { MainLatestPost } from "./ui/MainLatestPost"
+export { MainRecapBanner } from "./ui/MainRecapBanner"
