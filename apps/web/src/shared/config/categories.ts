@@ -75,9 +75,33 @@ export const categoryTree: CategoryNode[] = [
     description: "사이드 프로젝트 개발 과정 및 회고",
     children: [
       {
-        name: "Carefree OCR",
-        slug: "carefree-ocr",
-        color: "bg-purple-500/15 text-purple-600 dark:text-purple-400",
+        name: "Toy",
+        slug: "toy",
+        color: "bg-pink-500/15 text-pink-600 dark:text-pink-400",
+        children: [
+          {
+            name: "Carefree OCR",
+            slug: "carefree-ocr",
+            color: "bg-purple-500/15 text-purple-600 dark:text-purple-400",
+          },
+        ],
+      },
+      {
+        name: "Task",
+        slug: "task",
+        color: "bg-blue-500/15 text-blue-600 dark:text-blue-400",
+        children: [
+          {
+            name: "FLOKR",
+            slug: "flokr",
+            color: "bg-indigo-500/15 text-indigo-600 dark:text-indigo-400",
+          },
+          {
+            name: "FLOWIKI",
+            slug: "flowiki",
+            color: "bg-cyan-500/15 text-cyan-600 dark:text-cyan-400",
+          },
+        ],
       },
     ],
   },

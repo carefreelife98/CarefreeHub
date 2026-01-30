@@ -1,0 +1,559 @@
+---
+title: "FLOWIKI - 사내 위키 및 실시간 협업 문서 시스템"
+description: "Next.js App Router와 TipTap 에디터를 활용한 Notion 스타일 사내 위키 시스템 개발기"
+date: 2025-05-31
+categories: ["flowiki"]
+tags: ["Next.js", "React", "TypeScript", "TipTap", "PostgreSQL", "Zustand", "Full Text Search"]
+author: "Carefreelife98"
+thumbnail: "/images/Projects/flow/flowiki-logo.png"
+published: true
+---
+
+# FLOWIKI 프로젝트 수행 기록
+
+![FLOWIKI Logo](/images/Projects/flow/flowiki-logo.png)
+
+> **FLOWIKI** - 사내 위키 및 실시간 협업 문서 시스템
+
+---
+
+## 프로젝트 개요
+
+| 항목         | 내용                                   |
+| ---------- | ------------------------------------ |
+| **프로젝트명**  | FLOWIKI                              |
+| **개발 기간**  | 2025-04 ~ 2025-05 (약 2개월, 초기 개발만 수행) |
+| **서비스 상태** | **운영 배포 완료**                         |
+
+### 서비스 운영 현황
+| 환경     | 고객사/서비스      | 상태  |
+| ------ | ------------ | --- |
+| 엔터프라이즈 | **SK 쉴더스**   | 운영중 |
+| 엔터프라이즈 | **매그나칩 반도체** | 운영중 |
+| SaaS   | 플로우 SaaS     | 운영중 |
+
+---
+
+## 1. 배경
+
+### 조직/비즈니스 문제
+- **사내 지식 관리 시스템 부재**
+- 분산된 문서와 정보 접근성 문제
+- 실시간 협업 문서 편집 필요성
+- Notion, Confluence 등 외부 도구 의존도 감소 필요
+
+### 기존 시스템의 한계
+- 기존 문서 관리 도구의 검색 기능 미흡
+- 계층적 문서 구조 관리 어려움
+- 사용자별 문서 히스토리 추적 불가
+- 실시간 공동 편집 지원 부재
+
+---
+
+## 2. 나의 역할
+
+| 항목           | 내용                       |
+| ------------ | ------------------------ |
+| **기획 참여 여부** | X                        |
+| **설계**       | O (프론트엔드 초기 아키텍처)        |
+| **구현**       | O (프론트엔드 초기 전체 + 검색 백엔드) |
+| **운영**       | **운영 배포 완료** (현재 담당 X)   |
+
+### 담당 영역
+
+#### 1. 프론트엔드 레이아웃
+- **계층형 사이드바**: 재귀적 트리 구조 렌더링
+- **탭 시스템**: 다중 문서 탭 관리 (브라우저 탭과 유사)
+- **BreadCrumb 네비게이션**: 문서 계층 경로 표시
+
+#### 2. Full Text Search
+- **PostgreSQL FTS 기반 검색**: 한글 형태소 분석
+- **검색 결과 UI**: Dialog 기반 검색 결과 표시
+- **보안**: SQL Injection 방어 로직
+
+#### 3. 문서 라우팅
+- **Next.js App Router**: 파일 기반 동적 라우팅
+- **인증 레이아웃**: (auth) 그룹 기반 라우팅
+
+---
+
+## 3. 기술 선택과 이유
+
+### Next.js (App Router) 선택 이유
+| 이유 | 상세 |
+|------|------|
+| **TipTap 에디터 사용** | React 기반 실시간 공동 편집 라이브러리 활용 필요 |
+| **기존 플로우 시스템과 독립적** | 퍼블리싱 팀 협업 없이 자체 개발 가능 |
+| **서버 컴포넌트** | App Router의 RSC 활용으로 초기 로딩 최적화 |
+| **파일 기반 라우팅** | 문서 구조와 URL 매핑 용이 |
+
+### 프론트엔드 기술 스택
+
+| 기술 | 역할 |
+|------|------|
+| **Zustand** | 경량 상태 관리 (editorStore, userStore, flowikiTabStore) |
+| **TipTap** | Rich Text Editor (Notion 스타일 WYSIWYG) |
+| **Radix UI + shadcn/ui** | 접근성 고려한 UI 컴포넌트 |
+| **Tailwind CSS** | 유틸리티 기반 스타일링 |
+
+### PostgreSQL FTS 선택 이유 (RediSearch 대비)
+
+| 선택 | 대안 | 이유 |
+|------|------|------|
+| PostgreSQL FTS | RediSearch | 별도 인프라 없이 기존 DB 활용 |
+| | | 한글 형태소 분석 지원 용이 |
+| | | 운영 복잡성 감소 |
+
+### 아키텍처: Next.js App Router 기반 구조
+
+```
+src/
+├── api/              # API 호출 계층
+│   ├── document/
+│   ├── search/
+│   └── dashboard/
+├── app/(auth)/       # 인증된 사용자 라우팅
+│   ├── document/
+│   ├── favorites/
+│   ├── history/
+│   └── recently-views/
+├── components/       # 기능별 컴포넌트
+│   ├── common/
+│   ├── dashboard/
+│   ├── editor/
+│   ├── layout/
+│   ├── search/
+│   └── ui/
+├── store/            # Zustand 상태 관리
+│   ├── editorStore.ts
+│   ├── userStore.ts
+│   └── flowikiTabStore.ts
+├── hooks/            # 커스텀 훅
+└── lib/              # 유틸리티
+```
+
+> 참고: FSD(Feature-Sliced Design)가 아닌 **기술 계층 기반 구조** 사용
+
+---
+
+## 4. 어려웠던 지점
+
+### 4.1 기술적 병목
+
+#### Full Text Search 한글 처리
+
+**문제**: PostgreSQL FTS 한글 토크나이저 설정
+- 영어와 달리 한글은 형태소 분석 필요
+- 조사, 어미 등 처리 복잡
+- 접두사 검색 (prefix search) 지원 필요
+
+**해결**: 한글 + 영어 동시 검색 지원 및 파라미터 바인딩
+
+```typescript
+// apps/flowiki-back/src/modules/search/adapter/output/persistence/get-search-result.postgres.adapter.ts
+
+async getSearchResult(keyword: string, user: UserDto): Promise<SearchResult> {
+    if (keyword.trim() === "") {
+        return SearchResult.of([]);
+    }
+
+    const terms = keyword.trim().split(/\s+/).filter(term => term.length > 0);
+
+    const queryBuilder = this.documentRepository
+        .createQueryBuilder('document')
+        .where('document.user_id = :userId', { userId: user.userId });
+
+    if (terms.length > 0) {
+        const searchConditions = [];
+
+        for (let i = 0; i < terms.length; i++) {
+            const paramName = `term${i}`;
+            const searchTerm = `${terms[i]}:*`; // 접두사 매칭을 위해 :* 추가
+
+            // 제목 검색 (한글 + 영어)
+            searchConditions.push(`
+                (to_tsvector('korean', document.title) @@ to_tsquery('korean', :${paramName}) OR
+                 to_tsvector('english', document.title) @@ to_tsquery('english', :${paramName}))
+            `);
+
+            // 내용 검색 (한글 + 영어)
+            searchConditions.push(`
+                (to_tsvector('korean', CAST(document.content_json AS TEXT)) @@ to_tsquery('korean', :${paramName}) OR
+                 to_tsvector('english', CAST(document.content_json AS TEXT)) @@ to_tsquery('english', :${paramName}))
+            `);
+
+            // 파라미터 바인딩 (SQL Injection 방어)
+            queryBuilder.setParameter(paramName, searchTerm);
+        }
+
+        queryBuilder.andWhere(`document.stts = 'Y'`);
+        queryBuilder.andWhere(`(${searchConditions.join(' OR ')})`);
+    }
+
+    // 검색 결과 순위 기반 정렬
+    const rankingExpression = terms.map((_, i) => {
+        const paramName = `term${i}`;
+        return `
+            (ts_rank_cd(to_tsvector('korean', document.title), to_tsquery('korean', :${paramName})) +
+             ts_rank_cd(to_tsvector('english', document.title), to_tsquery('english', :${paramName})))
+        `;
+    }).join(' + ');
+
+    if (rankingExpression) {
+        queryBuilder.orderBy(rankingExpression, 'DESC');
+    }
+
+    const documents = await queryBuilder.getMany();
+    return SearchResult.of(documents.map(doc => SearchDocument.fromDocument(doc)));
+}
+```
+
+#### 탭 상태 관리
+
+**문제**: 새로고침 시 탭 상태 유지
+- 브라우저 새로고침 시 열린 탭 정보 손실
+- Zustand 상태가 메모리에서만 유지
+
+**해결**: Zustand persist 미들웨어 적용
+
+```typescript
+// apps/flowiki-front/src/store/flowikiTabStore.ts
+
+import { create } from 'zustand';
+import { persist } from 'zustand/middleware';
+
+export type Tab = {
+    id: string;
+    docId: string;
+    title: string;
+    url: string;
+    isNew: boolean;
+};
+
+type TabStore = {
+    tabs: Tab[];
+    activeTabId: string | null;
+    getTabs: () => Tab[];
+    getTabByDocId: (docId: string) => Tab | null;
+    getCurrentTab: () => Tab | null;
+    addTab: (tab: Tab) => void;
+    closeTab: (id: string) => void;
+    setActiveTabId: (id: string) => void;
+    updateTab: (id: string, updates: Partial<Tab>) => void;
+    clearTabs: () => void;
+};
+
+export const useTabStore = create<TabStore>()(
+    persist(
+        (set, get) => ({
+            tabs: [],
+            activeTabId: null,
+            getTabByDocId: (docId: string) => {
+                return get().tabs.find((tab) => tab.docId === docId) || null;
+            },
+            getCurrentTab: () => {
+                const { activeTabId, tabs } = get();
+                if (!activeTabId) return null;
+                return tabs.find((tab) => tab.id === activeTabId) || null;
+            },
+            addTab: (tab) => {
+                set((state) => ({
+                    tabs: [...state.tabs, tab],
+                    activeTabId: tab.id
+                }));
+            },
+            closeTab: (id: string) => {
+                set((state) => {
+                    // 마지막 탭은 닫지 않음
+                    if (state.tabs.length <= 1) return state;
+
+                    const newTabs = state.tabs.filter((t) => t.id !== id);
+                    const activeTabId = state.activeTabId === id
+                        ? newTabs[0].id
+                        : state.activeTabId;
+
+                    return { tabs: newTabs, activeTabId };
+                });
+            },
+            // ... 기타 메서드
+        }),
+        {
+            name: 'flowiki-tabs',  // LocalStorage 키
+            partialize: (state) => ({
+                tabs: state.tabs,
+                activeTabId: state.activeTabId,
+            }),
+        },
+    ),
+);
+```
+
+#### 계층형 사이드바
+
+**문제**: 재귀적 트리 렌더링 성능
+- 깊은 문서 구조에서 렌더링 지연
+- 불필요한 리렌더링 발생
+
+**해결**: useMemo를 활용한 재귀적 트리 평탄화
+
+```typescript
+// apps/flowiki-front/src/hooks/useFolderGroup.ts
+
+export function useFolderGroup({ nodes = [], openedFolders, setOpenedFolders }: UseFolderGroupProps) {
+    // 재귀적 트리 평탄화 - useMemo로 성능 최적화
+    const flattenedList = useMemo(() => {
+        const flatten = (
+            items: TreeNodeInterface[],
+            depth: number = 0,
+            parentFolderId: number | null = null
+        ): FlattenedNode[] => {
+            return items.reduce<FlattenedNode[]>((acc, node) => {
+                const flatNode: FlattenedNode = {
+                    ...node,
+                    depth,
+                    parentFolderId
+                };
+                acc.push(flatNode);
+
+                // 열린 폴더만 자식 노드를 렌더링 (성능 최적화)
+                if (node.children && node.children.length > 0 && openedFolders.has(node.id.toString())) {
+                    acc.push(...flatten(node.children, depth + 1, node.id));
+                }
+
+                return acc;
+            }, []);
+        };
+
+        return flatten(nodes);
+    }, [nodes, openedFolders]);  // 의존성 배열로 불필요한 재계산 방지
+
+    const handleFolderOpenChange = (folderId: string, isOpen: boolean) => {
+        setOpenedFolders(prev => {
+            const newSet = new Set(prev);
+            if (isOpen) {
+                newSet.add(folderId);
+            } else {
+                newSet.delete(folderId);
+            }
+            return newSet;
+        });
+    };
+
+    return { flattenedList, handleFolderOpenChange, /* ... */ };
+}
+```
+
+### 4.2 도메인 이해의 어려움
+
+- **문서 계층 구조 설계**: 폴더 vs 페이지 구분
+- **사용자별 권한 체계**: 읽기/쓰기/관리자 역할
+
+### 4.3 협업/운영 이슈
+
+- **실시간 협업 기능 (Socket) 연동**: TipTap + Y.js 기반
+
+---
+
+## 5. 해결 방식
+
+### 5.1 구조적 선택
+
+#### 컴포넌트 분리
+```
+components/
+├── dashboard/   # 대시보드 관련 (9개 컴포넌트)
+├── editor/      # 에디터 관련
+├── search/      # 검색 관련
+├── layout/      # 레이아웃 (헤더, 사이드바)
+└── common/      # 공통 컴포넌트
+```
+
+#### 상태 관리
+```typescript
+// Zustand store 분리
+const useEditorStore = create(...)    // 에디터 상태
+const useUserStore = create(...)      // 사용자 상태
+const useFlowikiTabStore = create(...)  // 탭 상태
+```
+
+#### API 레이어
+```typescript
+// 별도 api 폴더에서 fetch 로직 캡슐화
+api/
+├── document/   # 문서 CRUD
+├── search/     # 검색 API
+└── dashboard/  # 대시보드 데이터
+```
+
+### 5.2 트레이드오프
+
+| 결정 | 선택 | 대안 | 이유 |
+|------|------|------|------|
+| 상태 관리 | Zustand | Redux | 러닝커브, 번들 사이즈 |
+| 검색 | PostgreSQL FTS | RediSearch | 인프라 단순화 |
+| 에디터 | TipTap | Slate.js | 플러그인 생태계, 공동편집 지원 |
+| 아키텍처 | 기술 계층 | FSD | 팀 친숙도, 프로젝트 규모 |
+
+---
+
+## 6. 결과와 남은 것
+
+### 6.1 서비스 상태
+
+| 상태 | 내용 |
+|------|------|
+| **개발** | 완료 |
+| **배포** | SK 쉴더스, 매그나칩, SaaS 운영중 |
+| **담당** | 초기 개발 완료 후 운영 담당자 이관 |
+
+### 6.2 재사용 가능한 패턴
+
+#### 계층형 사이드바 컴포넌트
+```typescript
+// 재귀적 트리 렌더링
+const TreeNode = ({ node }) => (
+  <>
+    <NodeItem node={node} />
+    {node.children?.map(child => (
+      <TreeNode key={child.id} node={child} />
+    ))}
+  </>
+);
+```
+
+#### 탭 관리 시스템
+```typescript
+// Zustand 기반 다중 탭 상태
+const useFlowikiTabStore = create(
+  persist(
+    (set) => ({
+      tabs: [],
+      activeTab: null,
+      addTab: (tab) => set(...),
+      removeTab: (id) => set(...),
+    }),
+    { name: 'flowiki-tabs' }
+  )
+);
+```
+
+#### PostgreSQL FTS 검색
+```sql
+-- 한글 검색 최적화 패턴
+SELECT * FROM documents
+WHERE to_tsvector('korean', content) @@ plainto_tsquery('korean', $1);
+```
+
+### 6.3 나의 사고 방식 변화
+
+- **Next.js App Router 실무 적용**: 서버 컴포넌트, 파일 기반 라우팅 경험
+- **검색 기능 설계 시 보안 고려**: SQL Injection 방어의 중요성
+- **독립적 프로젝트 경험**: 퍼블리싱 팀 없이 React 기반 자체 개발
+
+---
+
+## 취약점 분석
+
+### 탭 기능
+#### 탭 버그 수정 - persist 미들웨어 적용
+
+```typescript
+// apps/flowiki-front/src/store/flowikiTabStore.ts
+
+// 버그: 새로고침 시 중복 탭 생성
+// 원인: Zustand 상태가 메모리에서만 유지되어 새로고침 시 초기화됨
+// 해결: persist 미들웨어로 localStorage에 탭 상태 저장
+
+export const useTabStore = create<TabStore>()(
+    persist(
+        (set, get) => ({
+            tabs: [],
+            activeTabId: null,
+            addTab: (tab) => {
+                set((state) => ({
+                    tabs: [...state.tabs, tab],
+                    activeTabId: tab.id
+                }));
+            },
+            closeTab: (id: string) => {
+                set((state) => {
+                    if (state.tabs.length <= 1) return state;  // 마지막 탭 보호
+                    const newTabs = state.tabs.filter((t) => t.id !== id);
+                    return {
+                        tabs: newTabs,
+                        activeTabId: state.activeTabId === id ? newTabs[0].id : state.activeTabId
+                    };
+                });
+            },
+        }),
+        {
+            name: 'flowiki-tabs',  // localStorage 키
+            partialize: (state) => ({ tabs: state.tabs, activeTabId: state.activeTabId }),
+        },
+    ),
+);
+```
+
+### Full Text Search
+#### SQL Injection 방어 로직
+
+```typescript
+// apps/flowiki-back/src/modules/data/postgres.service.ts
+
+// 취약한 코드 (수정 전)
+// await this.pool.query(`SELECT * FROM documents WHERE doc_id = '${docId}'`);
+
+// 안전한 코드 (파라미터 바인딩 적용)
+async getDocumentData(docId: string): Promise<DocData | null> {
+    try {
+        // $1 파라미터 바인딩 - SQL Injection 방어
+        const { rows } = await this.pool.query(
+            "SELECT title, content_json, current_hash, user_id FROM documents WHERE doc_id = $1 and stts='Y'",
+            [docId],  // 배열로 파라미터 전달
+        );
+        // ...
+    } catch (error) {
+        throw new InternalServerErrorException('Error fetching document content');
+    }
+}
+
+async saveDocument(docData: DocData, lastEdited: string, title: string): Promise<void> {
+    const client = await this.pool.connect();
+    try {
+        await client.query('BEGIN');
+
+        // 트랜잭션 내 모든 쿼리에 파라미터 바인딩 적용
+        await client.query(
+            `INSERT INTO documents_history (doc_id, title, content_json, created_at, user_id, current_hash)
+             VALUES ($1, $2, $3, NOW(), $4, $5)`,
+            [docData.docId, title, docData.contentStr, docData.userId, docData.currentHash],
+        );
+
+        await client.query('COMMIT');
+    } catch (error) {
+        await client.query('ROLLBACK');
+        throw error;
+    } finally {
+        client.release();
+    }
+}
+```
+
+---
+
+## 핵심 러닝 포인트
+
+### 기술적 성장
+- **Next.js App Router 실무 적용**: 서버 컴포넌트, 파일 기반 라우팅
+- **TipTap 에디터 통합**: React 기반 실시간 공동 편집 구현
+- **PostgreSQL FTS**: 한글 Full Text Search 최적화
+- **보안**: SQL Injection 방어 패턴 (파라미터 바인딩)
+
+### 도메인 이해
+- **사내 위키 시스템 설계**: 계층적 문서 구조, 사용자별 권한 체계
+- **실시간 협업 요구사항**: 문서 동시 편집, 변경 이력 추적
+
+### 협업 및 운영
+- **독립적 프로젝트**: 퍼블리싱 팀 없이 React 기반 자체 개발
+- **다중 환경 배포 경험**: SaaS + 엔터프라이즈 (SK 쉴더스, 매그나칩)
+- **프로젝트 인수인계**: 개발 완료 후 운영 담당자 이관
