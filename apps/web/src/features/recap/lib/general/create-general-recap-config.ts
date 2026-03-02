@@ -1,18 +1,20 @@
 import { IntroSlide, IntroSlideData, RecapConfig, SlideConfig } from "../.."
+import { create2025RecapConfig } from "../2025"
 
 export function createGeneralRecapConfig(year: number): RecapConfig {
+  // 연도별 전용 config가 있으면 사용
+  if (year === 2025) return create2025RecapConfig()
+
+  // 기본 placeholder (다른 연도용)
   const slides: SlideConfig<unknown>[] = []
 
-  // 1. 인트로 슬라이드 (어두운 배경)
   slides.push({
     id: "intro",
     component: IntroSlide,
     data: {
       year,
       title: `준비 중 입니다.`,
-      // title: `${year}년, 나의 기록`,
       subtitle: "준비 중 입니다.",
-      // subtitle: "올 한 해를 돌아봅니다",
     } satisfies IntroSlideData,
     background: {
       type: "gradient",

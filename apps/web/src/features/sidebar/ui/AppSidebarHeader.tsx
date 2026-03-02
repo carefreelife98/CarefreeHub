@@ -15,6 +15,7 @@ export default function AppSidebarHeader() {
             width={48}
             height={48}
             className="rounded-full shrink-0"
+            style={{ width: 48, height: 48 }}
           />
           <div className="flex flex-col min-w-0">
             <CardTitle className="text-sm font-semibold truncate">

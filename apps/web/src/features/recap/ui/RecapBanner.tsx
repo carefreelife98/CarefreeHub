@@ -17,11 +17,7 @@ export function RecapBanner({ year }: RecapBannerProps) {
       className="w-full"
     >
       <Link href={`/recap/${year}`} className="group block">
-        <div
-          className="relative overflow-hidden rounded-2xl p-6 md:p-8
-            bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900
-            border border-white/10 hover:border-white/20 transition-all duration-300"
-        >
+        <div className="relative overflow-hidden rounded-2xl p-6 md:p-8 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 border border-white/10 hover:border-white/20 transition-all duration-300">
           {/* 배경 장식 */}
           <div className="absolute top-0 right-0 w-1/2 h-full opacity-20">
             <div
@@ -48,8 +44,7 @@ export function RecapBanner({ year }: RecapBannerProps) {
             </div>
 
             <motion.div
-              className="flex-shrink-0 p-3 rounded-full bg-white/10 
-                group-hover:bg-white/20 transition-colors"
+              className="flex-shrink-0 p-3 rounded-full bg-white/10 group-hover:bg-white/20 transition-colors"
               whileHover={{ scale: 1.1, x: 5 }}
               transition={{ type: "spring", stiffness: 400 }}
             >
