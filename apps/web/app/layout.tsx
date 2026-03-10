@@ -2,10 +2,8 @@ import { SpeedInsights } from "@vercel/speed-insights/next"
 import type { Metadata } from "next"
 import { Suspense } from "react"
 import "./globals.css"
-import { SidebarInset, SidebarProvider, Toaster } from "@shared/ui"
-import { AppSidebar } from "@features/sidebar"
+import { Toaster } from "@shared/ui"
 import { siteConfig } from "@shared/config"
-import { BlogHeader } from "@widgets/header"
 import { GoogleAnalyticsProvider } from "@features/analytics"
 
 export const metadata: Metadata = {
@@ -65,17 +63,7 @@ export default function RootLayout({
         <Suspense fallback={null}>
           <GoogleAnalyticsProvider />
         </Suspense>
-        <SidebarProvider>
-          <AppSidebar />
-          <SidebarInset className="flex flex-col h-screen max-h-screen min-w-0">
-            <header className="sticky top-0 z-30 bg-background">
-              <BlogHeader />
-            </header>
-            <main id="main-content" className="flex-1 overflow-x-hidden overflow-y-auto">
-              {children}
-            </main>
-          </SidebarInset>
-        </SidebarProvider>
+        {children}
         <Toaster />
         <SpeedInsights />
       </body>

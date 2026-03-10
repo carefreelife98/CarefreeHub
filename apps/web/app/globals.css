@@ -229,3 +229,23 @@
 .animate-collapsible-up {
   animation: collapsible-up 0.2s ease-out;
 }
+
+/* ============================================
+   Print (PDF) Styles
+   ============================================ */
+@media print {
+  html, body {
+    overflow: visible !important;
+    height: auto !important;
+    min-height: 0 !important;
+    background: white !important;
+    color: black !important;
+  }
+
+  /* Framer Motion whileInView 애니메이션이 뷰포트 밖 섹션을 숨기는 문제 해결 */
+  [style*="opacity: 0"],
+  [style*="opacity:0"] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

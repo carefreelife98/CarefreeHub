@@ -3,12 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 4000",
     "build": "velite && next build",
     "start": "next start",
     "lint": "eslint"
   },
   "dependencies": {
+    "@mermaid-js/mermaid-zenuml": "^0.2.2",
     "@radix-ui/react-avatar": "^1.1.10",
     "@radix-ui/react-collapsible": "^1.1.12",
     "@radix-ui/react-dialog": "^1.1.15",
@@ -26,6 +27,7 @@
     "embla-carousel-autoplay": "^8.6.0",
     "embla-carousel-react": "^8.6.0",
     "lucide-react": "^0.552.0",
+    "mermaid": "^11.13.0",
     "motion": "^12.23.24",
     "next": "16.0.7",
     "next-themes": "^0.4.6",
