@@ -12,7 +12,8 @@ export async function POST() {
     if (!upstream.ok) return new Response("error", { status: 502 })
     const data = await upstream.json()
     return Response.json(data)
-  } catch {
-    return Response.json({ suggestions: [] }, { status: 500 })
+  } catch (e) {
+    console.error("[suggest-keywords] upstream fetch failed:", e)
+    return Response.json({ error: String(e), apiUrl: process.env.API_URL ?? "NOT_SET" }, { status: 500 })
   }
 }
