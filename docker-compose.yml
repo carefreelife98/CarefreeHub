@@ -30,7 +30,7 @@ services:
       DATABASE_URL: postgresql://studio:${POSTGRES_PASSWORD:-studio_secret_2026}@postgres:5432/carefree_studio
       OPENAI_API_KEY: ${OPENAI_API_KEY}
       ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY}
-      ALLOWED_ORIGINS: https://carefreelab.cloud,https://www.carefreelab.cloud,http://localhost:4000
+      ALLOWED_ORIGINS: https://carefreelab.cloud,https://www.carefreelab.cloud,https://carefree-hub-studio-web.vercel.app,http://localhost:4000
       PORT: "3001"
 
 volumes:
