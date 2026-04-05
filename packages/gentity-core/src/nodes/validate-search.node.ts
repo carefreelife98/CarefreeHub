@@ -10,8 +10,8 @@ const SearchValidationSchema = z.object({
   passed: z.boolean(),
   relevantCount: z.number(),
   reason: z.string(),
-  newKeywords: z.array(z.string()).optional(),
-  newKeywordsKo: z.array(z.string()).optional(),
+  newKeywords: z.array(z.string()).nullable(),
+  newKeywordsKo: z.array(z.string()).nullable(),
 })
 
 export type SearchValidation = z.infer<typeof SearchValidationSchema>
