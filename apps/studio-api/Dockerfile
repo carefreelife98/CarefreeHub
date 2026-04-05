@@ -26,22 +26,11 @@ RUN pnpm --filter @carefree-studio/shared build && \
     pnpm --filter @carefree-studio/gentity-core build && \
     pnpm --filter @carefree-studio/api build
 
-# 6. Production stage
+# 6. Production stage — keep full workspace to preserve pnpm links
 FROM node:22-slim AS runner
-RUN corepack enable && corepack prepare pnpm@10.15.1 --activate
 WORKDIR /app
 
-COPY --from=base /app/package.json /app/pnpm-lock.yaml /app/pnpm-workspace.yaml ./
-COPY --from=base /app/node_modules/ node_modules/
-COPY --from=base /app/packages/shared/dist/ packages/shared/dist/
-COPY --from=base /app/packages/shared/package.json packages/shared/
-COPY --from=base /app/packages/scraper-adapters/dist/ packages/scraper-adapters/dist/
-COPY --from=base /app/packages/scraper-adapters/package.json packages/scraper-adapters/
-COPY --from=base /app/packages/gentity-core/dist/ packages/gentity-core/dist/
-COPY --from=base /app/packages/gentity-core/package.json packages/gentity-core/
-COPY --from=base /app/apps/studio-api/dist/ apps/studio-api/dist/
-COPY --from=base /app/apps/studio-api/package.json apps/studio-api/
-COPY --from=base /app/apps/studio-api/node_modules/ apps/studio-api/node_modules/
+COPY --from=base /app/ .
 
 ENV NODE_ENV=production
 ENV PORT=3001
