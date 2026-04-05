@@ -335,7 +335,7 @@ export function AnalysisProgress({ analysisId, onComplete }: Props) {
 
   useEffect(() => {
     let errorCount = 0
-    const es = new EventSource(`/api/gentity/analyze/${analysisId}/events`)
+    const es = new EventSource(`${process.env.NEXT_PUBLIC_API_URL}/api/gentity/analyze/${analysisId}/events`)
 
     es.onmessage = (e) => {
       errorCount = 0

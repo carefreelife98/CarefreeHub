@@ -41,7 +41,7 @@ export function AiAssistant() {
     setMessages((prev) => [...prev, { role: "assistant", content: "", isStreaming: true }])
 
     try {
-      const res = await fetch("/api/assistant", {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/assistant`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ message: trimmed, history: messages.slice(-6) }),

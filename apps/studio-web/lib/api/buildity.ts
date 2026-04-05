@@ -1,5 +1,4 @@
-// apps/web/lib/api/buildity.ts
-
+import { getApiUrl } from "@/lib/api-url"
 import type {
   ChipGenerateRequest,
   ChipRefreshRequest,
@@ -7,11 +6,13 @@ import type {
   ChipCategory,
 } from "@carefree-studio/shared"
 
+const api = () => getApiUrl()
+
 export async function streamChips(
   request: ChipGenerateRequest,
   signal?: AbortSignal
 ): Promise<Response> {
-  const res = await fetch("/api/buildity/chips/stream", {
+  const res = await fetch(`${api()}/api/buildity/chips/stream`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(request),
@@ -22,7 +23,7 @@ export async function streamChips(
 }
 
 export async function refreshChips(request: ChipRefreshRequest): Promise<ChipCategory> {
-  const res = await fetch("/api/buildity/chips/refresh", {
+  const res = await fetch(`${api()}/api/buildity/chips/refresh`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(request),
@@ -34,7 +35,7 @@ export async function refreshChips(request: ChipRefreshRequest): Promise<ChipCat
 }
 
 export async function streamPrd(request: PrdBuildRequest, signal?: AbortSignal): Promise<Response> {
-  const res = await fetch("/api/buildity/build/stream", {
+  const res = await fetch(`${api()}/api/buildity/build/stream`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(request),

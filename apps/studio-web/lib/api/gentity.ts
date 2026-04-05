@@ -1,9 +1,10 @@
-// apps/web/lib/api/gentity.ts
-
+import { getApiUrl } from "@/lib/api-url"
 import type { GentityReport, AnalyzeRequest } from "@carefree-studio/shared"
 
+const api = () => getApiUrl()
+
 export async function analyzeGame(request: AnalyzeRequest): Promise<{ analysisId: string }> {
-  const res = await fetch("/api/gentity/analyze", {
+  const res = await fetch(`${api()}/api/gentity/analyze`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(request),
@@ -14,14 +15,14 @@ export async function analyzeGame(request: AnalyzeRequest): Promise<{ analysisId
 }
 
 export async function getAnalysisResult(analysisId: string): Promise<GentityReport | null> {
-  const res = await fetch(`/api/gentity/result/${analysisId}`)
+  const res = await fetch(`${api()}/api/gentity/result/${analysisId}`)
   if (!res.ok) return null
   const json = (await res.json()) as { success: boolean; data?: GentityReport }
   return json.success && json.data ? json.data : null
 }
 
 export function createAnalysisEventSource(analysisId: string): EventSource {
-  return new EventSource(`/api/gentity/analyze/${analysisId}/events`)
+  return new EventSource(`${api()}/api/gentity/analyze/${analysisId}/events`)
 }
 
 interface KeywordSuggestion {
@@ -31,7 +32,7 @@ interface KeywordSuggestion {
 }
 
 export async function suggestKeywords(): Promise<KeywordSuggestion[]> {
-  const res = await fetch("/api/gentity/suggest-keywords", {
+  const res = await fetch(`${api()}/api/gentity/suggest-keywords`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
   })
