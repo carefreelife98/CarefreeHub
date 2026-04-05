@@ -45,12 +45,10 @@ export class GentityController {
   streamEvents(@Param("id") id: string, @Res() res: Response): void {
     const subject = activeStreams.get(id)
     if (!subject) {
-      res
-        .status(404)
-        .json({
-          success: false,
-          error: { code: "NOT_FOUND", message: "Analysis stream not found" },
-        })
+      res.status(404).json({
+        success: false,
+        error: { code: "NOT_FOUND", message: "Analysis stream not found" },
+      })
       return
     }
 
