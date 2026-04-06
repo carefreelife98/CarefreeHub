@@ -63,6 +63,8 @@ export type NodeCompleteSummary =
   | { kind: "design-structure"; sceneCount: number; objectCount: number }
   | { kind: "setup-assets"; paletteCount: number; placeholderCount: number }
   | { kind: "generate"; fileCount: number }
+  | { kind: "ast-validate"; passed: boolean; attempt: number; errorCount: number }
+  | { kind: "finalize"; totalFiles: number; passed: boolean }
 
 export type ErrorCode =
   | "SCRAPE_FAILED"
