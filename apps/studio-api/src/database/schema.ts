@@ -70,3 +70,26 @@ export const prds = pgTable("prds", {
   markdown: text("markdown").notNull(),
   createdAt: timestamp("created_at").notNull().defaultNow(),
 })
+
+export const games = pgTable("games", {
+  id: uuid("id").primaryKey().defaultRandom(),
+  prdId: uuid("prd_id").references(() => prds.id),
+  title: varchar("title", { length: 255 }).notNull(),
+  status: varchar("status", { length: 50 }).notNull().default("generating"),
+  techStack: jsonb("tech_stack").$type<{ framework: string; language: string }>().notNull(),
+  llmProvider: varchar("llm_provider", { length: 50 }).notNull(),
+  createdAt: timestamp("created_at").notNull().defaultNow(),
+  updatedAt: timestamp("updated_at").notNull().defaultNow(),
+})
+
+export const gameVersions = pgTable("game_versions", {
+  id: uuid("id").primaryKey().defaultRandom(),
+  gameId: uuid("game_id")
+    .notNull()
+    .references(() => games.id),
+  version: integer("version").notNull().default(1),
+  files: jsonb("files").$type<{ path: string; content: string; hash: string }[]>().notNull(),
+  assets: jsonb("assets").$type<{ name: string; type: string; color: string; dimensions: { width: number; height: number } }[]>().notNull(),
+  generationLog: jsonb("generation_log").$type<Record<string, unknown>>(),
+  createdAt: timestamp("created_at").notNull().defaultNow(),
+})
