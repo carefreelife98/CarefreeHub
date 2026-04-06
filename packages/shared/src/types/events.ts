@@ -62,6 +62,7 @@ export type NodeCompleteSummary =
   | { kind: "parse"; conceptTitle: string }
   | { kind: "design-structure"; sceneCount: number; objectCount: number }
   | { kind: "setup-assets"; paletteCount: number; placeholderCount: number }
+  | { kind: "generate"; fileCount: number }
 
 export type ErrorCode =
   | "SCRAPE_FAILED"
