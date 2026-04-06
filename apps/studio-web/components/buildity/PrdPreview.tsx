@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { Streamdown } from "streamdown"
 import { code } from "@streamdown/code"
@@ -17,10 +17,12 @@ interface Props {
   steps: BuildityStep[]
   llmConfig?: LlmConfig
   onBack: () => void
+  onMarkdownReady?: (markdown: string) => void
 }
 
-export function PrdPreview({ concept, steps, llmConfig, onBack }: Props) {
+export function PrdPreview({ concept, steps, llmConfig, onBack, onMarkdownReady }: Props) {
   const [sections, setSections] = useState<string[]>(Array(7).fill(""))
+  const sectionsRef = useRef<string[]>(Array(7).fill(""))
   const [sectionTitles, setSectionTitles] = useState<string[]>([])
   const [sectionDone, setSectionDone] = useState<Set<number>>(new Set())
   const [isStreaming, setIsStreaming] = useState(false)
@@ -65,7 +67,8 @@ export function PrdPreview({ concept, steps, llmConfig, onBack }: Props) {
                 titles: string[]
               }
               setSectionTitles(titles)
-              setSections(Array(total).fill(""))
+              sectionsRef.current = Array(total).fill("")
+            setSections(Array(total).fill(""))
             } catch {}
           } else if (eventType === "section" && dataLine) {
             try {
@@ -76,6 +79,7 @@ export function PrdPreview({ concept, steps, llmConfig, onBack }: Props) {
               setSections((prev) => {
                 const next = [...prev]
                 next[index] = (next[index] ?? "") + text
+                sectionsRef.current = next
                 return next
               })
             } catch {}
@@ -88,6 +92,7 @@ export function PrdPreview({ concept, steps, llmConfig, onBack }: Props) {
         }
       }
       setIsDone(true)
+      onMarkdownReady?.(sectionsRef.current.filter(Boolean).join("\n\n---\n\n"))
     } catch (err) {
       setError(err instanceof Error ? err.message : "PRD 생성 실패")
     } finally {
