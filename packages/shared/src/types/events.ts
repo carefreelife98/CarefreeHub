@@ -59,6 +59,9 @@ export type NodeCompleteSummary =
   | { kind: "analyze"; strengthCount: number; painPointCount: number }
   | { kind: "create"; conceptTitle: string }
   | { kind: "verify"; passed: boolean; feedback?: string }
+  | { kind: "parse"; conceptTitle: string }
+  | { kind: "design-structure"; sceneCount: number; objectCount: number }
+  | { kind: "setup-assets"; paletteCount: number; placeholderCount: number }
 
 export type ErrorCode =
   | "SCRAPE_FAILED"
