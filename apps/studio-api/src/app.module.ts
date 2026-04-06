@@ -5,6 +5,7 @@ import { DrizzleModule } from "./database/drizzle.module.js"
 import { GentityModule } from "./gentity/gentity.module.js"
 import { BuildityModule } from "./buildity/buildity.module.js"
 import { AssistantModule } from "./assistant/assistant.module.js"
+import { CraftityModule } from "./craftity/craftity.module.js"
 import { RequestLoggerMiddleware } from "./request-logger.middleware.js"
 
 @Module({
@@ -14,6 +15,7 @@ import { RequestLoggerMiddleware } from "./request-logger.middleware.js"
     GentityModule,
     BuildityModule,
     AssistantModule,
+    CraftityModule,
   ],
 })
 export class AppModule implements NestModule {

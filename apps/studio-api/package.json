@@ -11,6 +11,7 @@
     "lint": "tsc --noEmit"
   },
   "dependencies": {
+    "@carefree-studio/craftity-core": "workspace:*",
     "@carefree-studio/gentity-core": "workspace:*",
     "@carefree-studio/scraper-adapters": "workspace:*",
     "@carefree-studio/shared": "workspace:*",

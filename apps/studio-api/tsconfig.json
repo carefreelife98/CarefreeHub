@@ -10,6 +10,7 @@
   "references": [
     { "path": "../../packages/shared" },
     { "path": "../../packages/scraper-adapters" },
-    { "path": "../../packages/gentity-core" }
+    { "path": "../../packages/gentity-core" },
+    { "path": "../../packages/craftity-core" }
   ]
 }
