@@ -89,8 +89,9 @@ export function RecapContainer({ config }: RecapContainerProps) {
   }, [goNext, goPrev])
 
   const getBackgroundStyle = (slide: SlideConfig<unknown>) => {
+    const fallback = "oklch(0.16 0.005 50)"
     if (!slide.background) {
-      return { background: "#0f0f0f" }
+      return { background: fallback }
     }
 
     switch (slide.background.type) {
@@ -105,9 +106,10 @@ export function RecapContainer({ config }: RecapContainerProps) {
           backgroundPosition: "center",
         }
       default:
-        return { background: "#0f0f0f" }
+        return { background: fallback }
     }
   }
+
 
   const getAnimationVariants = (slide: SlideConfig<unknown>) => {
     const animation = slide.animation ?? { enter: "fade", duration: 0.5 }
@@ -169,7 +171,7 @@ export function RecapContainer({ config }: RecapContainerProps) {
 
   return (
     <div
-      className="fixed inset-0 overflow-hidden z-50 bg-[#0f0f0f] cursor-pointer"
+      className="dark fixed inset-0 overflow-hidden z-50 bg-background text-foreground cursor-pointer"
       onClick={handleClick}
     >
       <AnimatePresence mode="wait" initial={false}>

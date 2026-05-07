@@ -6,6 +6,8 @@ export const metadata: Metadata = {
 }
 
 export default function RecapLayout({ children }: { children: React.ReactNode }) {
-  // 풀스크린 레이아웃 - 헤더/사이드바 제외
-  return <div className="min-h-screen bg-[#0f0f0f]">{children}</div>
+  // 풀스크린 레이아웃 - 헤더/사이드바 제외, 의도된 다크 surface (Warm Ink 다크톤)
+  return (
+    <div className="dark min-h-[100dvh] bg-background text-foreground antialiased">{children}</div>
+  )
 }
