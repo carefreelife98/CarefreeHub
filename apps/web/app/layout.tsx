@@ -1,10 +1,18 @@
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import type { Metadata } from "next"
 import { Suspense } from "react"
+import { JetBrains_Mono } from "next/font/google"
+import "pretendard/dist/web/variable/pretendardvariable-dynamic-subset.css"
 import "./globals.css"
 import { Toaster } from "@shared/ui"
 import { siteConfig } from "@shared/config"
 import { GoogleAnalyticsProvider } from "@features/analytics"
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono-jetbrains",
+  display: "swap",
+})
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -58,7 +66,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="ko">
+    <html lang="ko" className={jetbrainsMono.variable}>
       <body>
         <Suspense fallback={null}>
           <GoogleAnalyticsProvider />

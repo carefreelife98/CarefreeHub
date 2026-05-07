@@ -34,7 +34,12 @@ export function AppSidebar() {
             <Logo
               className={`w-8 h-8 shrink-0 transition-[transform,opacity] duration-300 ease-[cubic-bezier(0.32,0.72,0,1)] transform-gpu ${isExpanded ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-4"}`}
             />
-            <div className="text-xl font-bold whitespace-nowrap">Carefree Hub</div>
+            <div
+              className="text-xl font-bold tracking-tight whitespace-nowrap"
+              style={{ letterSpacing: "-0.02em" }}
+            >
+              Carefree Hub
+            </div>
           </div>
 
           {/* Toggle Button - 아이콘 크로스페이드 */}

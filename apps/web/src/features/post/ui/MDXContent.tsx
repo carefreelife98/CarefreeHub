@@ -22,12 +22,16 @@ function useMDXComponent(code: string) {
   }, [code])
 }
 
+/* eslint-disable react-hooks/static-components -- Velite/MDX 표준: 코드 문자열을 컴포넌트로 컴파일, useMemo 캐시로 idempotent */
 export function MDXContent({ code }: MDXContentProps) {
   const Component = useMDXComponent(code)
 
   return (
-    <div className="prose prose-neutral dark:prose-invert max-w-none">
+    // 본문은 65ch 까지만 — 가독 한계. max-w-none을 쓰지 않는다.
+    // 이미지/코드블록/표는 prose 내부에서 자체 폭을 가지므로 65ch을 자연스럽게 넘는다.
+    <div className="prose prose-neutral dark:prose-invert max-w-[68ch]">
       <Component components={mdxComponents} />
     </div>
   )
 }
+/* eslint-enable react-hooks/static-components */

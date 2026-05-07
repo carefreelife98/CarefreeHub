@@ -1,3 +1,4 @@
+import Image from "next/image"
 import Link from "next/link"
 import { Calendar, User, Clock } from "lucide-react"
 import { findCategoryBySlug, getCategoryColor } from "@shared/config"
@@ -28,7 +29,14 @@ export function PostHeader({
         {/* Thumbnail - 작은 사이즈로 좌측에 */}
         {thumbnail && (
           <div className="flex-shrink-0 w-24 h-24 sm:w-32 sm:h-32 rounded-lg overflow-hidden border border-border/50">
-            <img src={thumbnail} alt={title} className="w-full h-full object-cover" />
+            <Image
+              src={thumbnail}
+              alt={title}
+              width={128}
+              height={128}
+              className="w-full h-full object-cover"
+              unoptimized
+            />
           </div>
         )}
 
@@ -56,11 +64,18 @@ export function PostHeader({
           )}
 
           {/* Title */}
-          <h1 className="text-2xl sm:text-3xl font-bold tracking-tight mb-2">{title}</h1>
+          <h1
+            className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-3 break-keep"
+            style={{ letterSpacing: "-0.02em" }}
+          >
+            {title}
+          </h1>
 
           {/* Description */}
           {description && (
-            <p className="text-base text-muted-foreground mb-3 line-clamp-2">{description}</p>
+            <p className="text-base sm:text-lg text-muted-foreground mb-4 leading-relaxed line-clamp-2 break-keep">
+              {description}
+            </p>
           )}
 
           {/* Meta info */}

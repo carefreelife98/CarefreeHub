@@ -13,9 +13,13 @@ export default function PostsPage() {
 
   return (
     <div className="w-full flex flex-col px-4 md:px-8 lg:px-16 xl:px-32 py-8">
-      <div className="mb-8">
-        <h1 className="text-3xl font-bold">전체 게시글</h1>
-        <p className="text-muted-foreground mt-2">모든 포스트를 확인하세요.</p>
+      <div className="mb-8 sm:mb-12">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight break-keep">
+          전체 게시글
+        </h1>
+        <p className="text-muted-foreground mt-3 text-base sm:text-lg">
+          모든 포스트를 확인하세요.
+        </p>
       </div>
 
       <div className="w-full">
@@ -29,7 +33,7 @@ export default function PostsPage() {
             updatedAt={
               post.updated ? new Date(post.updated).toLocaleDateString("ko-KR") : undefined
             }
-            thumbnailUrl={post.thumbnail || "https://picsum.photos/200/300"}
+            thumbnailUrl={post.thumbnail}
             linkUrl={`/posts/${post.slug}`}
             chips={post.categories.map((cat) => ({
               label: cat,

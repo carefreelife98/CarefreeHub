@@ -105,6 +105,9 @@ importers:
 
   apps/studio-api:
     dependencies:
+      '@carefree-studio/craftity-core':
+        specifier: workspace:*
+        version: link:../../packages/craftity-core
       '@carefree-studio/gentity-core':
         specifier: workspace:*
         version: link:../../packages/gentity-core
@@ -202,6 +205,9 @@ importers:
       '@tanstack/react-query':
         specifier: ^5.0.0
         version: 5.96.2(react@19.2.4)
+      '@webcontainer/api':
+        specifier: ^1.6.1
+        version: 1.6.1
       class-variance-authority:
         specifier: ^0.7.1
         version: 0.7.1
@@ -344,6 +350,9 @@ importers:
       next-themes:
         specifier: ^0.4.6
         version: 0.4.6(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
+      pretendard:
+        specifier: ^1.3.9
+        version: 1.3.9
       prism-react-renderer:
         specifier: ^2.4.1
         version: 2.4.1(react@19.2.0)
@@ -417,6 +426,37 @@ importers:
       velite:
         specifier: ^0.3.1
         version: 0.3.1
+
+  packages/craftity-core:
+    dependencies:
+      '@carefree-studio/shared':
+        specifier: workspace:*
+        version: link:../shared
+      '@langchain/anthropic':
+        specifier: ^1.3.26
+        version: 1.3.26(@langchain/core@1.1.39(openai@6.33.0(zod@3.25.76)))
+      '@langchain/core':
+        specifier: ^1.1.38
+        version: 1.1.39(openai@6.33.0(zod@3.25.76))
+      '@langchain/langgraph':
+        specifier: ^1.2.6
+        version: 1.2.7(@langchain/core@1.1.39(openai@6.33.0(zod@3.25.76)))(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(zod-to-json-schema@3.25.2(zod@3.25.76))(zod@3.25.76)
+      '@langchain/openai':
+        specifier: ^1.4.1
+        version: 1.4.2(@langchain/core@1.1.39(openai@6.33.0(zod@3.25.76)))
+      typescript:
+        specifier: ^5.7.0
+        version: 5.9.3
+      winston:
+        specifier: ^3.19.0
+        version: 3.19.0
+      zod:
+        specifier: ^3.24.0
+        version: 3.25.76
+    devDependencies:
+      vitest:
+        specifier: ^3.0.0
+        version: 3.2.4(@types/debug@4.1.12)(@types/node@25.5.2)(jiti@2.6.1)(lightningcss@1.30.2)(msw@2.12.14(@types/node@25.5.2)(typescript@5.9.3))(terser@5.44.1)
 
   packages/gentity-core:
     dependencies:
@@ -3738,6 +3778,9 @@ packages:
 
   '@webassemblyjs/wast-printer@1.14.1':
     resolution: {integrity: sha512-kPSSXE6De1XOR820C90RIo2ogvZG+c3KiHzqUoO/F34Y2shGzesfqv7o57xrxovZJH/MetF5UjroJ/R/3isoiw==}
+
+  '@webcontainer/api@1.6.1':
+    resolution: {integrity: sha512-2RS2KiIw32BY1Icf6M1DvqSmcon9XICZCDgS29QJb2NmF12ZY2V5Ia+949hMKB3Wno+P/Y8W+sPP59PZeXSELg==}
 
   '@xtuc/ieee754@1.2.0':
     resolution: {integrity: sha512-DX8nKgqcGwsc0eJSqYt5lwP4DH5FlHnmuWWBRy7X0NcaGR0ZtuyeESgMwTYVEtxmsNGY+qit4QYT/MIYTOTPeA==}
@@ -7366,6 +7409,9 @@ packages:
     resolution: {integrity: sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==}
     engines: {node: '>= 0.8.0'}
 
+  pretendard@1.3.9:
+    resolution: {integrity: sha512-PaQAADyLY5v4kYFwkpSJHbSSYIkiriY/1xXw75TKoZ9UQQqeU+tvP05yTdZAWibiIYoo8ZKtRv8PM7w0IaywSw==}
+
   prettier-linter-helpers@1.0.0:
     resolution: {integrity: sha512-GbK2cP9nraSSUF9N2XwUwqfzlAFlMNYYl+ShE/V+H8a9uNl/oUqB1w2EL54Jh0OlyRSd8RfWYJ3coVS4TROP2w==}
     engines: {node: '>=6.0.0'}
@@ -8562,6 +8608,7 @@ packages:
 
   uuid@10.0.0:
     resolution: {integrity: sha512-8XkAphELsDnEGrDxUOHB3RGvXz6TeuYSGEZBOjtTtPm2lwhGBjLgOzLHB63IUWfBpNucQjND6d3AOudO+H3RWQ==}
+    deprecated: uuid@10 and below is no longer supported.  For ESM codebases, update to uuid@latest.  For CommonJS codebases, use uuid@11 (but be aware this version will likely be deprecated in 2028).
     hasBin: true
 
   uuid@11.1.0:
@@ -12453,6 +12500,8 @@ snapshots:
     dependencies:
       '@webassemblyjs/ast': 1.14.1
       '@xtuc/long': 4.2.2
+
+  '@webcontainer/api@1.6.1': {}
 
   '@xtuc/ieee754@1.2.0': {}
 
@@ -17074,6 +17123,8 @@ snapshots:
   powershell-utils@0.1.0: {}
 
   prelude-ls@1.2.1: {}
+
+  pretendard@1.3.9: {}
 
   prettier-linter-helpers@1.0.0:
     dependencies:

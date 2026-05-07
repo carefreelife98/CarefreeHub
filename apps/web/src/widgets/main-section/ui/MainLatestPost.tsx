@@ -13,8 +13,10 @@ export function MainLatestPost() {
 
   return (
     <div>
-      <div className="w-full flex flex-row items-center justify-between">
-        <h1 className="text-xl whitespace-nowrap font-bold text-muted-foreground">최근 게시글</h1>
+      <div className="w-full flex flex-row items-center justify-between mb-2">
+        <h2 className="text-sm font-semibold uppercase tracking-[0.18em] text-muted-foreground whitespace-nowrap">
+          최근 게시글
+        </h2>
         <Button variant="ghost" size="sm">
           <Link href="/posts" className="flex flex-row items-center justify-center gap-2">
             <span>전체 보기</span>
@@ -33,7 +35,7 @@ export function MainLatestPost() {
             updatedAt={
               post.updated ? new Date(post.updated).toLocaleDateString("ko-KR") : undefined
             }
-            thumbnailUrl={post.thumbnail || "https://picsum.photos/200/300"}
+            thumbnailUrl={post.thumbnail}
             linkUrl={`/posts/${post.slug}`}
             chips={post.categories.map((cat) => ({
               label: cat,

@@ -26,28 +26,42 @@ export function PostListHeader({
   description,
 }: PostListHeaderProps) {
   return (
-    <div className="mb-10">
+    <div className="mb-10 sm:mb-12">
       {/* 제목 */}
-      <div className="flex items-center justify-between">
-        <div className="flex items-center gap-3">
+      <div className="flex items-center justify-between gap-3">
+        <div className="flex items-center gap-3 sm:gap-4 min-w-0">
           {(svgIcon || Icon) && (
-            <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-muted">
-              {svgIcon ? svgIcon : Icon && <Icon className="w-6 h-6 text-foreground" />}
+            <div className="flex shrink-0 items-center justify-center w-11 h-11 sm:w-14 sm:h-14 rounded-xl bg-muted">
+              {svgIcon ? svgIcon : Icon && <Icon className="w-5 h-5 sm:w-7 sm:h-7 text-foreground" />}
             </div>
           )}
-          <h1 className={cn("font-bold tracking-tight", type === "tag" ? "text-4xl" : "text-4xl")}>
-            {type === "tag" && <span className="text-muted-foreground font-normal">#</span>}
+          <h1
+            className={cn(
+              "font-bold tracking-tight break-keep min-w-0",
+              "text-3xl sm:text-4xl md:text-5xl"
+            )}
+            style={{ letterSpacing: "-0.02em" }}
+          >
+            {type === "tag" && (
+              <span className="text-muted-foreground font-normal mr-0.5">#</span>
+            )}
             {title}
           </h1>
         </div>
-        <span className="text-sm text-muted-foreground">{count}개의 포스트</span>
+        <span className="shrink-0 text-xs sm:text-sm text-muted-foreground tabular-nums">
+          {count}개
+        </span>
       </div>
 
       {/* 설명 */}
-      {description && <p className="mt-3 text-lg text-muted-foreground max-w-2xl">{description}</p>}
+      {description && (
+        <p className="mt-4 text-base sm:text-lg text-muted-foreground max-w-2xl leading-relaxed">
+          {description}
+        </p>
+      )}
 
       {/* 구분선 */}
-      <div className="mt-6 border-b border-border" />
+      <div className="mt-6 sm:mt-8 border-b border-border" />
     </div>
   )
 }
