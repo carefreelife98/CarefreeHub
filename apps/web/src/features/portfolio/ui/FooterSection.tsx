@@ -12,9 +12,9 @@ interface FooterSectionProps {
 
 export function FooterSection({ links }: FooterSectionProps) {
   return (
-    <section id="footer" className="border-t border-border/30 py-12 print:py-6">
+    <section id="footer" className="border-t border-border/30 py-10 sm:py-12 print:py-6">
       <SectionReveal>
-        <div className="mx-auto max-w-5xl px-6">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6">
           <div className="flex flex-col items-center gap-6 text-center">
             {links.recap && (
               <Link

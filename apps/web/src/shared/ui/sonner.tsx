@@ -26,11 +26,15 @@ const Toaster = ({ ...props }: ToasterProps) => {
       }}
       toastOptions={{
         classNames: {
-          success: "!bg-emerald-50 !text-emerald-800 !border-emerald-200",
-          error: "!bg-rose-50 !text-rose-800 !border-rose-200",
-          warning: "!bg-amber-50 !text-amber-800 !border-amber-200",
-          info: "!bg-sky-50 !text-sky-800 !border-sky-200",
-          loading: "!bg-slate-50 !text-slate-700 !border-slate-200",
+          // Warm Ink 의미 컬러 — sage/coral/amber/ink 패밀리
+          success:
+            "!bg-[oklch(0.96_0.03_160)] !text-[oklch(0.32_0.1_160)] !border-[oklch(0.45_0.12_160)]/20",
+          error:
+            "!bg-[oklch(0.96_0.03_25)] !text-[oklch(0.4_0.15_25)] !border-[oklch(0.5_0.17_25)]/20",
+          warning:
+            "!bg-[oklch(0.96_0.04_75)] !text-[oklch(0.4_0.13_75)] !border-[oklch(0.5_0.13_75)]/20",
+          info: "!bg-[oklch(0.96_0.03_250)] !text-[oklch(0.32_0.13_250)] !border-[oklch(0.42_0.16_250)]/20",
+          loading: "!bg-muted !text-muted-foreground !border-border",
           description: "!text-inherit opacity-80",
         },
       }}

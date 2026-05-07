@@ -28,20 +28,9 @@ export function InlineCode({ children, className }: InlineCodeProps) {
   // 백틱 제거
   const content = removeBackticks(children)
 
-  // 노션 정확한 스타일 인라인 코드
+  // 노션식 인라인 코드 — Warm Ink 코랄 액센트 + 따뜻한 중성 배경
   return (
-    <code
-      style={{
-        color: "#EB5757",
-        background: "rgba(135, 131, 120, 0.15)",
-        borderRadius: "3px",
-        padding: "0.2em 0.4em",
-        fontSize: "85%",
-        fontFamily:
-          '"SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace',
-        lineHeight: "normal",
-      }}
-    >
+    <code className="rounded-[3px] px-[0.4em] py-[0.2em] text-[85%] leading-normal text-[oklch(0.5_0.17_25)] dark:text-[oklch(0.78_0.14_25)] bg-[oklch(0.92_0.02_60)] dark:bg-[oklch(0.27_0.01_50)] font-mono">
       {content}
     </code>
   )

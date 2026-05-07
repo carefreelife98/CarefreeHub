@@ -1,7 +1,7 @@
 "use client"
 
 import { useMemo, useState } from "react"
-import type { Feature, FeatureSubSection } from "../lib/types"
+import type { Feature } from "../lib/types"
 import { RoleBadge } from "./RoleBadge"
 import { MermaidDiagram } from "./MermaidDiagram"
 import { ImageWithCaption } from "./ImageWithCaption"
@@ -11,10 +11,9 @@ import { SectionReveal } from "./SectionReveal"
 
 interface FeatureSectionProps {
   feature: Feature
-  index: number
 }
 
-export function FeatureSection({ feature, index }: FeatureSectionProps) {
+export function FeatureSection({ feature }: FeatureSectionProps) {
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null)
 
   const hasSubSections = feature.subSections && feature.subSections.length > 0
@@ -38,13 +37,15 @@ export function FeatureSection({ feature, index }: FeatureSectionProps) {
   return (
     <section
       id={feature.id}
-      className="border-t border-border/30 py-12 print:py-6 print:break-inside-avoid-page"
+      className="border-t border-border/30 py-10 sm:py-12 print:py-6 print:break-inside-avoid-page"
     >
       <SectionReveal>
-        <div className="mx-auto max-w-5xl px-6">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6">
           <RoleBadge roles={feature.roles} />
 
-          <h2 className="mt-3 text-2xl font-bold print:text-xl">{feature.title}</h2>
+          <h2 className="mt-3 text-xl sm:text-2xl font-bold print:text-xl break-keep">
+            {feature.title}
+          </h2>
 
           {/* 문제 */}
           <div className="mt-6 print:mt-3">
@@ -110,7 +111,7 @@ export function FeatureSection({ feature, index }: FeatureSectionProps) {
               return (
                 <div
                   key={si}
-                  className="mt-10 rounded-lg border border-border/20 bg-muted/30 p-6 print:mt-6 print:bg-white print:border-gray-200"
+                  className="mt-8 sm:mt-10 rounded-lg border border-border/20 bg-muted/30 p-4 sm:p-6 print:mt-6 print:bg-white print:border-gray-200"
                 >
                   <h3 className="text-lg font-bold print:text-base">{sub.title}</h3>
 
@@ -166,10 +167,10 @@ export function FeatureSection({ feature, index }: FeatureSectionProps) {
 
           {/* 성과 */}
           <div className="mt-8 print:mt-4">
-            <h3 className="text-sm font-semibold uppercase tracking-wider bg-gradient-to-r from-indigo-400 via-emerald-400 to-violet-400 bg-clip-text text-transparent print:text-gray-700">
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-foreground print:text-gray-700">
               성과
             </h3>
-            <div className="mt-3 grid gap-3 sm:grid-cols-2 lg:grid-cols-3 print:grid-cols-3">
+            <div className="mt-3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 print:grid-cols-3">
               {feature.stats.map((stat, i) => (
                 <StatCard key={i} stat={stat} />
               ))}

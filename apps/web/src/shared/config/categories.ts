@@ -39,30 +39,58 @@ export interface CategoryNode {
  *
  * 3. 라우팅: /posts/category/[slug]
  */
+/*
+ * 카테고리 컬러 시스템 — Warm Ink 팔레트
+ *
+ * 원칙:
+ * - 같은 부모 = 같은 hue (자식은 lightness 단계만 다르게)
+ * - 5개 패밀리: ink (Tech), coral (Project), amber (Learning), sage (Seminar), parchment (Recap)
+ * - 모든 색상은 토큰 무관한 OKLCH로 정의 (테마 토큰과 충돌하지 않음)
+ * - 칩 형태: bg + text — 본문 위 부드러운 wash
+ *
+ * 다크모드는 dark: 변형으로 lightness/chroma 조정.
+ */
+const C = {
+  // Tech — 잉크 블루 패밀리
+  tech: "bg-[oklch(0.94_0.04_250)] text-[oklch(0.42_0.16_250)] dark:bg-[oklch(0.3_0.06_250)] dark:text-[oklch(0.78_0.13_250)]",
+  techStrong:
+    "bg-[oklch(0.92_0.05_250)] text-[oklch(0.4_0.17_250)] dark:bg-[oklch(0.32_0.07_250)] dark:text-[oklch(0.8_0.14_250)]",
+
+  // Project — 따뜻한 코랄 패밀리
+  project:
+    "bg-[oklch(0.94_0.04_25)] text-[oklch(0.5_0.17_25)] dark:bg-[oklch(0.3_0.06_25)] dark:text-[oklch(0.78_0.14_25)]",
+  projectStrong:
+    "bg-[oklch(0.92_0.05_25)] text-[oklch(0.48_0.18_25)] dark:bg-[oklch(0.32_0.07_25)] dark:text-[oklch(0.8_0.15_25)]",
+
+  // Learning — 앰버 패밀리
+  learning:
+    "bg-[oklch(0.93_0.05_75)] text-[oklch(0.5_0.13_75)] dark:bg-[oklch(0.3_0.05_75)] dark:text-[oklch(0.82_0.13_75)]",
+
+  // Seminar — 세이지 패밀리
+  seminar:
+    "bg-[oklch(0.93_0.04_160)] text-[oklch(0.45_0.12_160)] dark:bg-[oklch(0.3_0.05_160)] dark:text-[oklch(0.78_0.12_160)]",
+
+  // Recap — 파치먼트(짙은 따뜻 톤)
+  recap:
+    "bg-[oklch(0.93_0.03_60)] text-[oklch(0.4_0.04_60)] dark:bg-[oklch(0.28_0.02_60)] dark:text-[oklch(0.85_0.02_60)]",
+} as const
+
 export const categoryTree: CategoryNode[] = [
   {
     name: "Tech",
     slug: "tech",
     icon: Server,
-    color: "bg-blue-500/15 text-blue-600 dark:text-blue-400",
+    color: C.tech,
     description: "개발 기술, 아키텍처, 트러블슈팅 등 기술 포스팅",
     children: [
       {
         name: "Backend",
         slug: "backend",
         icon: Server,
-        color: "bg-emerald-500/15 text-emerald-600 dark:text-emerald-400",
+        color: C.tech,
         children: [
-          {
-            name: "Spring",
-            slug: "spring",
-            color: "bg-green-500/15 text-green-600 dark:text-green-400",
-          },
-          {
-            name: "NestJS",
-            slug: "nestjs",
-            color: "bg-rose-500/15 text-rose-600 dark:text-rose-400",
-          },
+          { name: "Spring", slug: "spring", color: C.tech },
+          { name: "NestJS", slug: "nestjs", color: C.techStrong },
         ],
       },
     ],
@@ -71,36 +99,22 @@ export const categoryTree: CategoryNode[] = [
     name: "Project",
     slug: "project",
     icon: Briefcase,
-    color: "bg-violet-500/15 text-violet-600 dark:text-violet-400",
+    color: C.project,
     description: "사이드 프로젝트 개발 과정 및 회고",
     children: [
       {
         name: "Toy",
         slug: "toy",
-        color: "bg-pink-500/15 text-pink-600 dark:text-pink-400",
-        children: [
-          {
-            name: "Carefree OCR",
-            slug: "carefree-ocr",
-            color: "bg-purple-500/15 text-purple-600 dark:text-purple-400",
-          },
-        ],
+        color: C.project,
+        children: [{ name: "Carefree OCR", slug: "carefree-ocr", color: C.projectStrong }],
       },
       {
         name: "Task",
         slug: "task",
-        color: "bg-blue-500/15 text-blue-600 dark:text-blue-400",
+        color: C.project,
         children: [
-          {
-            name: "FLOKR",
-            slug: "flokr",
-            color: "bg-indigo-500/15 text-indigo-600 dark:text-indigo-400",
-          },
-          {
-            name: "FLOWIKI",
-            slug: "flowiki",
-            color: "bg-cyan-500/15 text-cyan-600 dark:text-cyan-400",
-          },
+          { name: "FLOKR", slug: "flokr", color: C.projectStrong },
+          { name: "FLOWIKI", slug: "flowiki", color: C.projectStrong },
         ],
       },
     ],
@@ -109,43 +123,25 @@ export const categoryTree: CategoryNode[] = [
     name: "Learning",
     slug: "learning",
     icon: BookOpen,
-    color: "bg-amber-500/15 text-amber-600 dark:text-amber-400",
+    color: C.learning,
     description: "교육 과정, 자격증 준비 등 학습 기록",
-    children: [
-      {
-        name: "CloudWave",
-        slug: "cloudwave",
-        color: "bg-orange-500/15 text-orange-600 dark:text-orange-400",
-      },
-    ],
+    children: [{ name: "CloudWave", slug: "cloudwave", color: C.learning }],
   },
   {
     name: "Seminar",
     slug: "seminar",
     icon: Megaphone,
-    color: "bg-red-500/15 text-red-600 dark:text-red-400",
+    color: C.seminar,
     description: "세미나 후기 및 관련 정보",
-    children: [
-      {
-        name: "Goorm",
-        slug: "goorm",
-        color: "bg-neutral-200/50 text-neutral-800 dark:bg-neutral-700/50 dark:text-neutral-200",
-      },
-    ],
+    children: [{ name: "Goorm", slug: "goorm", color: C.seminar }],
   },
   {
     name: "Recap",
     slug: "recap",
     icon: ScrollText,
-    color: "bg-amber-500/15 text-amber-600 dark:text-amber-400",
+    color: C.recap,
     description: "회고",
-    children: [
-      {
-        name: "2025",
-        slug: "2025",
-        color: "bg-amber-500/15 text-amber-600 dark:text-amber-400",
-      },
-    ],
+    children: [{ name: "2025", slug: "2025", color: C.recap }],
   },
 ]
 

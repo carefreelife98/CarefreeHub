@@ -10,12 +10,12 @@ interface TechStackGridProps {
 
 export function TechStackGrid({ stacks }: TechStackGridProps) {
   return (
-    <section id="tech-stack" className="py-12 print:py-6">
+    <section id="tech-stack" className="py-10 sm:py-12 print:py-6">
       <SectionReveal>
-        <div className="mx-auto max-w-5xl px-6">
-          <h2 className="text-2xl font-bold print:text-xl">기술 스택</h2>
+        <div className="mx-auto max-w-5xl px-4 sm:px-6">
+          <h2 className="text-xl sm:text-2xl font-bold print:text-xl">기술 스택</h2>
 
-          <div className="mt-8 grid gap-8 sm:grid-cols-2 print:mt-4 print:gap-4">
+          <div className="mt-6 sm:mt-8 grid gap-6 sm:gap-8 sm:grid-cols-2 print:mt-4 print:gap-4">
             {stacks.map((category) => (
               <div key={category.label}>
                 <h3 className="mb-3 text-sm font-semibold text-muted-foreground print:text-xs">

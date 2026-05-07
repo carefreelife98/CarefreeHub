@@ -44,19 +44,19 @@ export function FlowAiPortfolio() {
       <TechStackGrid stacks={project.techStacks} />
 
       {/* 핵심 기능 상세 5개 */}
-      {project.features.map((feature, i) => (
-        <FeatureSection key={feature.id} feature={feature} index={i} />
+      {project.features.map((feature) => (
+        <FeatureSection key={feature.id} feature={feature} />
       ))}
 
       {/* CPU 최적화 */}
       <ChallengeSection challenge={project.challenge} />
 
       {/* 나머지 기능 요약 카드 */}
-      <section id="summary" className="border-t border-border/30 py-12 print:py-6">
+      <section id="summary" className="border-t border-border/30 py-10 sm:py-12 print:py-6">
         <SectionReveal>
-          <div className="mx-auto max-w-5xl px-6">
-            <h2 className="text-2xl font-bold print:text-xl">기타 기능</h2>
-            <StaggerContainer className="mt-6 grid gap-3 sm:grid-cols-2 print:mt-3">
+          <div className="mx-auto max-w-5xl px-4 sm:px-6">
+            <h2 className="text-xl sm:text-2xl font-bold print:text-xl">기타 기능</h2>
+            <StaggerContainer className="mt-5 sm:mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 print:mt-3">
               {project.summaryFeatures.map((f) => (
                 <FeatureSummaryCard key={f.id} feature={f} />
               ))}
@@ -66,12 +66,12 @@ export function FlowAiPortfolio() {
       </section>
 
       {/* 종합 성과 */}
-      <section id="results" className="border-t border-border/30 py-12 print:py-6">
+      <section id="results" className="border-t border-border/30 py-10 sm:py-12 print:py-6">
         <SectionReveal>
-          <div className="mx-auto max-w-5xl px-6">
-            <h2 className="text-2xl font-bold print:text-xl">종합 성과</h2>
+          <div className="mx-auto max-w-5xl px-4 sm:px-6">
+            <h2 className="text-xl sm:text-2xl font-bold print:text-xl">종합 성과</h2>
 
-            <div className="mt-6 grid gap-3 sm:grid-cols-3 print:mt-3">
+            <div className="mt-5 sm:mt-6 grid grid-cols-1 sm:grid-cols-3 gap-3 print:mt-3">
               {project.overallStats.map((stat, i) => (
                 <StatCard key={i} stat={stat} />
               ))}
