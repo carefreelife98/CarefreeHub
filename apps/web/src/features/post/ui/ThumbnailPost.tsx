@@ -4,6 +4,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardTitle } from "@shar
 import { Badge } from "@shared/ui"
 import { useRouter } from "next/navigation"
 import { cn } from "@shared/lib"
+import { PostThumbnail } from "./PostThumbnail"
 
 interface Chip {
   label: string
@@ -17,7 +18,7 @@ interface ThumbnailPostProps {
   createdAt: string
   createdBy: string
   updatedAt?: string
-  thumbnailUrl: string
+  thumbnailUrl?: string
   linkUrl: string
   chips?: Chip[]
 }
@@ -38,8 +39,17 @@ export function ThumbnailPost({
       className="w-full p-0 rounded-none border-none shadow-none cursor-pointer hover:bg-muted/50 transition-colors"
       onClick={() => router.push(linkUrl)}
     >
-      <CardContent className="flex flex-row items-start justify-start gap-4 py-4">
-        <div className="flex-[3] flex-col items-start justify-start">
+      <CardContent className="flex flex-col sm:flex-row items-stretch sm:items-start justify-start gap-3 sm:gap-4 py-4">
+        <div className="order-first sm:order-last w-full aspect-[16/9] sm:w-[130px] sm:h-[90px] sm:aspect-auto sm:flex-none rounded-lg overflow-hidden">
+          <PostThumbnail
+            src={thumbnailUrl}
+            title={title}
+            className="w-full h-full"
+            width={260}
+            height={180}
+          />
+        </div>
+        <div className="flex-1 min-w-0 flex flex-col items-start justify-start">
           {chips && chips.length > 0 && (
             <div className="flex flex-wrap gap-1.5 mb-2">
               {chips.slice(0, 3).map((chip) => (
@@ -60,21 +70,18 @@ export function ThumbnailPost({
               ))}
             </div>
           )}
-          <CardTitle className="text-2xl font-bold line-clamp-2 mb-2 group-hover:text-primary transition-colors">
+          <CardTitle className="text-base sm:text-lg md:text-xl font-semibold leading-snug tracking-tight line-clamp-2 mb-2 group-hover:text-primary transition-colors break-keep">
             {title}
           </CardTitle>
-          <CardDescription className="line-clamp-3 mb-2">{description}</CardDescription>
+          <CardDescription className="text-sm line-clamp-2 sm:line-clamp-3 mb-2">
+            {description}
+          </CardDescription>
           <CardFooter className="p-0">
-            <span className="text-sm text-muted-foreground">
-              {createdAt} · {createdBy}
+            <span className="text-xs sm:text-sm text-muted-foreground">
+              <span className="tabular-nums">{createdAt}</span> · {createdBy}
             </span>
           </CardFooter>
         </div>
-        <img
-          src={thumbnailUrl}
-          alt={title}
-          className="flex-[1] w-[130px] h-[90px] rounded-lg object-cover"
-        />
       </CardContent>
     </Card>
   )

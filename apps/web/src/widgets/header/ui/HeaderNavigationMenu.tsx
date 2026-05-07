@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import Link from "next/link"
-import { GithubIcon, LinkedinIcon, MailIcon, ScrollText, Sparkles } from "lucide-react"
+import { GithubIcon, LinkedinIcon, MailIcon, ScrollText } from "lucide-react"
 import { useIsMobile } from "@shared/hooks"
 import {
   NavigationMenu,
@@ -22,11 +22,11 @@ export default function HeaderNavigationMenu() {
   const router = useRouter()
   return (
     <NavigationMenu viewport={isMobile} className="w-full max-w-none justify-center">
-      <NavigationMenuList className="flex-wrap justify-center gap-8">
+      <NavigationMenuList className="flex-wrap justify-center gap-4 lg:gap-8">
         <NavigationMenuItem>
           <NavigationMenuTrigger>Carefreelife98</NavigationMenuTrigger>
           <NavigationMenuContent>
-            <ul className="grid gap-2 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+            <ul className="grid gap-2 w-[min(400px,calc(100vw-2rem))] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
               <li className="row-span-3">
                 <NavigationMenuLink asChild>
                   <Card
@@ -58,7 +58,7 @@ export default function HeaderNavigationMenu() {
         <NavigationMenuItem>
           <NavigationMenuTrigger>포스트</NavigationMenuTrigger>
           <NavigationMenuContent>
-            <ul className="grid gap-2 sm:w-[400px] md:w-[500px] md:grid-cols-2 lg:w-[400px]">
+            <ul className="grid gap-2 w-[min(400px,calc(100vw-2rem))] md:w-[500px] md:grid-cols-2 lg:w-[400px]">
               {categoryTree.map((category) => (
                 <ListItem
                   key={category.slug}
@@ -79,7 +79,7 @@ export default function HeaderNavigationMenu() {
             </span>
           </NavigationMenuTrigger>
           <NavigationMenuContent>
-            <ul className="grid gap-2 w-[300px]">
+            <ul className="grid gap-2 w-[min(300px,calc(100vw-2rem))]">
               <li>
                 <NavigationMenuLink asChild>
                   <Link
@@ -87,7 +87,7 @@ export default function HeaderNavigationMenu() {
                     className="block p-4 rounded-md hover:bg-muted transition-colors"
                   >
                     <div className="flex items-center gap-2 mb-2">
-                      <ScrollText className="w-5 h-5 text-amber-500" />
+                      <ScrollText className="w-5 h-5 text-[oklch(0.65_0.15_75)] dark:text-[oklch(0.78_0.13_75)]" />
                       <span className="font-medium">연간 Recap</span>
                     </div>
                     <p className="text-muted-foreground text-sm">한 해를 돌아보는 공간</p>
@@ -113,7 +113,7 @@ export default function HeaderNavigationMenu() {
         <NavigationMenuItem className="hidden md:block">
           <NavigationMenuTrigger>링크</NavigationMenuTrigger>
           <NavigationMenuContent>
-            <ul className="grid w-[200px] gap-4">
+            <ul className="grid w-[min(200px,calc(100vw-2rem))] gap-4">
               <li>
                 <NavigationMenuLink asChild>
                   <Link
