@@ -3,7 +3,6 @@
 import { useCallback, useEffect } from "react"
 import Image from "next/image"
 import { X, ChevronLeft, ChevronRight } from "lucide-react"
-import { cn } from "@shared/lib"
 import type { ScreenshotPlaceholder } from "../lib/types"
 
 interface ImageLightboxProps {

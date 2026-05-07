@@ -81,7 +81,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
 
   return (
     <ResizablePostLayout toc={post.toc}>
-      <article className="pb-60">
+      <article className="pb-24 sm:pb-32">
         {primaryCategory && <PostBreadcrumb category={primaryCategory} />}
 
         <PostHeader

@@ -29,7 +29,7 @@ export default async function TagPage({ params }: { params: Promise<{ tag: strin
             description={post.description || ""}
             createdAt={new Date(post.date).toLocaleDateString("ko-KR")}
             createdBy={post.author}
-            thumbnailUrl={post.thumbnail || "https://picsum.photos/200/300"}
+            thumbnailUrl={post.thumbnail}
             linkUrl={`/posts/${post.slug}`}
             chips={post.tags.map((t) => ({
               label: `#${t}`,

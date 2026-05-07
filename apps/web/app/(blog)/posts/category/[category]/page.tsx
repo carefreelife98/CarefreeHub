@@ -1,5 +1,6 @@
+/* eslint-disable react-hooks/static-components -- 카테고리 lookup 테이블 기반 아이콘 참조, idempotent */
 import { posts } from "#site/content"
-import { GridPost, PostBreadcrumb, PostListHeader } from "@features/post"
+import { GridPost, PostBreadcrumb, PostListHeader, ThumbnailPost } from "@features/post"
 import {
   findCategoryBySlug,
   getCategoryWithDescendants,
@@ -45,27 +46,50 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
       />
 
       {categoryPosts.length === 0 ? (
-        <div className="flex flex-col h-full gap-4 items-center justify-center">
+        <div className="flex flex-col h-full gap-4 items-center justify-center py-20">
           <p className="text-muted-foreground">아직 등록된 포스트가 없습니다 🥲</p>
         </div>
       ) : (
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
-          {categoryPosts.map((post) => (
-            <GridPost
-              key={post.slug}
-              title={post.title}
-              description={post.description}
-              author={post.author}
-              createdAt={new Date(post.date).toLocaleDateString("ko-KR")}
-              thumbnailUrl={post.thumbnail || "https://picsum.photos/200/300"}
-              linkUrl={`/posts/${post.slug}`}
-              chips={post.categories.map((cat) => ({
-                label: cat,
-                href: `/posts/category/${cat.toLowerCase()}`,
-                color: getCategoryColor(cat.toLowerCase()),
-              }))}
-            />
-          ))}
+        // 첫 글은 풀폭 ThumbnailPost로 강조, 나머지는 grid (모바일 1열, 데스크톱 최대 3열)
+        // identical card grid 안티패턴 회피: 첫 글에 시각 위계 부여.
+        <div className="space-y-6">
+          <ThumbnailPost
+            key={categoryPosts[0].slug}
+            title={categoryPosts[0].title}
+            description={categoryPosts[0].description || ""}
+            createdAt={new Date(categoryPosts[0].date).toLocaleDateString("ko-KR")}
+            createdBy={categoryPosts[0].author}
+            thumbnailUrl={categoryPosts[0].thumbnail}
+            linkUrl={`/posts/${categoryPosts[0].slug}`}
+            chips={categoryPosts[0].categories.map((cat) => ({
+              label: cat,
+              href: `/posts/category/${cat.toLowerCase()}`,
+              color: getCategoryColor(cat.toLowerCase()),
+            }))}
+          />
+          {categoryPosts.length > 1 && (
+            <>
+              <div className="border-t border-border/60" />
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                {categoryPosts.slice(1).map((post) => (
+                  <GridPost
+                    key={post.slug}
+                    title={post.title}
+                    description={post.description}
+                    author={post.author}
+                    createdAt={new Date(post.date).toLocaleDateString("ko-KR")}
+                    thumbnailUrl={post.thumbnail}
+                    linkUrl={`/posts/${post.slug}`}
+                    chips={post.categories.map((cat) => ({
+                      label: cat,
+                      href: `/posts/category/${cat.toLowerCase()}`,
+                      color: getCategoryColor(cat.toLowerCase()),
+                    }))}
+                  />
+                ))}
+              </div>
+            </>
+          )}
         </div>
       )}
     </div>

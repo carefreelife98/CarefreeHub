@@ -2,6 +2,7 @@
 
 import { motion, useMotionValue, useTransform, animate } from "motion/react"
 import { useEffect } from "react"
+import { cn } from "@shared/lib"
 import type { BaseSlideProps, StatsSlideData } from "../../model/types"
 
 function AnimatedNumber({ value, isActive }: { value: number | string; isActive: boolean }) {
@@ -23,19 +24,23 @@ function AnimatedNumber({ value, isActive }: { value: number | string; isActive:
     return <span>{value}</span>
   }
 
-  return <motion.span>{rounded}</motion.span>
+  return <motion.span className="tabular-nums">{rounded}</motion.span>
 }
 
 export function StatsSlide({ data, isActive, theme = "dark" }: BaseSlideProps<StatsSlideData>) {
   const { title, stats } = data
-  const isDark = theme === "dark"
+  const wrapperTheme = theme === "light" ? "" : "dark"
 
   return (
-    <div className="flex flex-col items-center justify-center text-center px-8 max-w-4xl mx-auto">
+    <div
+      className={cn(
+        wrapperTheme,
+        "flex flex-col items-center justify-center text-center px-8 max-w-4xl mx-auto text-foreground"
+      )}
+    >
       <motion.h2
-        className={`text-3xl md:text-4xl lg:text-5xl font-bold mb-16 ${
-          isDark ? "text-white" : "text-neutral-900"
-        }`}
+        className="text-3xl md:text-4xl lg:text-5xl font-bold mb-16 text-foreground tracking-tight break-keep"
+        style={{ letterSpacing: "-0.02em" }}
         initial={{ opacity: 0, y: 20 }}
         animate={isActive ? { opacity: 1, y: 0 } : {}}
         transition={{ delay: 0.2, duration: 0.6 }}
@@ -47,46 +52,32 @@ export function StatsSlide({ data, isActive, theme = "dark" }: BaseSlideProps<St
         {stats.map((stat, index) => (
           <motion.div
             key={stat.label}
-            className={`flex flex-col items-center p-6 rounded-2xl
-              ${stat.highlight ? (isDark ? "bg-white/10" : "bg-neutral-100") : ""} backdrop-blur-sm`}
+            className={cn(
+              "flex flex-col items-center p-6 rounded-2xl",
+              stat.highlight && "bg-foreground/10 backdrop-blur-sm"
+            )}
             initial={{ opacity: 0, y: 30 }}
             animate={isActive ? { opacity: 1, y: 0 } : {}}
             transition={{ delay: 0.4 + index * 0.15, duration: 0.6 }}
           >
             <div className="flex items-baseline gap-1">
               {stat.prefix && (
-                <span
-                  className={`text-2xl md:text-3xl ${isDark ? "text-white/60" : "text-neutral-500"}`}
-                >
-                  {stat.prefix}
-                </span>
+                <span className="text-2xl md:text-3xl text-foreground/60">{stat.prefix}</span>
               )}
               <span
-                className={`text-5xl md:text-6xl lg:text-7xl font-bold
-                  ${stat.highlight ? "" : isDark ? "text-white/90" : "text-neutral-800"}`}
-                style={
-                  stat.highlight
-                    ? {
-                        background: "linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%)",
-                        WebkitBackgroundClip: "text",
-                        WebkitTextFillColor: "transparent",
-                      }
-                    : {}
-                }
+                className={cn(
+                  "text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight",
+                  stat.highlight ? "text-primary" : "text-foreground/90"
+                )}
+                style={{ letterSpacing: "-0.03em" }}
               >
                 <AnimatedNumber value={stat.value} isActive={isActive} />
               </span>
               {stat.suffix && (
-                <span
-                  className={`text-2xl md:text-3xl ml-1 ${isDark ? "text-white/60" : "text-neutral-500"}`}
-                >
-                  {stat.suffix}
-                </span>
+                <span className="text-2xl md:text-3xl ml-1 text-foreground/60">{stat.suffix}</span>
               )}
             </div>
-            <span
-              className={`text-lg md:text-xl mt-3 font-medium ${isDark ? "text-white/50" : "text-neutral-500"}`}
-            >
+            <span className="text-lg md:text-xl mt-3 font-medium text-foreground/50 break-keep">
               {stat.label}
             </span>
           </motion.div>

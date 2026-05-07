@@ -17,6 +17,7 @@ export const AvatarCircles = ({ numPeople, className, avatarUrls }: AvatarCircle
     <div className={cn("z-10 flex -space-x-4 rtl:space-x-reverse", className)}>
       {avatarUrls.map((url, index) => (
         <a key={index} href={url.profileUrl} target="_blank" rel="noopener noreferrer">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             key={index}
             className="h-10 w-10 rounded-full border-2 border-white dark:border-gray-800"

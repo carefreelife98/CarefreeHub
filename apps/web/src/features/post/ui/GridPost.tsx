@@ -4,6 +4,7 @@ import { Card, CardContent, CardDescription, CardTitle } from "@shared/ui"
 import { Badge } from "@shared/ui"
 import { useRouter } from "next/navigation"
 import { cn } from "@shared/lib"
+import { PostThumbnail } from "./PostThumbnail"
 
 interface Chip {
   label: string
@@ -16,7 +17,7 @@ interface GridPostProps {
   description?: string
   author: string
   createdAt: string
-  thumbnailUrl: string
+  thumbnailUrl?: string
   linkUrl: string
   chips?: Chip[]
 }
@@ -34,15 +35,19 @@ export function GridPost({
 
   return (
     <Card
-      className="group p-0 gap-2 cursor-pointer overflow-hidden rounded-lg border bg-card transition-all duration-200 hover:shadow-lg hover:-translate-y-1"
+      className="group p-0 gap-2 cursor-pointer overflow-hidden rounded-lg border bg-card transition-all duration-200 hover:shadow-lg hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:translate-y-0"
       onClick={() => router.push(linkUrl)}
     >
       <div className="aspect-[16/10] overflow-hidden p-3">
-        <img
-          src={thumbnailUrl}
-          alt={title}
-          className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105 rounded-lg"
-        />
+        <div className="h-full w-full overflow-hidden rounded-lg">
+          <PostThumbnail
+            src={thumbnailUrl}
+            title={title}
+            className="h-full w-full transition-transform duration-300 group-hover:scale-105 motion-reduce:transition-none motion-reduce:group-hover:scale-100"
+            width={320}
+            height={200}
+          />
+        </div>
       </div>
       <CardContent className="p-3">
         {chips && chips.length > 0 && (
@@ -65,16 +70,18 @@ export function GridPost({
             ))}
           </div>
         )}
-        <CardTitle className="text-sm font-semibold line-clamp-2 mb-1 group-hover:text-primary transition-colors">
+        <CardTitle className="text-sm font-semibold tracking-tight leading-snug line-clamp-2 mb-1 group-hover:text-primary transition-colors break-keep">
           {title}
         </CardTitle>
         {description && (
-          <CardDescription className="text-xs line-clamp-2 mb-2">{description}</CardDescription>
+          <CardDescription className="text-xs line-clamp-2 mb-2 break-keep">
+            {description}
+          </CardDescription>
         )}
         <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
           <span>{author}</span>
-          <span>·</span>
-          <span>{createdAt}</span>
+          <span aria-hidden="true">·</span>
+          <span className="tabular-nums">{createdAt}</span>
         </div>
       </CardContent>
     </Card>

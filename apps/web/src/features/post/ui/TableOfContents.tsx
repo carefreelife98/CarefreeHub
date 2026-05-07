@@ -164,14 +164,15 @@ export function TableOfContents({ toc, onClose }: TableOfContentsProps) {
                   onClick={(e) => handleClick(e, id)}
                   title={item.title}
                   className={cn(
-                    "block text-[13px] py-1.5 pr-3 border-l-2 transition-colors hover:text-foreground truncate",
+                    "block text-[13px] py-1.5 pr-3 rounded-sm transition-colors motion-reduce:transition-none truncate hover:text-foreground",
                     item.depth === 1 && "pl-3",
                     item.depth === 2 && "pl-5",
                     item.depth === 3 && "pl-7",
                     isActive
-                      ? "border-primary text-primary font-medium bg-primary/5"
-                      : "border-transparent text-muted-foreground hover:border-border"
+                      ? "text-primary font-medium bg-primary/8"
+                      : "text-muted-foreground hover:bg-muted/50"
                   )}
+                  aria-current={isActive ? "location" : undefined}
                 >
                   {item.title}
                 </a>

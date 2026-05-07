@@ -1,7 +1,6 @@
 import { notFound } from "next/navigation"
 import {
   RecapContainer,
-  createBlogRecapConfig,
   createGeneralRecapConfig,
   getAvailableRecapYears,
 } from "@features/recap"

@@ -6,13 +6,13 @@ export default function AppSidebarSocialLinks() {
   return (
     <Dock
       direction="middle"
-      className="h-10 w-full m-0 justify-around bg-white rounded-lg"
+      className="h-10 w-full m-0 justify-around bg-card rounded-lg"
       iconSize={32}
       iconMagnification={40}
       iconDistance={120}
     >
       {siteConfig.sidebar.footer.socialLinks.map((link) => (
-        <DockIcon key={link.name} className="h-8 w-8 hover:bg-gray-100">
+        <DockIcon key={link.name} className="h-8 w-8 hover:bg-muted">
           <a
             href={link.url}
             target="_blank"

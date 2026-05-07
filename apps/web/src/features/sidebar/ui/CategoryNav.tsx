@@ -15,7 +15,6 @@ import {
   SidebarMenuSub,
   SidebarMenuSubItem,
   SidebarMenuSubButton,
-  useSidebar,
 } from "@shared/ui"
 import { categoryTree, type CategoryNode } from "@shared/config"
 import { getCategoryCustomIcon } from "@shared/icons"
@@ -28,7 +27,6 @@ interface CategoryNavItemProps {
 
 function CategoryNavItem({ node, level = 0 }: CategoryNavItemProps) {
   const pathname = usePathname()
-  const { state } = useSidebar()
 
   const href = `/posts/category/${node.slug}`
   const isActive = pathname === href

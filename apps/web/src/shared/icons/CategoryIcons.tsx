@@ -1,3 +1,4 @@
+import Image from "next/image"
 import { SvgIcon } from "./SvgIcon"
 import type { LucideIcon } from "lucide-react"
 import { Server, Briefcase, BookOpen, Code2 } from "lucide-react"
@@ -92,12 +93,13 @@ export function CJIcon({ size = 24 }: { size?: number }) {
 
 export function GoormIcon({ size = 24 }: { size?: number }) {
   return (
-    <img
+    <Image
       src="/logo/goorm-logo.jpeg"
       alt="Goorm"
       width={size}
       height={size}
-      style={{ borderRadius: "4px" }}
+      className="rounded"
+      unoptimized
     />
   )
 }
