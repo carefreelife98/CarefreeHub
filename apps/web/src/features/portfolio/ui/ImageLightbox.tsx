@@ -37,15 +37,19 @@ export function ImageLightbox({ images, currentIndex, onClose, onNavigate }: Ima
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 print:hidden"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-[oklch(0.12_0.005_50_/_0.88)] print:hidden"
       onClick={onClose}
+      role="dialog"
+      aria-modal="true"
+      aria-label="이미지 보기"
     >
       <button
         type="button"
         onClick={onClose}
-        className="absolute top-4 right-4 rounded-full bg-white/10 p-2 text-white backdrop-blur-sm transition-colors hover:bg-white/20"
+        className="absolute top-4 right-4 rounded-full bg-white/10 p-2 text-white backdrop-blur-sm transition-colors motion-reduce:transition-none hover:bg-white/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-white/60"
+        aria-label="닫기"
       >
-        <X className="size-5" />
+        <X className="size-5" aria-hidden="true" />
       </button>
 
       {hasPrev && (
@@ -55,9 +59,10 @@ export function ImageLightbox({ images, currentIndex, onClose, onNavigate }: Ima
             e.stopPropagation()
             onNavigate(currentIndex - 1)
           }}
-          className="absolute left-4 rounded-full bg-white/10 p-2 text-white backdrop-blur-sm transition-colors hover:bg-white/20"
+          className="absolute left-4 rounded-full bg-white/10 p-2 text-white backdrop-blur-sm transition-colors motion-reduce:transition-none hover:bg-white/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-white/60"
+          aria-label="이전 이미지"
         >
-          <ChevronLeft className="size-5" />
+          <ChevronLeft className="size-5" aria-hidden="true" />
         </button>
       )}
 
@@ -68,9 +73,10 @@ export function ImageLightbox({ images, currentIndex, onClose, onNavigate }: Ima
             e.stopPropagation()
             onNavigate(currentIndex + 1)
           }}
-          className="absolute right-4 rounded-full bg-white/10 p-2 text-white backdrop-blur-sm transition-colors hover:bg-white/20"
+          className="absolute right-4 rounded-full bg-white/10 p-2 text-white backdrop-blur-sm transition-colors motion-reduce:transition-none hover:bg-white/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-white/60"
+          aria-label="다음 이미지"
         >
-          <ChevronRight className="size-5" />
+          <ChevronRight className="size-5" aria-hidden="true" />
         </button>
       )}
 

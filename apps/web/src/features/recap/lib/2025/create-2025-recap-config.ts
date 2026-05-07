@@ -55,35 +55,35 @@ export function create2025RecapConfig(): RecapConfig {
         { className: "flex flex-col gap-6 text-left w-full" },
         createElement(
           "div",
-          { className: "p-5 rounded-xl bg-white/5 border border-white/10" },
-          createElement("span", { className: "text-white/40 text-sm tracking-wider" }, "아들로서"),
+          { className: "p-5 rounded-xl bg-foreground/5 border border-foreground/10" },
+          createElement("span", { className: "text-foreground/40 text-sm tracking-wider" }, "아들로서"),
           createElement(
             "p",
-            { className: "text-white/80 text-base md:text-lg mt-2 leading-relaxed" },
+            { className: "text-foreground/80 text-base md:text-lg mt-2 leading-relaxed" },
             "부모님께 받아온 무조건적인 사랑에 무조건적인 사랑으로 답하고 있는 듬직한 아들"
           )
         ),
         createElement(
           "div",
-          { className: "p-5 rounded-xl bg-white/5 border border-white/10" },
-          createElement("span", { className: "text-white/40 text-sm tracking-wider" }, "동료로서"),
+          { className: "p-5 rounded-xl bg-foreground/5 border border-foreground/10" },
+          createElement("span", { className: "text-foreground/40 text-sm tracking-wider" }, "동료로서"),
           createElement(
             "p",
-            { className: "text-white/80 text-base md:text-lg mt-2 leading-relaxed" },
+            { className: "text-foreground/80 text-base md:text-lg mt-2 leading-relaxed" },
             '"커뮤니케이션에 비용이 들지 않는 유일한 동료"'
           )
         ),
         createElement(
           "div",
-          { className: "p-5 rounded-xl bg-white/5 border border-white/10" },
+          { className: "p-5 rounded-xl bg-foreground/5 border border-foreground/10" },
           createElement(
             "span",
-            { className: "text-white/40 text-sm tracking-wider" },
+            { className: "text-foreground/40 text-sm tracking-wider" },
             "남자친구로서"
           ),
           createElement(
             "p",
-            { className: "text-white/80 text-base md:text-lg mt-2 leading-relaxed" },
+            { className: "text-foreground/80 text-base md:text-lg mt-2 leading-relaxed" },
             "배울 수 있는, 좋은 영향을 줄 수 있는 사람"
           )
         )
@@ -113,7 +113,7 @@ export function create2025RecapConfig(): RecapConfig {
         { className: "flex flex-col items-center gap-8 w-full" },
         createElement(
           "p",
-          { className: "text-white/70 text-base md:text-lg leading-relaxed text-center" },
+          { className: "text-foreground/70 text-base md:text-lg leading-relaxed text-center" },
           "불확실한 문제를 외면하지 않고 끝까지 파고들며,",
           createElement("br"),
           '"지금 가장 합리적인 구조는 무엇인가" 를 고민하는 개발자로 성장한 한 해.'
@@ -121,12 +121,8 @@ export function create2025RecapConfig(): RecapConfig {
         createElement(
           "blockquote",
           {
-            className: "text-xl md:text-2xl font-semibold text-center leading-relaxed",
-            style: {
-              background: "linear-gradient(135deg, #60a5fa 0%, #a78bfa 100%)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-            },
+            className:
+              "text-xl md:text-2xl font-semibold text-center leading-relaxed text-[oklch(0.78_0.13_250)]",
           },
           '"불확실한 문제를 구조로 정의하고,',
           createElement("br"),
@@ -244,7 +240,7 @@ export function create2025RecapConfig(): RecapConfig {
             "div",
             {
               key: item.month,
-              className: "flex items-center gap-4 p-3 rounded-lg bg-white/5 border border-white/10",
+              className: "flex items-center gap-4 p-3 rounded-lg bg-foreground/5 border border-foreground/10",
             },
             createElement("span", { className: "text-xl" }, item.icon),
             createElement(
@@ -252,12 +248,12 @@ export function create2025RecapConfig(): RecapConfig {
               { className: "flex-1 min-w-0" },
               createElement(
                 "span",
-                { className: "text-white/40 text-xs tracking-wider" },
+                { className: "text-foreground/40 text-xs tracking-wider" },
                 item.month
               ),
               createElement(
                 "p",
-                { className: "text-white/80 text-sm md:text-base truncate" },
+                { className: "text-foreground/80 text-sm md:text-base truncate" },
                 item.event
               )
             )
@@ -340,64 +336,49 @@ export function create2025RecapConfig(): RecapConfig {
         { className: "flex flex-col gap-5 text-left max-w-2xl" },
         createElement(
           "div",
-          { className: "p-5 rounded-xl bg-white/5 border border-white/10" },
+          { className: "p-5 rounded-xl bg-foreground/5 border border-foreground/10" },
           createElement(
             "h3",
             {
-              className: "text-lg font-semibold mb-2",
-              style: {
-                background: "linear-gradient(135deg, #60a5fa 0%, #a78bfa 100%)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-              },
+              className: "text-lg font-semibold mb-2 text-[oklch(0.78_0.13_250)]",
             },
             "부딪혀보는 용기"
           ),
           createElement(
             "p",
-            { className: "text-white/60 text-sm md:text-base leading-relaxed" },
+            { className: "text-foreground/60 text-sm md:text-base leading-relaxed" },
             '"해본 적 없다"는 것이 "할 수 없다"의 이유가 되지 않는다.'
           )
         ),
         createElement(
           "div",
-          { className: "p-5 rounded-xl bg-white/5 border border-white/10" },
+          { className: "p-5 rounded-xl bg-foreground/5 border border-foreground/10" },
           createElement(
             "h3",
             {
-              className: "text-lg font-semibold mb-2",
-              style: {
-                background: "linear-gradient(135deg, #34d399 0%, #60a5fa 100%)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-              },
+              className: "text-lg font-semibold mb-2 text-[oklch(0.78_0.12_160)]",
             },
             "측정 기반 엔지니어링"
           ),
           createElement(
             "p",
-            { className: "text-white/60 text-sm md:text-base leading-relaxed" },
+            { className: "text-foreground/60 text-sm md:text-base leading-relaxed" },
             '"작동하는 코드"와 "잘 작동하는 코드" 사이에는 측정과 분석이라는 거대한 간극이 있었다.'
           )
         ),
         createElement(
           "div",
-          { className: "p-5 rounded-xl bg-white/5 border border-white/10" },
+          { className: "p-5 rounded-xl bg-foreground/5 border border-foreground/10" },
           createElement(
             "h3",
             {
-              className: "text-lg font-semibold mb-2",
-              style: {
-                background: "linear-gradient(135deg, #f59e0b 0%, #f43f5e 100%)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-              },
+              className: "text-lg font-semibold mb-2 text-[oklch(0.82_0.13_75)]",
             },
             "기존 코드를 부수는 결단"
           ),
           createElement(
             "p",
-            { className: "text-white/60 text-sm md:text-base leading-relaxed" },
+            { className: "text-foreground/60 text-sm md:text-base leading-relaxed" },
             "완성은 때론 파괴에서 시작된다."
           )
         )

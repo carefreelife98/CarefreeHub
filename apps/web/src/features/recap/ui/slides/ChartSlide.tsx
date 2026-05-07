@@ -15,14 +15,18 @@ import {
   AreaChart,
   Area,
 } from "recharts"
+import { cn } from "@shared/lib"
 import type { BaseSlideProps, ChartSlideData } from "../../model/types"
 
 export function ChartSlide({ data, isActive, theme = "dark" }: BaseSlideProps<ChartSlideData>) {
   const { title, subtitle, chartType, data: chartData } = data
-  const isDark = theme === "dark"
+  const wrapperTheme = theme === "light" ? "" : "dark"
 
-  const tickColor = isDark ? "rgba(255,255,255,0.5)" : "rgba(0,0,0,0.5)"
-  const axisColor = isDark ? "rgba(255,255,255,0.1)" : "rgba(0,0,0,0.1)"
+  // recharts의 SVG fill/stroke는 CSS var를 못 받으므로 hex로 명시.
+  // dark/light 분기는 유지하되, Warm Ink 패밀리 색으로 정렬.
+  const isDark = theme === "dark"
+  const tickColor = isDark ? "oklch(0.96 0.005 60 / 0.5)" : "oklch(0.18 0.01 60 / 0.5)"
+  const axisColor = isDark ? "oklch(0.96 0.005 60 / 0.1)" : "oklch(0.18 0.01 60 / 0.1)"
 
   const renderChart = () => {
     switch (chartType) {
@@ -48,7 +52,7 @@ export function ChartSlide({ data, isActive, theme = "dark" }: BaseSlideProps<Ch
                 animationEasing="ease-out"
               >
                 {chartData.map((entry, index) => (
-                  <Cell key={`cell-${index}`} fill={entry.color ?? "#3b82f6"} />
+                  <Cell key={`cell-${index}`} fill={entry.color ?? "#3563d9"} />
                 ))}
               </Bar>
             </BarChart>
@@ -98,9 +102,9 @@ export function ChartSlide({ data, isActive, theme = "dark" }: BaseSlideProps<Ch
               <Line
                 type="monotone"
                 dataKey="value"
-                stroke="#3b82f6"
+                stroke="#3563d9"
                 strokeWidth={2}
-                dot={{ fill: "#3b82f6", strokeWidth: 0 }}
+                dot={{ fill: "#3563d9", strokeWidth: 0 }}
                 animationDuration={1500}
                 animationEasing="ease-out"
               />
@@ -114,8 +118,8 @@ export function ChartSlide({ data, isActive, theme = "dark" }: BaseSlideProps<Ch
             <AreaChart data={chartData} margin={{ top: 20, right: 20, bottom: 20, left: 20 }}>
               <defs>
                 <linearGradient id="colorValue" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="5%" stopColor="#3b82f6" stopOpacity={0.3} />
-                  <stop offset="95%" stopColor="#3b82f6" stopOpacity={0} />
+                  <stop offset="5%" stopColor="#3563d9" stopOpacity={0.3} />
+                  <stop offset="95%" stopColor="#3563d9" stopOpacity={0} />
                 </linearGradient>
               </defs>
               <XAxis
@@ -132,7 +136,7 @@ export function ChartSlide({ data, isActive, theme = "dark" }: BaseSlideProps<Ch
               <Area
                 type="monotone"
                 dataKey="value"
-                stroke="#3b82f6"
+                stroke="#3563d9"
                 fillOpacity={1}
                 fill="url(#colorValue)"
                 animationDuration={1500}
@@ -145,11 +149,15 @@ export function ChartSlide({ data, isActive, theme = "dark" }: BaseSlideProps<Ch
   }
 
   return (
-    <div className="flex flex-col items-center justify-center text-center px-8 max-w-4xl mx-auto w-full">
+    <div
+      className={cn(
+        wrapperTheme,
+        "flex flex-col items-center justify-center text-center px-8 max-w-4xl mx-auto w-full text-foreground"
+      )}
+    >
       <motion.h2
-        className={`text-3xl md:text-4xl lg:text-5xl font-bold mb-4 ${
-          isDark ? "text-white" : "text-neutral-900"
-        }`}
+        className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-foreground tracking-tight break-keep"
+        style={{ letterSpacing: "-0.02em" }}
         initial={{ opacity: 0, y: 20 }}
         animate={isActive ? { opacity: 1, y: 0 } : {}}
         transition={{ delay: 0.2, duration: 0.6 }}
@@ -159,7 +167,7 @@ export function ChartSlide({ data, isActive, theme = "dark" }: BaseSlideProps<Ch
 
       {subtitle && (
         <motion.p
-          className={`text-lg md:text-xl mb-12 ${isDark ? "text-white/50" : "text-neutral-500"}`}
+          className="text-lg md:text-xl mb-12 text-foreground/50 break-keep"
           initial={{ opacity: 0, y: 20 }}
           animate={isActive ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.3, duration: 0.6 }}
@@ -188,11 +196,9 @@ export function ChartSlide({ data, isActive, theme = "dark" }: BaseSlideProps<Ch
           <div key={index} className="flex items-center gap-2">
             <div
               className="w-3 h-3 rounded-full"
-              style={{ backgroundColor: item.color ?? "#3b82f6" }}
+              style={{ backgroundColor: item.color ?? "#3563d9" }}
             />
-            <span className={`text-sm ${isDark ? "text-white/60" : "text-neutral-600"}`}>
-              {item.name}
-            </span>
+            <span className="text-sm text-foreground/60">{item.name}</span>
           </div>
         ))}
       </motion.div>
