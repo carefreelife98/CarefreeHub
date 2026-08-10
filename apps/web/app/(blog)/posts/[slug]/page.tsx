@@ -10,6 +10,7 @@ import {
   ResizablePostLayout,
 } from "@features/post"
 import { PostAnalytics } from "@features/analytics"
+import { getSeriesNavData, SeriesNav } from "@features/series"
 
 export async function generateStaticParams() {
   return posts
@@ -89,12 +90,15 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
 
   const readingTime = estimateReadingTime(post.body || "")
   const primaryCategory = post.categories[0]
+  const seriesNav = getSeriesNavData(post)
 
   return (
     <ResizablePostLayout toc={post.toc}>
       <PostAnalytics postSlug={post.slug} />
       <article className="pb-60">
         {primaryCategory && <PostBreadcrumb category={primaryCategory} />}
+
+        {seriesNav && <SeriesNav nav={seriesNav} currentSlug={post.slug} />}
 
         <PostHeader
           title={post.title}

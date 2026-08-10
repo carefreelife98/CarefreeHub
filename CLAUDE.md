@@ -35,11 +35,15 @@ CarefreeHub/
 │   ├── app/                    # App Router pages
 │   │   ├── (blog)/             # Blog pages (sidebar + header layout)
 │   │   │   ├── posts/          # List, detail, category, tag, pagination
+│   │   │   ├── series/         # Series list + detail (연재 시리즈)
 │   │   │   ├── recap/          # Fullscreen yearly recap slides
 │   │   │   └── about/          # About (placeholder)
 │   │   ├── portfolio/          # Portfolio pages (no blog chrome)
+│   │   ├── feed.xml/           # RSS feed (static route handler)
 │   │   └── api/search-index/   # Static lightweight search index (JSON)
 │   ├── content/posts/          # MDX post sources (velite input)
+│   ├── content/series/         # Series definitions (velite Series collection)
+│   ├── scripts/                # check-sensitive.mjs (민감정보 린터), import-obsidian.mjs
 │   ├── .velite/                # Generated content data (gitignored)
 │   └── src/                    # FSD-style layers
 │       ├── features/           # analytics, portfolio, post, recap, search, sidebar
@@ -53,6 +57,18 @@ CarefreeHub/
 - Turbopack does not run webpack plugins, so the dev script runs `velite dev` (watch) alongside `next dev` via concurrently. Production builds run `velite && next build`.
 - Slug = last path segment of the file; duplicate slugs fail the build (checked in `velite.config.ts` prepare hook).
 - Import content via `#site/content`.
+
+### Series (연재 시리즈)
+
+- Series definitions live in `content/series/*.mdx` (title, description, status: ongoing/completed/planned, order).
+- Posts join a series via frontmatter `series: <slug>` + `seriesOrder: <n>`; the prepare hook fails the build on broken references or duplicate order numbers.
+- `@features/series` provides getSeriesNavData (포스트 상세의 SeriesNav), SeriesCard, series pages at `/series` and `/series/[slug]`.
+
+### Content safety (민감정보 게이트)
+
+- `pnpm --filter web lint:content` runs `scripts/check-sensitive.mjs` — blocks 고객사명, 내부 시스템 실명, 액션코드, 시크릿 패턴, 미변환 위키링크. CI runs it on every push.
+- Obsidian notes are imported via `pnpm --filter web import:post <note.md> --slug <slug> [...]` which converts wikilinks, copies images, sets `published: false`, and runs the linter automatically.
+- Intentional exceptions live in the ALLOWLIST map inside check-sensitive.mjs — add only after confirming the mention is safe to publish.
 
 ## Development Rules
 

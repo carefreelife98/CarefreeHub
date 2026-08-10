@@ -24,5 +24,8 @@ jobs:
       - name: Lint
         run: pnpm lint
 
+      - name: Content sensitive-data check
+        run: pnpm --filter web lint:content
+
       - name: Build
         run: pnpm build

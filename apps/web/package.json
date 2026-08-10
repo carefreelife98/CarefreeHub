@@ -6,7 +6,9 @@
     "dev": "velite && concurrently -k -n velite,next \"velite dev\" \"next dev -p 4000\"",
     "build": "velite && next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "lint:content": "node scripts/check-sensitive.mjs",
+    "import:post": "node scripts/import-obsidian.mjs"
   },
   "dependencies": {
     "@radix-ui/react-avatar": "^1.1.10",

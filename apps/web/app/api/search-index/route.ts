@@ -10,6 +10,7 @@ export interface SearchIndexItem {
   description: string
   tags: string[]
   categories: string[]
+  series?: string
 }
 
 export async function GET() {
@@ -22,6 +23,7 @@ export async function GET() {
       description: post.description || "",
       tags: post.tags,
       categories: post.categories,
+      series: post.series,
     }))
 
   return Response.json(index)

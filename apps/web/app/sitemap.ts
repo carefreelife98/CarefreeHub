@@ -1,4 +1,4 @@
-import { posts } from "#site/content"
+import { posts, series } from "#site/content"
 import { siteConfig, getAllCategorySlugs } from "@shared/config"
 import { MetadataRoute } from "next"
 
@@ -42,6 +42,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "daily",
       priority: 0.9,
     },
+    {
+      url: `${siteConfig.url}/series`,
+      lastModified: new Date(),
+      changeFrequency: "weekly" as const,
+      priority: 0.8,
+    },
+    ...series.map((sr) => ({
+      url: `${siteConfig.url}/series/${sr.slug}`,
+      lastModified: new Date(),
+      changeFrequency: "weekly" as const,
+      priority: 0.7,
+    })),
     {
       url: `${siteConfig.url}/recap`,
       lastModified: new Date(),

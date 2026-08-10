@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import Link from "next/link"
-import { Briefcase, GithubIcon, LinkedinIcon, MailIcon, ScrollText } from "lucide-react"
+import { Briefcase, GithubIcon, Layers, LinkedinIcon, MailIcon, ScrollText } from "lucide-react"
 import { useIsMobile } from "@shared/hooks"
 import {
   NavigationMenu,
@@ -106,6 +106,19 @@ export default function HeaderNavigationMenu() {
               </li>
             </ul>
           </NavigationMenuContent>
+        </NavigationMenuItem>
+        <NavigationMenuItem>
+          <NavigationMenuLink asChild>
+            <Link
+              href="/series"
+              className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+            >
+              <span className="flex items-center gap-1.5">
+                <Layers className="w-4 h-4" />
+                시리즈
+              </span>
+            </Link>
+          </NavigationMenuLink>
         </NavigationMenuItem>
         <NavigationMenuItem>
           <NavigationMenuLink asChild>
