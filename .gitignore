@@ -12,3 +12,8 @@ plans/*.md
 dist/
 .next/
 *.tsbuildinfo
+coverage/
+
+# OS / tooling
+.DS_Store
+.vercel

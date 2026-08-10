@@ -1,22 +1,17 @@
 {
-  "name": "CarefreeHub",
+  "name": "carefreehub",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "CarefreeHub - 개인 기술 블로그 & 포트폴리오",
+  "private": true,
   "scripts": {
     "dev": "turbo run dev",
     "build": "turbo run build",
     "start": "turbo run start",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\"",
-    "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,json,md}\"",
-    "test:watch": "turbo run test:watch",
-    "test:coverage": "turbo run test:coverage",
-    "test:e2e": "turbo run test:e2e",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,json,md}\""
   },
-  "keywords": [],
-  "author": "",
+  "author": "CarefreeLife",
   "license": "ISC",
   "packageManager": "pnpm@10.15.1",
   "devDependencies": {
