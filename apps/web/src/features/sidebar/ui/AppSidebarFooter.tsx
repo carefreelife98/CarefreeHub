@@ -10,7 +10,7 @@ export default function AppSidebarFooter() {
         <span>Designed by {siteConfig.sidebar.footer.designedBy}</span>
       </CardContent>
       <CardFooter className="flex flex-col p-1 items-center justify-center">
-        <span className="text-[10px] text-muted-foreground">
+        <span className="text-[10px] text-muted-foreground" suppressHydrationWarning>
           © {new Date().getFullYear()}. Carefree Lab Co. All rights reserved.
         </span>
       </CardFooter>

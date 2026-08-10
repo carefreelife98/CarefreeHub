@@ -1,10 +1,5 @@
 import { notFound } from "next/navigation"
-import {
-  RecapContainer,
-  createBlogRecapConfig,
-  createGeneralRecapConfig,
-  getAvailableRecapYears,
-} from "@features/recap"
+import { RecapContainer, createGeneralRecapConfig, getAvailableRecapYears } from "@features/recap"
 
 interface RecapPageProps {
   params: Promise<{ year: string }>
@@ -18,7 +13,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: RecapPageProps) {
   const { year } = await params
   return {
-    title: `${year} Recap | CarefreeHub`,
+    title: `${year} Recap`,
     description: `${year}년 활동 회고`,
   }
 }

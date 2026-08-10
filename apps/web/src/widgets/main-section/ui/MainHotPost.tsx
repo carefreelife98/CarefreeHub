@@ -1,12 +1,8 @@
 import { SimplePost } from "@features/post"
-import { posts } from "#site/content"
+import { getHotPosts } from "@shared/lib/posts"
 
 export function MainHotPost() {
-  // 임시로 최신 3개 포스트 표시 (추후 조회수 기반으로 변경 가능)
-  const hotPosts = posts
-    .filter((post) => post.published)
-    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
-    .slice(0, 3)
+  const hotPosts = getHotPosts(3)
 
   return (
     <div className="w-full flex flex-col items-start justify-start gap-4">

@@ -7,6 +7,7 @@
 
 // UI Components
 export { GoogleAnalyticsProvider } from "./ui/GoogleAnalyticsProvider"
+export { PostAnalytics } from "./ui/PostAnalytics"
 
 // Hooks
 export { usePageView, useScrollTracking, useExternalLinkTracking } from "./hooks"

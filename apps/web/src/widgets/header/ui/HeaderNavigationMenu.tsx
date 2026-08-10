@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import Link from "next/link"
-import { GithubIcon, LinkedinIcon, MailIcon, ScrollText, Sparkles } from "lucide-react"
+import { Briefcase, GithubIcon, LinkedinIcon, MailIcon, ScrollText } from "lucide-react"
 import { useIsMobile } from "@shared/hooks"
 import {
   NavigationMenu,
@@ -11,15 +11,12 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-  Card,
 } from "@shared/ui"
-import { useRouter } from "next/navigation"
 import { siteConfig, categoryTree } from "@shared/config"
 import CareerLogoList from "./CareerLogoList"
 
 export default function HeaderNavigationMenu() {
   const isMobile = useIsMobile()
-  const router = useRouter()
   return (
     <NavigationMenu viewport={isMobile} className="w-full max-w-none justify-center">
       <NavigationMenuList className="flex-wrap justify-center gap-8">
@@ -29,9 +26,9 @@ export default function HeaderNavigationMenu() {
             <ul className="grid gap-2 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
               <li className="row-span-3">
                 <NavigationMenuLink asChild>
-                  <Card
+                  <Link
+                    href="/about"
                     className="from-muted/50 to-muted flex h-full w-full flex-col justify-center rounded-md bg-linear-to-b px-4 py-2 no-underline outline-hidden transition-all duration-200 select-none focus:shadow-md md:p-6"
-                    onClick={() => router.push("/about")}
                   >
                     <CareerLogoList />
                     <div className="mb-2 text-lg font-medium sm:mt-4 text-center">
@@ -40,7 +37,7 @@ export default function HeaderNavigationMenu() {
                     <p className="text-muted-foreground text-sm leading-tight text-center">
                       {siteConfig.header.author.job}
                     </p>
-                  </Card>
+                  </Link>
                 </NavigationMenuLink>
               </li>
               <ListItem href="/about/introduction" title="자기 소개">
@@ -109,6 +106,19 @@ export default function HeaderNavigationMenu() {
               </li>
             </ul>
           </NavigationMenuContent>
+        </NavigationMenuItem>
+        <NavigationMenuItem>
+          <NavigationMenuLink asChild>
+            <Link
+              href="/portfolio"
+              className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+            >
+              <span className="flex items-center gap-1.5">
+                <Briefcase className="w-4 h-4" />
+                Portfolio
+              </span>
+            </Link>
+          </NavigationMenuLink>
         </NavigationMenuItem>
         <NavigationMenuItem className="hidden md:block">
           <NavigationMenuTrigger>링크</NavigationMenuTrigger>

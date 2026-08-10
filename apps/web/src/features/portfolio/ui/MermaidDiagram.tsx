@@ -1,7 +1,6 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
-import mermaid from "mermaid"
 
 interface MermaidDiagramProps {
   chart: string
@@ -13,18 +12,26 @@ export function MermaidDiagram({ chart, id }: MermaidDiagramProps) {
   const [svg, setSvg] = useState<string>("")
 
   useEffect(() => {
-    mermaid.initialize({
-      startOnLoad: false,
-      theme: "neutral",
-      securityLevel: "loose",
-      fontFamily: "sans-serif",
-      flowchart: { htmlLabels: true, curve: "basis", padding: 12 },
-    })
-
-    mermaid
-      .render(`mermaid-${id}`, chart)
-      .then(({ svg }) => setSvg(svg))
+    let cancelled = false
+    // mermaid는 번들이 매우 커서 다이어그램이 실제 렌더될 때만 동적 로드
+    import("mermaid")
+      .then(({ default: mermaid }) => {
+        mermaid.initialize({
+          startOnLoad: false,
+          theme: "neutral",
+          securityLevel: "loose",
+          fontFamily: "sans-serif",
+          flowchart: { htmlLabels: true, curve: "basis", padding: 12 },
+        })
+        return mermaid.render(`mermaid-${id}`, chart)
+      })
+      .then(({ svg }) => {
+        if (!cancelled) setSvg(svg)
+      })
       .catch(console.error)
+    return () => {
+      cancelled = true
+    }
   }, [chart, id])
 
   return (

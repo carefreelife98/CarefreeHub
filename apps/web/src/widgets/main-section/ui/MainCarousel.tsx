@@ -1,6 +1,6 @@
 "use client"
 
-import { useCallback, useEffect, useRef, useState } from "react"
+import { useCallback, useState, useSyncExternalStore } from "react"
 import {
   Card,
   CardContent,
@@ -23,38 +23,41 @@ interface MainCarouselProps {
 
 export function MainCarousel({ posts }: MainCarouselProps) {
   const [api, setApi] = useState<CarouselApi>()
-  const [current, setCurrent] = useState(0)
-  const autoplayPlugin = useRef(emblaAutoplay({ delay: AUTOPLAY_DELAY, stopOnInteraction: false }))
+  // ref 대신 lazy state로 보관 — 렌더 중 ref 접근 없이 동일 인스턴스 유지
+  const [autoplayPlugin] = useState(() =>
+    emblaAutoplay({ delay: AUTOPLAY_DELAY, stopOnInteraction: false })
+  )
 
-  const onSelect = useCallback(() => {
-    if (!api) return
-    setCurrent(api.selectedScrollSnap())
-  }, [api])
-
-  useEffect(() => {
-    if (!api) return
-
-    onSelect()
-    api.on("select", onSelect)
-
-    return () => {
-      api.off("select", onSelect)
-    }
-  }, [api, onSelect])
+  // embla의 select 이벤트를 외부 스토어로 구독 — effect 내 setState 없이 현재 슬라이드 동기화
+  const subscribe = useCallback(
+    (onStoreChange: () => void) => {
+      if (!api) return () => {}
+      api.on("select", onStoreChange)
+      return () => {
+        api.off("select", onStoreChange)
+      }
+    },
+    [api]
+  )
+  const current = useSyncExternalStore(
+    subscribe,
+    () => api?.selectedScrollSnap() ?? 0,
+    () => 0
+  )
 
   const handleMouseEnter = () => {
-    autoplayPlugin.current.stop()
+    autoplayPlugin.stop()
   }
 
   const handleMouseLeave = () => {
-    autoplayPlugin.current.play()
+    autoplayPlugin.play()
   }
 
   return (
     <div className="w-full" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
       <Carousel
         setApi={setApi}
-        plugins={[autoplayPlugin.current]}
+        plugins={[autoplayPlugin]}
         className="w-full"
         opts={{ loop: true }}
       >

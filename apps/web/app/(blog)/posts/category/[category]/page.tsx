@@ -1,7 +1,9 @@
 import { posts } from "#site/content"
+import { Metadata } from "next"
 import { GridPost, PostBreadcrumb, PostListHeader } from "@features/post"
 import {
   findCategoryBySlug,
+  getAllCategorySlugs,
   getCategoryWithDescendants,
   getCategoryIcon,
   getCategoryColor,
@@ -9,11 +11,22 @@ import {
 import { getCategoryCustomIcon } from "@shared/icons"
 
 export async function generateStaticParams() {
-  const categories = Array.from(new Set(posts.flatMap((post) => post.categories)))
+  // 카테고리 트리 전체 사용 — 포스트가 없는 부모 카테고리도 프리렌더
+  return getAllCategorySlugs().map((slug) => ({ category: slug }))
+}
 
-  return categories.map((category) => ({
-    category: category.toLowerCase(),
-  }))
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ category: string }>
+}): Promise<Metadata> {
+  const { category } = await params
+  const categoryNode = findCategoryBySlug(category)
+  const displayName = categoryNode?.name || category
+  return {
+    title: displayName,
+    description: categoryNode?.description || `${displayName} 카테고리의 포스트 목록`,
+  }
 }
 
 export default async function CategoryPage({ params }: { params: Promise<{ category: string }> }) {
@@ -41,6 +54,8 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
         title={displayName}
         count={categoryPosts.length}
         icon={CustomIcon ? undefined : LucideIcon}
+        // 모듈 스코프의 정적 아이콘 맵에서 조회하므로 렌더마다 새 컴포넌트가 생성되지 않음
+        // eslint-disable-next-line react-hooks/static-components
         svgIcon={CustomIcon ? <CustomIcon size={24} /> : undefined}
       />
 

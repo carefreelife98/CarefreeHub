@@ -49,7 +49,7 @@ export function getBlogRecapStats(year: number): BlogRecapStats {
   const categoryBreakdown = calculateCategoryBreakdown(yearPosts)
 
   // 월별 활동
-  const monthlyActivity = calculateMonthlyActivity(yearPosts, year)
+  const monthlyActivity = calculateMonthlyActivity(yearPosts)
 
   // 태그 통계
   const topTags = calculateTopTags(yearPosts)
@@ -112,7 +112,7 @@ function calculateCategoryBreakdown(yearPosts: typeof posts): CategoryBreakdown[
   return breakdown.sort((a, b) => b.count - a.count).slice(0, 6)
 }
 
-function calculateMonthlyActivity(yearPosts: typeof posts, year: number): MonthlyActivity[] {
+function calculateMonthlyActivity(yearPosts: typeof posts): MonthlyActivity[] {
   const monthCounts = new Array(12).fill(0)
 
   for (const post of yearPosts) {

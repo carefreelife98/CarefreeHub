@@ -7,7 +7,8 @@ export default function RecapLandingPage() {
   const currentYear = new Date().getFullYear()
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center px-8">
+    // (blog) 그룹의 사이드바/헤더 위에 풀스크린으로 덮어씌움 ([year] 페이지와 동일한 방식)
+    <div className="fixed inset-0 z-50 bg-[#0f0f0f] overflow-y-auto flex flex-col items-center justify-center px-8">
       {/* 헤더 */}
       <div className="absolute top-8 left-8">
         <Link href="/" className="text-white/50 hover:text-white transition-colors text-sm">

@@ -1,25 +1,44 @@
 import { posts } from "#site/content"
+import { Metadata } from "next"
 import { ThumbnailPost, PostListHeader } from "@features/post"
 
 export async function generateStaticParams() {
-  const tags = Array.from(new Set(posts.flatMap((post) => post.tags)))
+  const tags = Array.from(
+    new Set(posts.filter((post) => post.published).flatMap((post) => post.tags))
+  )
 
   return tags.map((tag) => ({
     tag: tag.toLowerCase(),
   }))
 }
 
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ tag: string }>
+}): Promise<Metadata> {
+  const { tag } = await params
+  const decodedTag = decodeURIComponent(tag)
+  return {
+    title: `#${decodedTag}`,
+    description: `#${decodedTag} 태그가 달린 포스트 목록`,
+  }
+}
+
 export default async function TagPage({ params }: { params: Promise<{ tag: string }> }) {
   const { tag } = await params
+  // URL 파라미터는 인코딩된 상태로 전달됨 (한글/공백/# 태그 대응)
+  const decodedTag = decodeURIComponent(tag)
   const tagPosts = posts
     .filter(
-      (post) => post.published && post.tags.some((t) => t.toLowerCase() === tag.toLowerCase())
+      (post) =>
+        post.published && post.tags.some((t) => t.toLowerCase() === decodedTag.toLowerCase())
     )
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
 
   return (
     <div className="flex flex-col gap-4">
-      <PostListHeader type="tag" title={tag} count={tagPosts.length} />
+      <PostListHeader type="tag" title={decodedTag} count={tagPosts.length} />
 
       <div className="space-y-4">
         {tagPosts.map((post) => (
@@ -33,7 +52,7 @@ export default async function TagPage({ params }: { params: Promise<{ tag: strin
             linkUrl={`/posts/${post.slug}`}
             chips={post.tags.map((t) => ({
               label: `#${t}`,
-              href: `/posts/tag/${t.toLowerCase()}`,
+              href: `/posts/tag/${encodeURIComponent(t.toLowerCase())}`,
             }))}
           />
         ))}

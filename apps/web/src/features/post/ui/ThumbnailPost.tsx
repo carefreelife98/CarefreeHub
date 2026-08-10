@@ -1,9 +1,10 @@
 "use client"
 
+import Link from "next/link"
 import { Card, CardContent, CardDescription, CardFooter, CardTitle } from "@shared/ui"
 import { Badge } from "@shared/ui"
-import { useRouter } from "next/navigation"
 import { cn } from "@shared/lib"
+import { trackPostClick } from "@features/analytics"
 
 interface Chip {
   label: string
@@ -16,7 +17,6 @@ interface ThumbnailPostProps {
   description: string
   createdAt: string
   createdBy: string
-  updatedAt?: string
   thumbnailUrl: string
   linkUrl: string
   chips?: Chip[]
@@ -31,13 +31,15 @@ export function ThumbnailPost({
   linkUrl,
   chips,
 }: ThumbnailPostProps) {
-  const router = useRouter()
-
   return (
-    <Card
-      className="w-full p-0 rounded-none border-none shadow-none cursor-pointer hover:bg-muted/50 transition-colors"
-      onClick={() => router.push(linkUrl)}
-    >
+    <Card className="relative w-full p-0 rounded-none border-none shadow-none hover:bg-muted/50 transition-colors">
+      {/* 카드 전체를 덮는 실제 링크 (SEO/키보드 접근성) */}
+      <Link
+        href={linkUrl}
+        aria-label={title}
+        className="absolute inset-0 z-0"
+        onClick={() => trackPostClick({ slug: linkUrl.replace("/posts/", ""), title })}
+      />
       <CardContent className="flex flex-row items-start justify-start gap-4 py-4">
         <div className="flex-[3] flex-col items-start justify-start">
           {chips && chips.length > 0 && (
@@ -47,15 +49,12 @@ export function ThumbnailPost({
                   key={chip.href}
                   variant="secondary"
                   className={cn(
-                    "text-xs px-2 py-0.5 cursor-pointer transition-colors border-0",
+                    "relative z-10 text-xs px-2 py-0.5 transition-colors border-0",
                     chip.color || "hover:bg-primary hover:text-primary-foreground"
                   )}
-                  onClick={(e: React.MouseEvent) => {
-                    e.stopPropagation()
-                    router.push(chip.href)
-                  }}
+                  asChild
                 >
-                  {chip.label}
+                  <Link href={chip.href}>{chip.label}</Link>
                 </Badge>
               ))}
             </div>
@@ -73,6 +72,7 @@ export function ThumbnailPost({
         <img
           src={thumbnailUrl}
           alt={title}
+          loading="lazy"
           className="flex-[1] w-[130px] h-[90px] rounded-lg object-cover"
         />
       </CardContent>

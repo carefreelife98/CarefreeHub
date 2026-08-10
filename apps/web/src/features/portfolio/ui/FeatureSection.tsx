@@ -1,7 +1,7 @@
 "use client"
 
 import { useMemo, useState } from "react"
-import type { Feature, FeatureSubSection } from "../lib/types"
+import type { Feature } from "../lib/types"
 import { RoleBadge } from "./RoleBadge"
 import { MermaidDiagram } from "./MermaidDiagram"
 import { ImageWithCaption } from "./ImageWithCaption"
@@ -11,10 +11,9 @@ import { SectionReveal } from "./SectionReveal"
 
 interface FeatureSectionProps {
   feature: Feature
-  index: number
 }
 
-export function FeatureSection({ feature, index }: FeatureSectionProps) {
+export function FeatureSection({ feature }: FeatureSectionProps) {
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null)
 
   const hasSubSections = feature.subSections && feature.subSections.length > 0

@@ -1,7 +1,6 @@
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Portfolio | CarefreeHub",
   description: "프로젝트 포트폴리오",
 }
 

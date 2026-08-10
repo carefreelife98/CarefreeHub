@@ -5,9 +5,16 @@ import { useEffect } from "react"
 import type { BaseSlideProps, StatsSlideData } from "../../model/types"
 
 function AnimatedNumber({ value, isActive }: { value: number | string; isActive: boolean }) {
-  const numericValue = typeof value === "number" ? value : parseInt(value.replace(/,/g, ""), 10)
+  const numericValue = typeof value === "number" ? value : parseFloat(value.replace(/,/g, ""))
+  // 원본 값의 소수 자릿수를 유지 (예: "41.8" → 소수 1자리)
+  const decimals = (String(value).split(".")[1] || "").length
   const motionValue = useMotionValue(0)
-  const rounded = useTransform(motionValue, (latest) => Math.round(latest).toLocaleString())
+  const rounded = useTransform(motionValue, (latest) =>
+    latest.toLocaleString(undefined, {
+      minimumFractionDigits: decimals,
+      maximumFractionDigits: decimals,
+    })
+  )
 
   useEffect(() => {
     if (isActive && !isNaN(numericValue)) {

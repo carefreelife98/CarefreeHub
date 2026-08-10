@@ -44,8 +44,8 @@ export function FlowAiPortfolio() {
       <TechStackGrid stacks={project.techStacks} />
 
       {/* 핵심 기능 상세 5개 */}
-      {project.features.map((feature, i) => (
-        <FeatureSection key={feature.id} feature={feature} index={i} />
+      {project.features.map((feature) => (
+        <FeatureSection key={feature.id} feature={feature} />
       ))}
 
       {/* CPU 최적화 */}

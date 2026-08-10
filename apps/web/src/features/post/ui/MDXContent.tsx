@@ -27,6 +27,8 @@ export function MDXContent({ code }: MDXContentProps) {
 
   return (
     <div className="prose prose-neutral dark:prose-invert max-w-none">
+      {/* velite가 컴파일한 MDX 코드를 런타임에 평가하는 표준 패턴 — code가 바뀌지 않는 한 useMemo로 안정적 */}
+      {/* eslint-disable-next-line react-hooks/static-components */}
       <Component components={mdxComponents} />
     </div>
   )

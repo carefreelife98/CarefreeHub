@@ -2,7 +2,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next"
 import type { Metadata } from "next"
 import { Suspense } from "react"
 import "./globals.css"
-import { Toaster } from "@shared/ui"
+import { Toaster, ThemeProvider } from "@shared/ui"
 import { siteConfig } from "@shared/config"
 import { GoogleAnalyticsProvider } from "@features/analytics"
 
@@ -58,13 +58,15 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="ko">
+    <html lang="ko" suppressHydrationWarning>
       <body>
-        <Suspense fallback={null}>
-          <GoogleAnalyticsProvider />
-        </Suspense>
-        {children}
-        <Toaster />
+        <ThemeProvider>
+          <Suspense fallback={null}>
+            <GoogleAnalyticsProvider />
+          </Suspense>
+          {children}
+          <Toaster />
+        </ThemeProvider>
         <SpeedInsights />
       </body>
     </html>

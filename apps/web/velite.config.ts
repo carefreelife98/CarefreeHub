@@ -1,6 +1,5 @@
 import { defineConfig, defineCollection, s } from "velite"
 import rehypeSlug from "rehype-slug"
-import rehypeAutolinkHeadings from "rehype-autolink-headings"
 import remarkGfm from "remark-gfm"
 
 const posts = defineCollection({
@@ -45,6 +44,17 @@ export default defineConfig({
     clean: true,
   },
   collections: { posts },
+  // slug는 파일명 마지막 세그먼트만 사용하므로 폴더가 달라도 파일명이 같으면 충돌 — 빌드 시점에 검증
+  prepare: ({ posts }) => {
+    const seen = new Map<string, string>()
+    for (const post of posts) {
+      const existing = seen.get(post.slug)
+      if (existing) {
+        throw new Error(`중복된 slug "${post.slug}": "${existing}" 와 "${post.title}"`)
+      }
+      seen.set(post.slug, post.title)
+    }
+  },
   mdx: {
     remarkPlugins: [remarkGfm],
     rehypePlugins: [rehypeSlug],

@@ -24,7 +24,7 @@ export function ImageWithCaption({ screenshot, priority, onClick }: ImageWithCap
           height={675}
           className="w-full object-cover"
           priority={priority}
-          loading="eager"
+          loading={priority ? undefined : "lazy"}
           unoptimized
         />
       </div>

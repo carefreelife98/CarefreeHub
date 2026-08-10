@@ -7,7 +7,7 @@ export const siteConfig = {
   },
   meta: {
     title: "Carefree Hub",
-    description: "Carefree Hub is a platform for creating and sharing carefree life",
+    description: "개발 기술, 프로젝트 경험, 학습 기록을 공유하는 채승민의 기술 블로그",
   },
   author: {
     name: "Carefreelife98",

@@ -578,6 +578,7 @@ function SidebarMenuSkeleton({
 }) {
   // Random width between 50 to 90%.
   const width = React.useMemo(() => {
+    // eslint-disable-next-line react-hooks/purity -- 스켈레톤 장식용 랜덤 폭 (shadcn/ui 원본 패턴)
     return `${Math.floor(Math.random() * 40) + 50}%`
   }, [])
 

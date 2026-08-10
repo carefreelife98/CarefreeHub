@@ -2,25 +2,28 @@
 
 import { Search } from "lucide-react"
 import HeaderNavigationMenu from "./HeaderNavigationMenu"
-import { Button, useSidebar, ScrollProgress, CommandShortcut } from "@shared/ui"
-import { useEffect, useState } from "react"
+import { Button, useSidebar, ScrollProgress, CommandShortcut, ThemeToggle } from "@shared/ui"
+import { useEffect, useState, useSyncExternalStore } from "react"
 import { PostSearchDialog } from "@features/search"
+
+const emptySubscribe = () => () => {}
 
 export default function BlogHeader() {
   const { state } = useSidebar()
   const isOpen = state === "expanded"
   const [searchOpen, setSearchOpen] = useState(false)
-  const [isMac, setIsMac] = useState(true)
+  // OS 감지 — 서버에서는 Mac으로 가정하고 클라이언트에서 userAgent로 확정
+  const isMac = useSyncExternalStore(
+    emptySubscribe,
+    () => /Mac|iPhone|iPad|iPod/.test(navigator.userAgent),
+    () => true
+  )
 
   const handleSearch = () => {
     setSearchOpen(true)
   }
 
   useEffect(() => {
-    // 클라이언트에서 OS 감지 (userAgent 사용)
-    const isMacOS = /Mac|iPhone|iPad|iPod/.test(navigator.userAgent)
-    setIsMac(isMacOS)
-
     const down = (e: KeyboardEvent) => {
       if (e.key === "i" && (e.metaKey || e.ctrlKey)) {
         e.preventDefault()
@@ -44,11 +47,12 @@ export default function BlogHeader() {
           <HeaderNavigationMenu />
         </div>
       </div>
-      <div className="min-w-32 flex flex-row justify-end items-center">
+      <div className="min-w-32 flex flex-row justify-end items-center gap-1">
         <Button variant="ghost" onClick={handleSearch}>
           <Search className="h-4 w-4" />
           <CommandShortcut>{isMac ? "⌘I" : "Ctrl+I"}</CommandShortcut>
         </Button>
+        <ThemeToggle />
       </div>
       <PostSearchDialog open={searchOpen} setOpen={setSearchOpen} />
       <ScrollProgress />

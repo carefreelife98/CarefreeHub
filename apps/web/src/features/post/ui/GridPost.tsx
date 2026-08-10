@@ -1,9 +1,10 @@
 "use client"
 
+import Link from "next/link"
 import { Card, CardContent, CardDescription, CardTitle } from "@shared/ui"
 import { Badge } from "@shared/ui"
-import { useRouter } from "next/navigation"
 import { cn } from "@shared/lib"
+import { trackPostClick } from "@features/analytics"
 
 interface Chip {
   label: string
@@ -30,17 +31,20 @@ export function GridPost({
   linkUrl,
   chips,
 }: GridPostProps) {
-  const router = useRouter()
-
   return (
-    <Card
-      className="group p-0 gap-2 cursor-pointer overflow-hidden rounded-lg border bg-card transition-all duration-200 hover:shadow-lg hover:-translate-y-1"
-      onClick={() => router.push(linkUrl)}
-    >
+    <Card className="group relative p-0 gap-2 overflow-hidden rounded-lg border bg-card transition-all duration-200 hover:shadow-lg hover:-translate-y-1">
+      {/* 카드 전체를 덮는 실제 링크 (SEO/키보드 접근성) */}
+      <Link
+        href={linkUrl}
+        aria-label={title}
+        className="absolute inset-0 z-0"
+        onClick={() => trackPostClick({ slug: linkUrl.replace("/posts/", ""), title })}
+      />
       <div className="aspect-[16/10] overflow-hidden p-3">
         <img
           src={thumbnailUrl}
           alt={title}
+          loading="lazy"
           className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105 rounded-lg"
         />
       </div>
@@ -52,15 +56,12 @@ export function GridPost({
                 key={chip.href}
                 variant="secondary"
                 className={cn(
-                  "text-[10px] px-1.5 py-0 h-4 cursor-pointer transition-colors border-0",
+                  "relative z-10 text-[10px] px-1.5 py-0 h-4 transition-colors border-0",
                   chip.color || "hover:bg-primary hover:text-primary-foreground"
                 )}
-                onClick={(e) => {
-                  e.stopPropagation()
-                  router.push(chip.href)
-                }}
+                asChild
               >
-                {chip.label}
+                <Link href={chip.href}>{chip.label}</Link>
               </Badge>
             ))}
           </div>

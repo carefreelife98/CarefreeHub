@@ -66,7 +66,7 @@ export function CodeBlock({ children, ...props }: CodeBlockProps) {
         {/* 복사 버튼 */}
         <button
           onClick={handleCopy}
-          className="p-1.5 rounded-md bg-white/10 hover:bg-white/20 text-gray-400 hover:text-white transition-all opacity-0 group-hover:opacity-100"
+          className="p-1.5 rounded-md bg-white/10 hover:bg-white/20 text-gray-400 hover:text-white transition-all opacity-0 group-hover:opacity-100 focus-visible:opacity-100"
           aria-label="코드 복사"
         >
           {copied ? <Check className="w-4 h-4 text-green-500" /> : <Copy className="w-4 h-4" />}

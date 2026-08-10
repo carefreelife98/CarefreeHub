@@ -1,9 +1,10 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useEffect, useMemo, useState } from "react"
 import { ChevronDown, List, X } from "lucide-react"
 import { cn } from "@shared/lib"
 import { Button, Collapsible, CollapsibleContent, CollapsibleTrigger } from "@shared/ui"
+import { trackTocClick } from "@features/analytics"
 
 interface TocEntry {
   title: string
@@ -38,7 +39,7 @@ function flattenToc(items: TocEntry[], depth = 1): FlatItem[] {
 export function TableOfContents({ toc, onClose }: TableOfContentsProps) {
   const [activeId, setActiveId] = useState<string>("")
   const [isOpen, setIsOpen] = useState(true)
-  const flatItems = flattenToc(toc)
+  const flatItems = useMemo(() => flattenToc(toc), [toc])
 
   useEffect(() => {
     const scrollContainer = document.getElementById("main-content")
@@ -87,8 +88,9 @@ export function TableOfContents({ toc, onClose }: TableOfContentsProps) {
 
   if (flatItems.length === 0) return null
 
-  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string, title: string) => {
     e.preventDefault()
+    trackTocClick({ headingId: id, headingTitle: title })
     const scrollContainer = document.getElementById("main-content")
 
     // 같은 id를 가진 요소가 여러 개 있을 수 있으므로, 실제로 보이는 요소 찾기
@@ -161,7 +163,7 @@ export function TableOfContents({ toc, onClose }: TableOfContentsProps) {
                 <a
                   key={item.url}
                   href={item.url}
-                  onClick={(e) => handleClick(e, id)}
+                  onClick={(e) => handleClick(e, id, item.title)}
                   title={item.title}
                   className={cn(
                     "block text-[13px] py-1.5 pr-3 border-l-2 transition-colors hover:text-foreground truncate",

@@ -17,7 +17,7 @@ export function OutroSlide({ data, isActive, theme = "dark" }: BaseSlideProps<Ou
           text: subtitle,
           url: window.location.href,
         })
-      } catch (err) {
+      } catch {
         // 사용자가 공유 취소
       }
     } else {

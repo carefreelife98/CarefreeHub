@@ -15,7 +15,7 @@ export function PostTags({ tags }: PostTagsProps) {
         {tags.map((tag) => (
           <Link
             key={tag}
-            href={`/posts/tag/${tag.toLowerCase()}`}
+            href={`/posts/tag/${encodeURIComponent(tag.toLowerCase())}`}
             className="text-sm px-3 py-1 rounded-full border border-border text-muted-foreground hover:text-foreground hover:border-foreground/30 transition-colors"
           >
             #{tag}

@@ -1,28 +1,29 @@
 import { posts } from "#site/content"
-import { siteConfig } from "@shared/config"
+import { siteConfig, getAllCategorySlugs } from "@shared/config"
 import { MetadataRoute } from "next"
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const postUrls = posts
-    .filter((post) => post.published)
-    .map((post) => ({
-      url: `${siteConfig.url}/posts/${post.slug}`,
-      lastModified: post.updated ? new Date(post.updated) : new Date(post.date),
-      changeFrequency: "monthly" as const,
-      priority: 0.8,
-    }))
+  const publishedPosts = posts.filter((post) => post.published)
 
-  const categories = Array.from(new Set(posts.flatMap((post) => post.categories)))
-  const categoryUrls = categories.map((category) => ({
-    url: `${siteConfig.url}/posts/category/${category.toLowerCase()}`,
+  const postUrls = publishedPosts.map((post) => ({
+    url: `${siteConfig.url}/posts/${post.slug}`,
+    lastModified: post.updated ? new Date(post.updated) : new Date(post.date),
+    changeFrequency: "monthly" as const,
+    priority: 0.8,
+  }))
+
+  // 카테고리 트리 전체 (부모 카테고리 포함)
+  const categoryUrls = getAllCategorySlugs().map((slug) => ({
+    url: `${siteConfig.url}/posts/category/${slug}`,
     lastModified: new Date(),
     changeFrequency: "weekly" as const,
     priority: 0.6,
   }))
 
-  const tags = Array.from(new Set(posts.flatMap((post) => post.tags)))
+  // 발행된 포스트의 태그만 노출 (URL 인코딩 필수 — 공백/한글/# 태그 대응)
+  const tags = Array.from(new Set(publishedPosts.flatMap((post) => post.tags)))
   const tagUrls = tags.map((tag) => ({
-    url: `${siteConfig.url}/posts/tag/${tag.toLowerCase()}`,
+    url: `${siteConfig.url}/posts/tag/${encodeURIComponent(tag.toLowerCase())}`,
     lastModified: new Date(),
     changeFrequency: "weekly" as const,
     priority: 0.5,
@@ -40,6 +41,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: "daily",
       priority: 0.9,
+    },
+    {
+      url: `${siteConfig.url}/recap`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.5,
+    },
+    {
+      url: `${siteConfig.url}/portfolio`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: `${siteConfig.url}/portfolio/flow-ai`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.7,
     },
     ...postUrls,
     ...categoryUrls,

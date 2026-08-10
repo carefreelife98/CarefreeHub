@@ -3,7 +3,7 @@
 import { motion } from "motion/react"
 import type { BaseSlideProps, IntroSlideData } from "../../model/types"
 import { RecapNavigation } from "../RecapNavigation"
-import { useIsMobile } from "@/src/shared/hooks"
+import { useIsMobile } from "@shared/hooks"
 
 export function IntroSlide({ data, isActive, theme = "dark" }: BaseSlideProps<IntroSlideData>) {
   const { year, title, subtitle } = data

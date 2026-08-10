@@ -63,9 +63,6 @@ export default async function PostsPageNumber({ params }: PageProps) {
             description={post.description || ""}
             createdAt={new Date(post.date).toLocaleDateString("ko-KR")}
             createdBy={post.author}
-            updatedAt={
-              post.updated ? new Date(post.updated).toLocaleDateString("ko-KR") : undefined
-            }
             thumbnailUrl={post.thumbnail || "https://picsum.photos/200/300"}
             linkUrl={`/posts/${post.slug}`}
             chips={post.categories.map((cat) => ({
