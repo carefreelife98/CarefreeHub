@@ -4,56 +4,55 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-CarefreeHub is a personal tech blog and portfolio platform built as a Turbo monorepo with:
+CarefreeHub is a personal tech blog and portfolio platform (Korean-language) built as a Turbo monorepo with a single app:
 
-- **Frontend**: Next.js 16 + React 19 + Tailwind CSS 4
-- **Backend**: NestJS 11 (planned for comments, analytics, RAG chatbot)
+- **apps/web**: Next.js 16 + React 19 + Tailwind CSS 4, MDX content via velite
+
+> Note: The discontinued "Carefree Studio" project (studio-web, studio-api, gentity packages) is preserved in the `archive/studio` branch and no longer lives on `main`.
 
 ## Commands
 
 ```bash
-# Development (runs all apps)
-pnpm dev
+# Development (repo root)
+pnpm dev          # turbo run dev (Next.js dev server on port 4000)
 
-# Build all apps
-pnpm build
-
-# Lint
-pnpm lint
-
-# Web app only (from apps/web)
-pnpm dev          # Next.js dev server
-pnpm build        # Production build
+# Build / Lint (repo root)
+pnpm build        # velite && next build
 pnpm lint         # ESLint
+pnpm format       # Prettier write
 
-# Server only (from apps/server)
-pnpm dev          # NestJS watch mode
-pnpm build        # Compile
-pnpm test         # Jest unit tests
-pnpm test:e2e     # E2E tests
-pnpm format       # Prettier
+# From apps/web
+pnpm dev          # velite dev + next dev -p 4000 (concurrently)
+pnpm build        # velite && next build
+pnpm lint         # eslint
 ```
 
 ## Architecture
 
 ```
 CarefreeHub/
-├── apps/
-│   ├── web/                    # Next.js 16 frontend
-│   │   ├── app/                # App Router pages
-│   │   ├── components/
-│   │   │   ├── ui/             # shadcn/ui components (Radix + CVA)
-│   │   │   └── common/         # App-specific components
-│   │   │       ├── sidebar/    # Collapsible sidebar with animations
-│   │   │       ├── header/     # Navigation, blog header
-│   │   │       └── icons/      # Logo, custom icons
-│   │   ├── config/             # Site metadata (site.ts)
-│   │   ├── hooks/              # Custom hooks (use-mobile)
-│   │   └── lib/                # Utilities (cn for class merging)
-│   └── server/                 # NestJS 11 backend
-│       └── src/                # Modules, controllers, services
-└── packages/                   # Shared packages (empty)
+├── apps/web/                   # Next.js 16 frontend (the blog)
+│   ├── app/                    # App Router pages
+│   │   ├── (blog)/             # Blog pages (sidebar + header layout)
+│   │   │   ├── posts/          # List, detail, category, tag, pagination
+│   │   │   ├── recap/          # Fullscreen yearly recap slides
+│   │   │   └── about/          # About (placeholder)
+│   │   ├── portfolio/          # Portfolio pages (no blog chrome)
+│   │   └── api/search-index/   # Static lightweight search index (JSON)
+│   ├── content/posts/          # MDX post sources (velite input)
+│   ├── .velite/                # Generated content data (gitignored)
+│   └── src/                    # FSD-style layers
+│       ├── features/           # analytics, portfolio, post, recap, search, sidebar
+│       ├── widgets/            # header, main-section
+│       └── shared/             # config, hooks, icons, lib, ui (shadcn/ui)
 ```
+
+### Content pipeline (velite)
+
+- Posts live in `apps/web/content/posts/**/*.mdx`; velite compiles them into `.velite/`.
+- Turbopack does not run webpack plugins, so the dev script runs `velite dev` (watch) alongside `next dev` via concurrently. Production builds run `velite && next build`.
+- Slug = last path segment of the file; duplicate slugs fail the build (checked in `velite.config.ts` prepare hook).
+- Import content via `#site/content`.
 
 ## Development Rules
 
@@ -64,6 +63,11 @@ CarefreeHub/
 - **커스텀 컴포넌트**: shadcn/ui에 없는 경우에만 직접 구현
 - **Radix UI 직접 사용**: shadcn/ui wrapper가 불필요한 경우 Radix 직접 사용 가능
 
+### FSD layering (apps/web/src)
+
+- `shared` → `features` → `widgets` → `app` 방향으로만 import (역방향 금지)
+- 각 레이어/피처는 `index.ts` 배럴을 통해서만 외부 노출
+
 ## Key Patterns
 
 ### Styling
@@ -71,38 +75,40 @@ CarefreeHub/
 - **Tailwind CSS 4** with PostCSS (not tailwind.config.js)
 - **cn() utility** for conditional classes: `cn("base-class", condition && "conditional-class")`
 - **CSS variables** for theming (oklch color space in globals.css)
+- **Dark mode**: class-based via next-themes (`ThemeProvider` in root layout, `ThemeToggle` in BlogHeader)
 - **CVA (class-variance-authority)** for component variants
 
 ### Components
 
-- **shadcn/ui style**: Radix primitives + Tailwind + CVA
 - **"use client"** directive required for interactive components
-- **Import alias**: `@/` maps to app root
+- **Import aliases**: `@/` → app root, `@shared/*`, `@features/*`, `@widgets/*` → `src/*` layers, `#site/content` → velite output
+- Post list cards must use real `<Link>` elements (SEO/a11y) — never div+onClick navigation
+- Tag URLs must be `encodeURIComponent(tag.toLowerCase())` (tags can contain `#`, spaces, Korean)
 
-### Animations
+### Analytics (GA4)
 
-- Use `transform-gpu` for GPU acceleration
-- Prefer `transition-[specific-props]` over `transition-all`
-- Apple-style easing: `ease-[cubic-bezier(0.32,0.72,0,1)]`
-- Grid-based height animations: `grid-rows-[1fr]` → `grid-rows-[0fr]`
+- `GoogleAnalyticsProvider` in root layout handles page views
+- `PostAnalytics` on post detail pages tracks scroll depth + external link clicks
+- Event helpers in `@features/analytics` (trackPostClick, trackSearch, trackTocClick, ...)
+- Env vars: `NEXT_PUBLIC_GA_MEASUREMENT_ID`, `NEXT_PUBLIC_GA_DEBUG_MODE` (declared in turbo.json build env)
 
 ### Layout
 
-- SidebarProvider wraps the app with collapsible sidebar
+- SidebarProvider wraps the blog with collapsible sidebar; recap/portfolio escape it (fullscreen / own layout)
 - Responsive breakpoint at 768px (useIsMobile hook)
 
 ## Tech Stack Details
 
 | Layer              | Technology             | Version |
 | ------------------ | ---------------------- | ------- |
-| Frontend Framework | Next.js                | 16.0.1  |
+| Frontend Framework | Next.js                | 16.0.7  |
 | React              | React + React Compiler | 19.2.0  |
 | Styling            | Tailwind CSS           | 4.x     |
 | UI Primitives      | Radix UI               | Latest  |
+| Content            | velite (MDX)           | 0.3.x   |
 | Animation          | Motion (Framer)        | 12.x    |
 | Icons              | Lucide React           | 0.552.0 |
-| Backend            | NestJS                 | 11.0.1  |
-| Testing            | Jest                   | 30.0.0  |
+| Theming            | next-themes            | 0.4.x   |
 | Package Manager    | pnpm                   | 10.15.1 |
 | Monorepo           | Turbo                  | 2.3.0   |
 
@@ -110,5 +116,6 @@ CarefreeHub/
 
 - **React Compiler** is enabled in next.config.ts
 - **TypeScript strict mode** is enabled
-- **Path alias**: `@/*` → `./*` in each app
-- **Server port**: 3001 (configurable via env)
+- **Path alias**: `@/*` → `./*` in apps/web
+- **Dev server port**: 4000
+- **CI**: GitHub Actions (`.github/workflows/ci.yml`) runs lint + build on push/PR
