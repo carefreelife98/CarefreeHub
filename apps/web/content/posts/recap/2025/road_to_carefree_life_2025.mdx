@@ -394,7 +394,7 @@ flow 플랫폼 내의 프로젝트, 업무, 게시물, 채팅, 파일 등에서 
 원인을 분석하니 명확했다. 전체 데이터를 대상으로 RAG를 수행하고 있었고, LLM이 과도하게 개입하는 구조였다.
 나는 이를 **의도 기반 검색 파이프라인으로** 전면 재설계했다.
 
-![Flow Search](/images/recap/2025/flowai-flowsearch-sample.png)
+![Flow Search](/images/portfolio/flow-ai/flowai-search-sample-3.png)
 
 `LangGraph StateGraph` 기반의 7노드 파이프라인을 설계했다.
 **쿼리 분석(LLM) 노드** 에서 사용자 의도와 검색 대상을 파악하고,

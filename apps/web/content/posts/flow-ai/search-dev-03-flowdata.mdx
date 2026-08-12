@@ -2,6 +2,7 @@
 title: "검색을 넘어 조회로: 계획하는 LLM, 실행하는 규칙, FlowData 오케스트레이터"
 description: "의도 기반 AI 검색 개발기 3편. 키워드 없는 질의를 위해 조회 그래프와 Planning LLM 오케스트레이터를 세운 설계, '어제 알림' 환각을 결정론으로 잡은 이야기, 그리고 .max()는 LLM에게 강제되지 않는다는 교훈까지"
 date: 2026-08-12
+thumbnail: "/images/recap/2025/flowai-flowsearch-sample2.png"
 published: true
 categories: [tech]
 tags: [AI, LangChain, LangGraph, Search]
@@ -38,6 +39,9 @@ Planning 노드의 LLM이 질의를 구조화된 JSON 계획으로 바꾼다. �
 1편부터 지켜온 원칙이 여기서도 산다. LLM은 양 끝에만. 계획(의미 해석)과 검증(품질 판단)에만 서고, 가운데의 분기·병렬·병합은 전부 규칙과 코드다.
 
 한 가지 최적화가 실사용 데이터에서 나왔다. 운영에서 관찰하니 대부분의 질의는 "내 알림 보여줘"처럼 **1-step 계획으로** 끝났다. 이 경우 StepExecutor → 수집 → 검증 풀코스는 낭비다. 그래서 계획이 1-step이면 conditional edge로 해당 서브그래프를 직접 호출하고 나머지 노드를 전부 건너뛰게 했다. UI도 함께 갈랐다. 복합 질의는 Step 파이프라인 차트로, 단순 질의는 "의도 분석 → 조회 → 결과 확인" 타임라인으로 보여준다. 단순한 질의에 거창한 오케스트레이션 시각화를 보여주는 건 정보가 아니라 소음이기 때문이다.
+
+![조회 실행 과정 화면](/images/recap/2025/flowai-flowsearch-sample2.png)
+_조건을 바꿔 재탐색하는 조회 실행 과정. 검색 조건·결과 분포가 단계별로 중계된다._
 
 ## "LLM에게 시간을 맡기지 마라": 어제 알림 버그
 

@@ -2,6 +2,7 @@
 title: "스트리밍 중엔 Marked, 끝나면 React-markdown: 하이브리드 렌더러"
 description: "스트리밍 성능 개발기 2편. 렌더러 자체가 병목이라는 진단 아래 스트리밍 중 Marked.js + innerHTML, 완료 후 react-markdown으로 전환하는 하이브리드 렌더러를 만들고 CPU 70~90%를 30~40%로 내린 기록"
 date: 2026-08-12
+thumbnail: "/images/recap/2025/flowai-cpu-sample2.png"
 published: true
 categories: [tech]
 tags: [Frontend, SSE, React, Performance]
@@ -74,6 +75,9 @@ function MarkdownRenderer({ markdownText, messageId, isStreaming }) {
 ## 실측: 20 FPS에서 55 FPS로
 
 2,000자 분량에 코드 블록 5개, 표 2개가 포함된 문서를 약 15초간 스트리밍하며 Chrome DevTools로 측정했다.
+
+![개선 후 성능 모니터](/images/recap/2025/flowai-cpu-sample2.png)
+_개선 후 같은 조건에서의 성능 모니터. 스트리밍 중에도 CPU가 30% 안팎에 머문다._
 
 | 지표 | Before (react-markdown 직행) | After (하이브리드) |
 | --- | --- | --- |

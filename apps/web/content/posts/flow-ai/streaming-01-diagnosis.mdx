@@ -2,6 +2,7 @@
 title: "AI 채팅이 노트북 팬을 돌린다: SSE 렌더링 CPU 과다의 4중 원인"
 description: "스트리밍 성능 개발기 1편. AI 응답 스트리밍 중 브라우저 CPU가 70~90%까지 치솟던 문제의 원인 네 가지를 규명하고, rAF 스로틀링과 배열 버퍼로 1차 대응한 기록"
 date: 2026-08-12
+thumbnail: "/images/recap/2025/flowai-cpu-sample1.png"
 published: true
 categories: [tech]
 tags: [Frontend, SSE, React, Performance]
@@ -16,6 +17,9 @@ seriesOrder: 1
 Chrome Performance Monitor를 열어놓고 다시 재현해봤다. 스트리밍이 시작되면 CPU 사용률이 60~80%로 올라갔고, 코드 블록과 표가 섞인 길고 복잡한 응답에서는 90%까지 치솟았다. 프레임은 20~30 FPS로 떨어져 스크롤이 눈에 띄게 끊겼다. 응답이 길어질수록 증상은 심해졌다. 사용자 입장에서는 "AI가 답을 쓰는 동안 브라우저가 버벅인다"는 체감이고, 저사양 기기라면 브라우저 프리징까지 갈 수 있는 수치였다.
 
 백엔드가 본업이라 처음엔 서버 쪽을 의심했다. 토큰을 너무 잘게 쪼개 보내나? 이벤트가 너무 잦나? 하지만 네트워크 탭은 평온했다. 문제는 토큰을 받은 다음, 브라우저 안에서 벌어지고 있었다.
+
+![스트리밍 중 CPU 사용량 진단 화면](/images/recap/2025/flowai-cpu-sample1.png)
+_로컬에서 재현한 진단 화면. 오른쪽 성능 모니터의 CPU 그래프가 스트리밍 시작과 함께 치솟는다._
 
 ## 옆 탭의 ChatGPT는 조용했다
 

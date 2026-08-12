@@ -130,11 +130,6 @@ export const flowAiProject: PortfolioProject = {
           alt: "Flow Search 재시도 진행 상태",
           caption: "조건부 재시도 시 추가 분석·플로우 탐색·결과 확인 단계별 SSE 상태 표시",
         },
-        {
-          src: "/images/portfolio/flow-ai/flowai-search-sample-1.png",
-          alt: "Flow Search 검색 결과 + 출처",
-          caption: "의도 분석 후 검색 결과와 출처 패널이 표시되는 화면",
-        },
       ],
       stats: [
         { label: "전체 처리 비중", value: 43.4, suffix: "%", type: "progress" },
@@ -408,11 +403,6 @@ export const flowAiProject: PortfolioProject = {
           alt: "Deep Think 계획 수립 및 실행",
           caption: "Plan 노드가 Todo를 생성하고 SubAgent가 병렬 실행되는 화면",
         },
-        {
-          src: "/images/portfolio/flow-ai/flowai-deepthink-sample-2.png",
-          alt: "Deep Think 최종 결과",
-          caption: "계획 수립 → 실행 → 통합 응답이 완료된 최종 결과",
-        },
       ],
       stats: [
         {
@@ -474,18 +464,7 @@ export const flowAiProject: PortfolioProject = {
     style W fill:#3b82f6,stroke:#2563eb,color:#fff
     style F fill:#f59e0b,stroke:#d97706,color:#000
     style V fill:#8b5cf6,stroke:#7c3aed,color:#fff`,
-      screenshots: [
-        {
-          src: "/images/portfolio/flow-ai/flowai-reference-sample-1.png",
-          alt: "출처 패널 - Flow 검색",
-          caption: "Flow 검색 결과의 인라인 칩과 출처 카드 패널 (웹·Flow·RAG 통합)",
-        },
-        {
-          src: "/images/portfolio/flow-ai/flowai-reference-sample-2.png",
-          alt: "출처 패널 - 하이라이팅",
-          caption: "출처 클릭 시 원문 하이라이팅과 상세 정보 표시",
-        },
-      ],
+      screenshots: [],
       stats: [
         {
           label: "이종 출처 통합",
