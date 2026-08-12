@@ -29,7 +29,7 @@ const RULES = [
   [/madrascheck-dev/i, "사내 GitHub 조직명"],
   [/chaeseungmin\//i, "내부 브랜치명"],
   [/\bOpenGate\b/i, "내부 게이트웨이 실명"],
-  [/Mate-X/i, "미공개 코드명 (공개 승인 전)"],
+  [/Mate-X/i, "구 브랜드명 — 현 공식 명칭 'Flow AI' 사용"],
   // 내부 API·DB 식별자
   [/\bACT_[A-Z0-9_]{4,}/, "내부 전문 액션코드"],
   [/\bCOLABO2_[A-Z0-9_]+/, "내부 전문 액션코드"],
