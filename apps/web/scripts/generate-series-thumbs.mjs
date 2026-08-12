@@ -37,6 +37,16 @@ const SERIES = {
       { no: "09", subtitle: "NOT 1.0 YET" },
     ],
   },
+  llm: {
+    title: "LLM",
+    gradient: ["#9a5b13", "#c07f21"],
+    circleDark: "#6b3d0a",
+    episodes: [
+      { no: "01", subtitle: "ZOD X STRICT" },
+      { no: "02", subtitle: "RECURRENCE" },
+      { no: "03", subtitle: "SHORTS" },
+    ],
+  },
 }
 
 function gridLines() {
