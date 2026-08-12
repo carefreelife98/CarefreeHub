@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
- * MCP 시리즈 썸네일 생성기 (thumb-mcp-01~06과 동일한 스타일)
- * 사용: node scripts/generate-mcp-thumbs.mjs
+ * 시리즈 썸네일 생성기 (1200x630 OG 규격, 시리즈별 색상/타이틀)
+ * 사용: node scripts/generate-series-thumbs.mjs [mcp|sdk]  (인자 없으면 전체)
  */
 import sharp from "sharp"
 import { join } from "node:path"
@@ -9,12 +9,29 @@ import { join } from "node:path"
 const ROOT = new URL("..", import.meta.url).pathname
 const OUT_DIR = join(ROOT, "public/images/flow-ai")
 
-const EPISODES = [
-  { no: "07", subtitle: "EVAL GATE" },
-  { no: "08", subtitle: "SCHEMA CONTRACT" },
-  { no: "09", subtitle: "OPS & INCIDENTS" },
-  { no: "10", subtitle: "LIVING SPEC" },
-]
+const SERIES = {
+  mcp: {
+    title: "MCP",
+    gradient: ["#136c86", "#2189a4"],
+    circleDark: "#0a4c60",
+    episodes: [
+      { no: "07", subtitle: "EVAL GATE" },
+      { no: "08", subtitle: "SCHEMA CONTRACT" },
+      { no: "09", subtitle: "OPS & INCIDENTS" },
+      { no: "10", subtitle: "LIVING SPEC" },
+    ],
+  },
+  sdk: {
+    title: "SDK",
+    gradient: ["#3a4494", "#5b66c0"],
+    circleDark: "#252c66",
+    episodes: [
+      { no: "01", subtitle: "WHY SDK" },
+      { no: "02", subtitle: "CORRECTNESS" },
+      { no: "03", subtitle: "WRONG PREMISE" },
+    ],
+  },
+}
 
 function gridLines() {
   const lines = []
@@ -27,18 +44,18 @@ function gridLines() {
   return lines.join("\n")
 }
 
-function svgFor({ subtitle }) {
+function svgFor(series, { subtitle }) {
   return `<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#136c86"/>
-      <stop offset="100%" stop-color="#2189a4"/>
+      <stop offset="0%" stop-color="${series.gradient[0]}"/>
+      <stop offset="100%" stop-color="${series.gradient[1]}"/>
     </linearGradient>
   </defs>
   <rect width="1200" height="630" fill="url(#bg)"/>
   ${gridLines()}
   <circle cx="1060" cy="90" r="250" fill="#ffffff" fill-opacity="0.07"/>
-  <circle cx="150" cy="480" r="185" fill="#0a4c60" fill-opacity="0.35"/>
+  <circle cx="150" cy="480" r="185" fill="${series.circleDark}" fill-opacity="0.35"/>
 
   <!-- node-graph motif -->
   <g stroke="#dcecf1" stroke-opacity="0.75" stroke-width="3">
@@ -51,15 +68,19 @@ function svgFor({ subtitle }) {
   <circle cx="851" cy="470" r="9" fill="#eef6f8"/>
   <circle cx="1057" cy="481" r="9" fill="#eef6f8"/>
 
-  <text x="95" y="292" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="150" font-weight="700" fill="#ffffff">MCP</text>
+  <text x="95" y="292" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="150" font-weight="700" fill="#ffffff">${series.title}</text>
   <rect x="97" y="376" width="70" height="9" rx="4.5" fill="#ffffff"/>
   <text x="95" y="448" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="36" font-weight="500" letter-spacing="7" fill="#ffffff">${subtitle.replace(/&/g, "&amp;")}</text>
   <text x="95" y="560" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="23" font-weight="500" letter-spacing="5" fill="#ffffff" fill-opacity="0.55">FLOW AI DEV LOG</text>
 </svg>`
 }
 
-for (const ep of EPISODES) {
-  const out = join(OUT_DIR, `thumb-mcp-${ep.no}.png`)
-  await sharp(Buffer.from(svgFor(ep))).png().toFile(out)
-  console.log(`✓ ${out}`)
+const target = process.argv[2]
+for (const [key, series] of Object.entries(SERIES)) {
+  if (target && target !== key) continue
+  for (const ep of series.episodes) {
+    const out = join(OUT_DIR, `thumb-${key}-${ep.no}.png`)
+    await sharp(Buffer.from(svgFor(series, ep))).png().toFile(out)
+    console.log(`✓ ${out}`)
+  }
 }
