@@ -39,7 +39,7 @@ Hybrid로 가기로 했으니 워크플로우를 실행하는 방법이 필요�
 
 방식 2가 성능상으로는 유리하다. 하지만 그래프를 import하는 순간 프롬프트, 그래프 정의, RAG 파이프라인, pgvector 의존성까지 LangChain 도메인 코드 전체가 딸려 들어온다. MCP 서버의 책임이 폭발하고, 애써 분리한 두 서비스가 코드 레벨에서 다시 결합한다.
 
-선택은 **HTTP-bridge였다.** 대신 AI 백엔드 쪽에 요구사항이 생겼다. 스스로를 **"AI as a Service"** 로 정의하고, 내부 HTTP API와 OpenAPI 스펙을 공식적으로 publish할 것. 비용은 네트워크 홉 +20~50ms. LLM 응답이 초 단위로 걸리는 세계에서 점점 작아지는 비용이다.
+선택은 **HTTP-bridge였다.** 대신 AI 백엔드 쪽에 요구사항이 생겼다. 스스로를 **"AI as a Service"** 로 정의하고, 내부 HTTP API와 OpenAPI 스펙을 공식적으로 publish할 것. 비용은 네트워크 홉 +20\~50ms. LLM 응답이 초 단위로 걸리는 세계에서 점점 작아지는 비용이다.
 
 ```mermaid
 flowchart LR
