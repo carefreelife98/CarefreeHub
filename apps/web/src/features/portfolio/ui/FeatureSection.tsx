@@ -3,7 +3,7 @@
 import { useMemo, useState } from "react"
 import type { Feature } from "../lib/types"
 import { RoleBadge } from "./RoleBadge"
-import { MermaidDiagram } from "./MermaidDiagram"
+import { MermaidDiagram } from "@shared/ui"
 import { ImageWithCaption } from "./ImageWithCaption"
 import { ImageLightbox } from "./ImageLightbox"
 import { StatCard } from "./StatCard"
@@ -86,7 +86,7 @@ export function FeatureSection({ feature }: FeatureSectionProps) {
                   <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">
                     아키텍처
                   </h3>
-                  <MermaidDiagram chart={feature.mermaidDiagram} id={feature.id} />
+                  <MermaidDiagram chart={feature.mermaidDiagram} id={feature.id} className="print:hidden" />
                 </div>
               )}
 
@@ -143,7 +143,7 @@ export function FeatureSection({ feature }: FeatureSectionProps) {
                       <h4 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">
                         아키텍처
                       </h4>
-                      <MermaidDiagram chart={sub.mermaidDiagram} id={`${feature.id}-sub-${si}`} />
+                      <MermaidDiagram chart={sub.mermaidDiagram} id={`${feature.id}-sub-${si}`} className="print:hidden" />
                     </div>
                   )}
 

@@ -4,6 +4,7 @@ import { useState, useRef, ReactNode } from "react"
 import { Check, Copy } from "lucide-react"
 import { Highlight, themes } from "prism-react-renderer"
 import { toast } from "sonner"
+import { MermaidDiagram } from "@shared/ui"
 
 interface CodeBlockProps {
   children?: ReactNode
@@ -33,6 +34,11 @@ export function CodeBlock({ children, ...props }: CodeBlockProps) {
         <code>{children}</code>
       </pre>
     )
+  }
+
+  // mermaid 코드펜스는 다이어그램으로 렌더링
+  if (language === "mermaid") {
+    return <MermaidDiagram chart={code} />
   }
 
   const handleCopy = async () => {

@@ -12,7 +12,6 @@ export { SectionReveal, StaggerContainer, StaggerItem } from "./ui/SectionReveal
 export { CountUp } from "./ui/CountUp"
 export { RoleBadge } from "./ui/RoleBadge"
 export { ImageWithCaption } from "./ui/ImageWithCaption"
-export { MermaidDiagram } from "./ui/MermaidDiagram"
 
 export type * from "./lib/types"
 export { flowAiProject } from "./data/flow-ai"
