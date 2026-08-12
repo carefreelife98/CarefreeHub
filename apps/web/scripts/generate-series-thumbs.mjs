@@ -29,6 +29,9 @@ const SERIES = {
       { no: "01", subtitle: "WHY SDK" },
       { no: "02", subtitle: "CORRECTNESS" },
       { no: "03", subtitle: "WRONG PREMISE" },
+      { no: "04", subtitle: "TRUST LEDGER" },
+      { no: "05", subtitle: "SIX CLIENTS" },
+      { no: "06", subtitle: "DX FIRST" },
     ],
   },
 }
