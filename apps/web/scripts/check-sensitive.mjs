@@ -52,8 +52,8 @@ const RULES = [
   [/마스터 이력서/i, "이력서 연계 링크"],
   // 문체 규칙
   [/[—―]/, "em-dash 사용 금지 (AI 문체 흔적, 쉼표/마침표/콜론으로 대체)"],
-  // 마크다운 안전 규칙
-  [/\d~[\d가-힣]/, "이스케이프 안 된 물결(~) — GFM 취소선으로 오작동. \\~ 로 이스케이프"],
+  // 마크다운 안전 규칙 (markdownOnly: frontmatter·코드 펜스는 GFM 파싱 대상이 아니므로 제외)
+  [/\d~[\d가-힣]/, "이스케이프 안 된 물결(~) — GFM 취소선으로 오작동. \\~ 로 이스케이프", { markdownOnly: true }],
 ]
 
 function collectMdx(dir) {
@@ -81,8 +81,22 @@ for (const file of targets) {
   const rel = relative(ROOT, file)
   const allowed = ALLOWLIST[rel] ?? []
   const lines = readFileSync(file, "utf8").split("\n")
+  let inFrontmatter = false
+  let inFence = false
   lines.forEach((line, i) => {
-    for (const [pattern, reason] of RULES) {
+    // frontmatter·코드 펜스 추적 (markdownOnly 규칙용)
+    if (i === 0 && line.trim() === "---") {
+      inFrontmatter = true
+    } else if (inFrontmatter && line.trim() === "---") {
+      inFrontmatter = false
+      return
+    }
+    const isFenceLine = line.trimStart().startsWith("```")
+    if (isFenceLine) inFence = !inFence
+    const skipMarkdownRules = inFrontmatter || inFence || isFenceLine
+
+    for (const [pattern, reason, opts] of RULES) {
+      if (opts?.markdownOnly && skipMarkdownRules) continue
       const match = line.match(pattern)
       if (match) {
         if (allowed.includes(reason)) continue
