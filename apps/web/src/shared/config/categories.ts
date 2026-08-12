@@ -3,8 +3,10 @@ import {
   Server,
   Briefcase,
   BookOpen,
+  Bot,
   Folder,
   Megaphone,
+  MonitorSmartphone,
   ScrollText,
 } from "lucide-react"
 
@@ -47,6 +49,18 @@ export const categoryTree: CategoryNode[] = [
     color: "bg-blue-500/15 text-blue-600 dark:text-blue-400",
     description: "개발 기술, 아키텍처, 트러블슈팅 등 기술 포스팅",
     children: [
+      {
+        name: "AI",
+        slug: "ai",
+        icon: Bot,
+        color: "bg-indigo-500/15 text-indigo-600 dark:text-indigo-400",
+      },
+      {
+        name: "Frontend",
+        slug: "frontend",
+        icon: MonitorSmartphone,
+        color: "bg-sky-500/15 text-sky-600 dark:text-sky-400",
+      },
       {
         name: "Backend",
         slug: "backend",
