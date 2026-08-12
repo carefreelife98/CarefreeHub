@@ -32,6 +32,9 @@ const SERIES = {
       { no: "04", subtitle: "TRUST LEDGER" },
       { no: "05", subtitle: "SIX CLIENTS" },
       { no: "06", subtitle: "DX FIRST" },
+      { no: "07", subtitle: "CONTRACT" },
+      { no: "08", subtitle: "REGISTRY" },
+      { no: "09", subtitle: "NOT 1.0 YET" },
     ],
   },
 }
