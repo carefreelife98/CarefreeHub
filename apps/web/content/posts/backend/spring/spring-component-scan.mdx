@@ -56,7 +56,7 @@ public class AppConfig {
 ```
 
 - ComponentScan을 사용하기 전에는 위처럼 설정 정보 클래스에서 의존 관계 주입을 해주었다
-- 하지만 ComponentScan을 사용한 후, 설정 정보 클래스 내에서 빈을 직접 등록하지 않고, **`@Component` 어노테이션이 적용된 클래스를 스프링 빈으로 자동 등록하기 때문에 의존 관계 주입 또한 `@Autowired` 메서드를 통해 해당 클래스 내에서 진행**해 주어야 한다
+- 하지만 ComponentScan을 사용한 후, 설정 정보 클래스 내에서 빈을 직접 등록하지 않고, **`@Component` 어노테이션이 적용된 클래스를 스프링 빈으로 자동 등록하기 때문에 의존 관계 주입 또한 `@Autowired` 메서드를 통해 해당 클래스 내에서 진행해** 주어야 한다
 
 ```java
 import org.springframework.beans.factory.annotation.Autowired;
@@ -84,13 +84,13 @@ public class MemberServiceImpl implements MemberService {
 }
 ```
 
-- 위와 같이 **구현 클래스의 생성자에 `@Autowired` 어노테이션을 적용**하여 **여러 의존관계 또한 한번에 주입**받을 수 있다
+- 위와 같이 **구현 클래스의 생성자에 `@Autowired` 어노테이션을 적용하여** **여러 의존관계 또한 한번에 주입받을** 수 있다
 
 # 컴포넌트 스캔과 자동 의존관계 주입 동작 과정
 
 ## @ComponentScan
 
-- 컴포넌트 스캔을 사용하는 경우 자동 등록되는 **스프링 빈의 기본 이름(Default)은 해당 클래스명**을 사용하되, **가장 앞글자를 소문자로 변경**하여 등록되며, **직접 지정** 또한 가능하다
+- 컴포넌트 스캔을 사용하는 경우 자동 등록되는 **스프링 빈의 기본 이름(Default)은 해당 클래스명을** 사용하되, **가장 앞글자를 소문자로 변경하여** 등록되며, **직접 지정** 또한 가능하다
   - Default: MemberServiceImpl(클래스명) -> memberServiceImpl(스프링 빈 이름)
   - Custom: `@Component("memberServiceCustom")` 과 같이 직접 빈 이름 부여 가능
 
@@ -120,12 +120,12 @@ public class AutoAppConfig {
 
 ### @ComponentScan TIP
 
-- `@ComponentScan`에 패키지 위치를 지정하지 않고, **설정 정보 클래스의 위치를 프로젝트 최상단**에 두고 쓰면 좋다
+- `@ComponentScan`에 패키지 위치를 지정하지 않고, **설정 정보 클래스의 위치를 프로젝트 최상단에** 두고 쓰면 좋다
 - 스프링 부트 사용 시에는 스프링 부트의 시작 설정 정보인 `@SpringBootApplication`을 프로젝트의 시작 루트 경로에 두고 사용하게 되며 해당 설정 내부에 `@ComponentScan`이 존재한다
 
 ## 컴포넌트 스캔의 기본 대상
 
-컴포넌트 스캔은 `@Component` 어노테이션이 적용된 클래스를 대상으로 하며, 아래와 같은 어노테이션 또한 내부적으로 `@Component` 어노테이션을 가지고 있으므로 컴포넌트 스캔의 대상이 되고, 그에 따른 **부가 기능도 수행**한다:
+컴포넌트 스캔은 `@Component` 어노테이션이 적용된 클래스를 대상으로 하며, 아래와 같은 어노테이션 또한 내부적으로 `@Component` 어노테이션을 가지고 있으므로 컴포넌트 스캔의 대상이 되고, 그에 따른 **부가 기능도 수행한다:**
 
 - **`@Controller`**: 스프링 MVC 컨트롤러로서 인식
 - **`@Service`**: 스프링 비즈니스 로직 구현

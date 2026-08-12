@@ -62,18 +62,18 @@ published: true
 ### 담당 영역
 
 #### 1. 프론트엔드 레이아웃
-- **계층형 사이드바**: 재귀적 트리 구조 렌더링
-- **탭 시스템**: 다중 문서 탭 관리 (브라우저 탭과 유사)
-- **BreadCrumb 네비게이션**: 문서 계층 경로 표시
+- **계층형 사이드바:** 재귀적 트리 구조 렌더링
+- **탭 시스템:** 다중 문서 탭 관리 (브라우저 탭과 유사)
+- **BreadCrumb 네비게이션:** 문서 계층 경로 표시
 
 #### 2. Full Text Search
-- **PostgreSQL FTS 기반 검색**: 한글 형태소 분석
+- **PostgreSQL FTS 기반 검색:** 한글 형태소 분석
 - **검색 결과 UI**: Dialog 기반 검색 결과 표시
-- **보안**: SQL Injection 방어 로직
+- **보안:** SQL Injection 방어 로직
 
 #### 3. 문서 라우팅
 - **Next.js App Router**: 파일 기반 동적 라우팅
-- **인증 레이아웃**: (auth) 그룹 기반 라우팅
+- **인증 레이아웃:** (auth) 그룹 기반 라우팅
 
 ---
 
@@ -142,12 +142,12 @@ src/
 
 #### Full Text Search 한글 처리
 
-**문제**: PostgreSQL FTS 한글 토크나이저 설정
+**문제:** PostgreSQL FTS 한글 토크나이저 설정
 - 영어와 달리 한글은 형태소 분석 필요
 - 조사, 어미 등 처리 복잡
 - 접두사 검색 (prefix search) 지원 필요
 
-**해결**: 한글 + 영어 동시 검색 지원 및 파라미터 바인딩
+**해결:** 한글 + 영어 동시 검색 지원 및 파라미터 바인딩
 
 ```typescript
 // apps/flowiki-back/src/modules/search/adapter/output/persistence/get-search-result.postgres.adapter.ts
@@ -210,11 +210,11 @@ async getSearchResult(keyword: string, user: UserDto): Promise<SearchResult> {
 
 #### 탭 상태 관리
 
-**문제**: 새로고침 시 탭 상태 유지
+**문제:** 새로고침 시 탭 상태 유지
 - 브라우저 새로고침 시 열린 탭 정보 손실
 - Zustand 상태가 메모리에서만 유지
 
-**해결**: Zustand persist 미들웨어 적용
+**해결:** Zustand persist 미들웨어 적용
 
 ```typescript
 // apps/flowiki-front/src/store/flowikiTabStore.ts
@@ -290,11 +290,11 @@ export const useTabStore = create<TabStore>()(
 
 #### 계층형 사이드바
 
-**문제**: 재귀적 트리 렌더링 성능
+**문제:** 재귀적 트리 렌더링 성능
 - 깊은 문서 구조에서 렌더링 지연
 - 불필요한 리렌더링 발생
 
-**해결**: useMemo를 활용한 재귀적 트리 평탄화
+**해결:** useMemo를 활용한 재귀적 트리 평탄화
 
 ```typescript
 // apps/flowiki-front/src/hooks/useFolderGroup.ts
@@ -345,12 +345,12 @@ export function useFolderGroup({ nodes = [], openedFolders, setOpenedFolders }: 
 
 ### 4.2 도메인 이해의 어려움
 
-- **문서 계층 구조 설계**: 폴더 vs 페이지 구분
-- **사용자별 권한 체계**: 읽기/쓰기/관리자 역할
+- **문서 계층 구조 설계:** 폴더 vs 페이지 구분
+- **사용자별 권한 체계:** 읽기/쓰기/관리자 역할
 
 ### 4.3 협업/운영 이슈
 
-- **실시간 협업 기능 (Socket) 연동**: TipTap + Y.js 기반
+- **실시간 협업 기능 (Socket) 연동:** TipTap + Y.js 기반
 
 ---
 
@@ -446,9 +446,9 @@ WHERE to_tsvector('korean', content) @@ plainto_tsquery('korean', $1);
 
 ### 6.3 나의 사고 방식 변화
 
-- **Next.js App Router 실무 적용**: 서버 컴포넌트, 파일 기반 라우팅 경험
-- **검색 기능 설계 시 보안 고려**: SQL Injection 방어의 중요성
-- **독립적 프로젝트 경험**: 퍼블리싱 팀 없이 React 기반 자체 개발
+- **Next.js App Router 실무 적용:** 서버 컴포넌트, 파일 기반 라우팅 경험
+- **검색 기능 설계 시 보안 고려:** SQL Injection 방어의 중요성
+- **독립적 프로젝트 경험:** 퍼블리싱 팀 없이 React 기반 자체 개발
 
 ---
 
@@ -544,16 +544,16 @@ async saveDocument(docData: DocData, lastEdited: string, title: string): Promise
 ## 핵심 러닝 포인트
 
 ### 기술적 성장
-- **Next.js App Router 실무 적용**: 서버 컴포넌트, 파일 기반 라우팅
-- **TipTap 에디터 통합**: React 기반 실시간 공동 편집 구현
+- **Next.js App Router 실무 적용:** 서버 컴포넌트, 파일 기반 라우팅
+- **TipTap 에디터 통합:** React 기반 실시간 공동 편집 구현
 - **PostgreSQL FTS**: 한글 Full Text Search 최적화
-- **보안**: SQL Injection 방어 패턴 (파라미터 바인딩)
+- **보안:** SQL Injection 방어 패턴 (파라미터 바인딩)
 
 ### 도메인 이해
-- **사내 위키 시스템 설계**: 계층적 문서 구조, 사용자별 권한 체계
-- **실시간 협업 요구사항**: 문서 동시 편집, 변경 이력 추적
+- **사내 위키 시스템 설계:** 계층적 문서 구조, 사용자별 권한 체계
+- **실시간 협업 요구사항:** 문서 동시 편집, 변경 이력 추적
 
 ### 협업 및 운영
-- **독립적 프로젝트**: 퍼블리싱 팀 없이 React 기반 자체 개발
-- **다중 환경 배포 경험**: SaaS + 엔터프라이즈 (SK 쉴더스, 매그나칩)
-- **프로젝트 인수인계**: 개발 완료 후 운영 담당자 이관
+- **독립적 프로젝트:** 퍼블리싱 팀 없이 React 기반 자체 개발
+- **다중 환경 배포 경험:** SaaS + 엔터프라이즈 (SK 쉴더스, 매그나칩)
+- **프로젝트 인수인계:** 개발 완료 후 운영 담당자 이관
