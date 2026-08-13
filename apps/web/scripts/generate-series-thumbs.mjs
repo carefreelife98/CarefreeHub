@@ -47,6 +47,18 @@ const SERIES = {
       { no: "03", subtitle: "SHORTS" },
     ],
   },
+  agent: {
+    title: "AGENT",
+    gradient: ["#5b2d8f", "#7e4bbd"],
+    circleDark: "#3a1d5e",
+    episodes: [{ no: "05", subtitle: "OPERATIONS" }],
+  },
+  search: {
+    title: "SEARCH",
+    gradient: ["#0e6e54", "#199478"],
+    circleDark: "#084636",
+    episodes: [{ no: "04", subtitle: "OPS NOTES" }],
+  },
 }
 
 function gridLines() {
