@@ -70,6 +70,8 @@ const SERIES = {
       { no: "04", subtitle: "PLANNER" },
       { no: "05", subtitle: "SUPER-STEP" },
       { no: "06", subtitle: "COLD CASE" },
+      { no: "07", subtitle: "42 REVIEWERS" },
+      { no: "08", subtitle: "20 NODES" },
     ],
   },
 }
