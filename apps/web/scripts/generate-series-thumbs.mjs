@@ -59,6 +59,16 @@ const SERIES = {
     circleDark: "#084636",
     episodes: [{ no: "04", subtitle: "OPS NOTES" }],
   },
+  wf: {
+    title: "BUILDER",
+    gradient: ["#1f5586", "#3d7cb4"],
+    circleDark: "#123a5e",
+    episodes: [
+      { no: "01", subtitle: "THREE LAYERS" },
+      { no: "02", subtitle: "EVENT FLOW" },
+      { no: "03", subtitle: "PERMISSIONS" },
+    ],
+  },
 }
 
 function gridLines() {
