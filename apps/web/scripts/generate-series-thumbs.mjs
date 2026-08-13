@@ -67,6 +67,9 @@ const SERIES = {
       { no: "01", subtitle: "THREE LAYERS" },
       { no: "02", subtitle: "EVENT FLOW" },
       { no: "03", subtitle: "PERMISSIONS" },
+      { no: "04", subtitle: "PLANNER" },
+      { no: "05", subtitle: "SUPER-STEP" },
+      { no: "06", subtitle: "COLD CASE" },
     ],
   },
 }
