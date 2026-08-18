@@ -74,6 +74,16 @@ const SERIES = {
       { no: "08", subtitle: "20 NODES" },
     ],
   },
+  op: {
+    title: "OSS",
+    gradient: ["#8f2d46", "#b44a66"],
+    circleDark: "#5e1d2e",
+    episodes: [
+      { no: "01", subtitle: "GO OR NO-GO" },
+      { no: "02", subtitle: "8 PACKAGES" },
+      { no: "03", subtitle: "DIVERGENCE" },
+    ],
+  },
 }
 
 function gridLines() {
