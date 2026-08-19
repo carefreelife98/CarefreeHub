@@ -50,7 +50,7 @@ sequenceDiagram
     Note over SSE: 이때서야 res.on('close', abort감지)<br/>← 나중에 등록됨
 ```
 
-전역(`APP_INTERCEPTOR`) 인터셉터는 `intercept()`가 동기적으로 먼저 실행되며 그 안에서 'close' 리스너를 즉시 등록한다. 반면 SSE 인터셉터의 close 핸들러는 `new Observable(factory)` 내부에 있으므로, NestJS가 Observable을 subscribe하는 시점(즉 핸들러 실행 직전)에야 등록된다. Node.js의 EventEmitter는 등록 순서대로 리스너를 호출하니, 'close'가 발생하면 **항상** 로그 확정이 abort 감지보다 먼저 달린다.
+전역(`APP_INTERCEPTOR`) 인터셉터는 `intercept()`가 동기적으로 먼저 실행되며 그 안에서 'close' 리스너를 즉시 등록한다. 반면 SSE 인터셉터의 close 핸들러는 `new Observable(factory)` 내부에 있으므로, NestJS가 Observable을 subscribe하는 시점(즉 핸들러 실행 직전)에야 등록된다. Node.js의 EventEmitter는 등록 순서대로 리스너를 호출하니, 'close'가 발생하면 **항상** 로그 확정이 abort 감지보다 먼저 실행된다.
 
 우회책을 여럿 시도했지만 전부 실패했다.
 
@@ -108,7 +108,7 @@ res.on('close', () => {
 | 중단 버튼 클릭 | `ABORTED` | 일부 소비 |
 | 채팅방 전환 (백그라운드 계속 생성) | `ABORTED` | **전부 소비** |
 | 새로고침·네트워크 끊김 | `ABORTED` | **전부 소비** |
-| 끝까지 시청 | `COMPLETE` | 전부 소비 |
+| 끝까지 수신 | `COMPLETE` | 전부 소비 |
 
 `ABORTED`가 "사용자가 의도적으로 중단했다"와 "연결만 끊겼을 뿐 서버는 전부 생성했다"를 동시에 의미하고 있었다. 처음 이 상태를 도입할 때의 목표는 abort **감지** 자체였고 이 값이 나중에 과금 판단의 근거로 쓰일 거라는 건 설계에 명시되지 않았다. 이후 다른 누군가가 집계 쿼리를 만들며 자연스러운 해석을 했고 두 해석이 충돌한 지점에서 돈이 새어나갔다.
 

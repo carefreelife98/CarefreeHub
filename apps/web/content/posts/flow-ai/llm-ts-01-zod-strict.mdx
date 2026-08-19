@@ -28,7 +28,7 @@ seriesOrder: 1
 
 처음 든 의심은 두 가지였다. "OpenAI가 표준 JSON Schema의 `oneOf`를 거부하는 게 이상한 거 아닌가?" 그리고 "모델을 Anthropic으로 바꾸면 되지 않나?" 실제로 Anthropic으로 바꾸면 에러가 사라졌다. 하지만 이건 해결이 아니라 회피였다. 그 이유는 뒤에서 소스 코드로 확인하게 된다.
 
-진짜 원인은 zod v4가 만드는 JSON Schema와 OpenAI strict 모드의 공식 제약이 구조적으로 충돌한다는 것이었다. 특정 기능 하나의 문제가 아니라 `withStructuredOutput(zodSchema)`을 쓰는 모든 호출처가 잠재 위험이었다.
+진짜 원인은 zod v4가 만드는 JSON Schema와 OpenAI strict 모드의 공식 제약이 구조적으로 충돌한다는 것이었다. 특정 기능 하나의 문제가 아니라 `withStructuredOutput(zodSchema)`을 쓰는 모든 호출처가 잠재적 위험 요소였다.
 
 ## strict 모드가 실제로 하는 일
 
@@ -96,9 +96,9 @@ mentionedName: z.string().optional()
 mentionedName: z.string().nullable()
 ```
 
-주의할 점 하나. `.default()`는 상황에 따라 다르다. number의 `.default(50)`은 `$ref`를 만들지 않아 안전하지만 **enum에 `.default()`나 `.describe()`를 붙이면 `$ref`와 키워드가 동시 부착되어 위반**이 된다. enum의 설명은 inline으로 풀어 쓰자.
+주의할 점 하나. `.default()`는 상황에 따라 다르다. number의 `.default(50)`은 `$ref`를 만들지 않아 안전하지만 **enum에 `.default()`나 `.describe()`를 붙이면 `$ref`와 키워드가 동시에 붙어 위반**이 된다. enum의 설명은 inline으로 풀어 쓰자.
 
-그럼 zod v3로 다운그레이드하면 되지 않을까? 검토 끝에 아니라고 결론 냈다. v3는 패턴 1과 2를 자연 회피할 뿐, 3과 4는 버전과 무관하다. 결국 네 패턴 모두 손봐야 하고 v4의 개선점을 포기하는 비용만 추가된다. v4 유지에 스키마 정제가 정공법이다.
+그럼 zod v3로 다운그레이드하면 되지 않을까? 검토 끝에 아니라고 결론 냈다. v3는 패턴 1과 2를 자연스럽게 피해 갈 뿐, 3과 4는 버전과 무관하다. 결국 네 패턴 모두 손봐야 하고 v4의 개선점을 포기하는 비용만 추가된다. v4를 유지하면서 스키마를 정제하는 쪽이 정공법이다.
 
 ## 라이브러리의 함정: withStructuredOutput은 parse하지 않는다
 
@@ -122,9 +122,9 @@ return toolCall.args; // 그대로 반환. zod parse 없음
 
 같은 위반이 다시 들어오는 걸 막기 위해 테스트를 두 겹으로 깔았다.
 
-**1겹: 스키마 lint 테스트.** 프로덕션 스키마를 실제로 import해서 JSON Schema로 변환한 뒤 재귀 검사한다. `oneOf`와 `propertyNames`의 부재, 모든 object의 properties 키가 required에 포함되는지, `$ref`에 키워드가 동시 부착되지 않았는지, 변환 자체가 throw하지 않는지. 비용이 0이라 매 CI마다 돈다.
+**1겹: 스키마 lint 테스트.** 프로덕션 스키마를 실제로 import해서 JSON Schema로 변환한 뒤 재귀 검사한다. `oneOf`와 `propertyNames`가 없는지, 모든 object의 properties 키가 required에 포함되는지, `$ref`에 키워드가 동시 부착되지 않았는지, 변환 자체가 throw하지 않는지. 비용이 0이라 매 CI마다 돈다.
 
-**2겹: 실 LLM e2e.** 환경 변수로 opt-in할 때만 실제 OpenAI와 Anthropic API에 `withStructuredOutput`을 호출해 API 거부 시 실패시킨다. 이 테스트가 실제로 lint가 못 잡은 위반 9건을 추가로 잡아냈다. strict 모드에는 문서화되지 않은 미세 규칙이 있어서 **lint 통과가 실 API 통과를 보장하지 않는다.** 정적 검사와 실제 호출, 둘 다 필요하다.
+**2겹: 실 LLM e2e.** 환경 변수로 opt-in할 때만 실제 OpenAI와 Anthropic API에 `withStructuredOutput`을 호출해 API 거부 시 실패시킨다. 이 테스트가 실제로 lint가 못 잡은 위반 9건을 추가로 잡아냈다. strict 모드에는 문서화되지 않은 세세한 규칙이 있어서 **lint 통과가 실 API 통과를 보장하지 않는다.** 정적 검사와 실제 호출, 둘 다 필요하다.
 
 ## JSON Schema 제약은 LLM에게 강제되지 않는다
 
