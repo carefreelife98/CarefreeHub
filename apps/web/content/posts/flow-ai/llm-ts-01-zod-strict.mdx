@@ -28,7 +28,7 @@ seriesOrder: 1
 
 처음 든 의심은 두 가지였다. "OpenAI가 표준 JSON Schema의 `oneOf`를 거부하는 게 이상한 거 아닌가?" 그리고 "모델을 Anthropic으로 바꾸면 되지 않나?" 실제로 Anthropic으로 바꾸면 에러가 사라졌다. 하지만 이건 해결이 아니라 회피였다. 그 이유는 뒤에서 소스 코드로 확인하게 된다.
 
-진짜 원인은 zod v4가 만드는 JSON Schema와 OpenAI strict 모드의 공식 제약이 구조적으로 충돌한다는 것이었다. 특정 기능 하나의 문제가 아니라 `withStructuredOutput(zodSchema)`을 쓰는 모든 호출처가 잠재적 위험 요소였다.
+진짜 원인은 zod v4가 만드는 JSON Schema와 OpenAI strict 모드의 공식 제약이 구조적으로 충돌한다는 것이었다. 특정 기능 하나의 문제가 아니라 `withStructuredOutput(zodSchema)`를 쓰는 모든 호출처가 잠재적 위험 요소였다.
 
 ## strict 모드가 실제로 하는 일
 

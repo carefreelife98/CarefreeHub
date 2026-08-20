@@ -65,7 +65,7 @@ const sanitizeLegacy = (text: string) =>
 
 모니터링에서 웹 검색 도구의 에러 두 건이 나란히 잡혔다. 둘 다 원인은 모델이었다.
 
-첫 번째는 enum 환각. 검색 기간 타입 필드는 `none | latest_year | latest_quarter | latest_half | specific_period`의 다섯 값만 받는데, 모델이 `latest_month`를 반복해서 만들어냈다. 스키마에도 없고 프롬프트에도 없는 값이다. 월 단위 개념이 설계에 없다는 사정은 모델에게 중요하지 않았다. 그럴듯하니까 생성했을 뿐이다.
+첫 번째는 enum 환각. 검색 기간 타입 필드는 `none | latest_year | latest_quarter | latest_half | specific_period`의 다섯 가지 값만 받는데, 모델이 `latest_month`를 반복해서 만들어냈다. 스키마에도 없고 프롬프트에도 없는 값이다. 월 단위 개념이 설계에 없다는 사정은 모델에게 중요하지 않았다. 그럴듯하니까 생성했을 뿐이다.
 
 두 번째는 날짜 역전. 검색 범위의 시작일에 미래 날짜를, 종료일에 과거 날짜를 넣어서 외부 검색 API가 "after는 before보다 앞서야 한다"며 400을 던졌다. 그래프 실패 후 폴백 경로도 같은 값을 그대로 썼기 때문에 똑같이 실패했다.
 

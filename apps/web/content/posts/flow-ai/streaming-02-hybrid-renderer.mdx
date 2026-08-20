@@ -15,7 +15,7 @@ seriesOrder: 2
 
 Chrome Performance로 1초 구간을 잘라 프로파일을 떠보니 범인이 선명했다. Main 스레드의 72%가 Scripting이었다. 그 안을 열어보면 ReactMarkdown 파싱, rehype-prism 코드 하이라이팅, rehype-raw HTML 처리, 그리고 VDOM diffing이 상위를 전부 차지했다. Idle은 2%. 브라우저에게 숨 쉴 틈이 없었다.
 
-구조적으로 보면 이렇다. 스트리밍 중에는 청크가 올 때마다 **누적된 문서 전체를** 다시 파싱한다. 1,000자씩 10번 스트리밍되는 10,000자 응답이라면, 파싱 대상은 1,000 + 2,000 + … + 10,000 = 55,000자다. 문서는 한 번만 커지는데 파싱 총량은 제곱으로 자란다. 게다가 그 파싱이 react-markdown이다. remark/rehype 플러그인 체인을 통과해 VDOM을 만들고 diff까지 하는, 스트리밍 중에는 아무도 쓰지 않는 인터랙티브 컴포넌트(복사 버튼, 출처 모달, 이미지 확대)까지 매번 다시 만드는 풀코스.
+구조적으로 보면 이렇다. 스트리밍 중에는 청크가 올 때마다 **누적된 문서 전체를** 다시 파싱한다. 1,000자씩 10번 스트리밍되는 10,000자 응답이라면, 파싱 대상은 1,000 + 2,000 + … + 10,000 = 55,000자다. 문서 길이는 선형으로 늘어나는데 파싱 총량은 제곱으로 자란다. 게다가 그 파싱이 react-markdown이다. remark/rehype 플러그인 체인을 통과해 VDOM을 만들고 diff까지 하는, 스트리밍 중에는 아무도 쓰지 않는 인터랙티브 컴포넌트(복사 버튼, 출처 모달, 이미지 확대)까지 매번 다시 만드는 풀코스.
 
 여기서 질문이 하나 생겼다. 스트리밍 중에 그 풀코스가 필요한가? 사용자가 보는 건 흘러나오는 텍스트다. 클릭할 것도, 모달을 열 것도 없다. 필요한 건 "마크다운처럼 보이는 화면"이지 "완전한 React 트리"가 아니었다.
 
@@ -51,7 +51,7 @@ function MarkdownRenderer({ markdownText, messageId, isStreaming }) {
 }
 ```
 
-여기서 제일 조심한 지점이 **React와의 충돌이다.** React가 children을 관리하는 요소의 innerHTML을 밖에서 바꾸면, 다음 reconciliation 때 React가 원래 children으로 되돌려버린다. 그래서 스트리밍 중의 div는 children이 아예 없는 빈 껍데기로 뒀다. React 입장에서 이 div는 "비어 있는 것"이므로 innerHTML을 아무리 바꿔도 건드리지 않는다. 스트리밍이 끝나면 innerHTML 조작을 완전히 멈추고 제어권을 React에 통째로 넘긴다. 두 세계가 같은 DOM을 동시에 만지는 순간이 없도록, `isStreaming` 플래그로 렌더링 경로를 시간축에서 완전히 분리한 것이다.
+여기서 제일 조심한 지점이 **React와의 충돌이다.** React가 children을 관리하는 요소의 innerHTML을 밖에서 바꾸면, 다음 reconciliation 때 React가 원래 children으로 되돌려버린다. 그래서 스트리밍 중의 div는 children이 아예 없는 빈 껍데기로 뒀다. React 입장에서 이 div는 "비어 있는 것"이므로 innerHTML을 아무리 바꿔도 React는 건드리지 않는다. 스트리밍이 끝나면 innerHTML 조작을 완전히 멈추고 제어권을 React에 통째로 넘긴다. 두 세계가 같은 DOM을 동시에 만지는 순간이 없도록, `isStreaming` 플래그로 렌더링 경로를 시간축에서 완전히 분리한 것이다.
 
 스트리밍 훅 쪽은 누적 마크다운을 `useRef`에만 들고 있다가(리렌더 트리거 없음), flush 시점에 `renderMarkdown()`으로 HTML을 만들어 `data-streaming-message` 속성 셀렉터로 찾은 div에 꽂는다. 완료 이벤트가 오면 그제야 최종 텍스트로 상태를 한 번 업데이트하고 `isStreaming`을 내린다. 스트리밍 내내 React 상태 업데이트는 0회, 완료 시 1회다.
 
